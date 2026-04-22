@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { Great_Vibes } from "next/font/google";
 import { useEffect, useMemo, useState, type ReactNode } from "react";
 import {
   CalendarDays,
@@ -18,6 +19,11 @@ import {
   Users,
   X,
 } from "lucide-react";
+
+const greatVibes = Great_Vibes({
+  subsets: ["latin"],
+  weight: "400",
+});
 
 function pad(n: number) {
   return String(n).padStart(2, "0");
@@ -104,7 +110,7 @@ function InvitationImage({
 }) {
   return (
     <div
-      className={`relative overflow-hidden rounded-[28px] border border-white/10 bg-white/5 ${
+      className={`relative overflow-hidden rounded-[28px] border border-[#eadccf] bg-white/70 ${
         tall ? "h-80" : "h-56"
       }`}
     >
@@ -115,7 +121,7 @@ function InvitationImage({
         className="object-cover"
         sizes="(max-width: 768px) 100vw, 420px"
       />
-      <div className="absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-t from-[#8e7767]/18 via-transparent to-white/10" />
     </div>
   );
 }
@@ -133,15 +139,15 @@ function SectionTitle({
 }) {
   return (
     <div className="mb-5">
-      <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[11px] uppercase tracking-[0.25em] text-white/55">
+      <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-[#eadccf] bg-white/70 px-3 py-1 text-[11px] uppercase tracking-[0.25em] text-[#9b7d68]">
         {icon}
         <span>{eyebrow}</span>
       </div>
-      <h2 className="text-2xl font-semibold tracking-tight text-white">
+      <h2 className="text-2xl font-semibold tracking-tight text-[#4b3d35]">
         {title}
       </h2>
       {subtitle ? (
-        <p className="mt-2 text-sm leading-6 text-white/70">{subtitle}</p>
+        <p className="mt-2 text-sm leading-6 text-[#7b6a60]">{subtitle}</p>
       ) : null}
     </div>
   );
@@ -179,7 +185,7 @@ function HeroStackedCarousel({
 
   return (
     <div className="relative mx-auto h-[25rem] w-full max-w-sm">
-      <div className="pointer-events-none absolute left-1/2 top-1/2 h-44 w-44 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#d8c3a5]/15 blur-3xl" />
+      <div className="pointer-events-none absolute left-1/2 top-1/2 h-52 w-52 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#e4cdb8]/35 blur-3xl" />
 
       {visibleCards
         .slice()
@@ -195,7 +201,7 @@ function HeroStackedCarousel({
           return (
             <div
               key={`${card.src}-${card.offset}-${activeIndex}`}
-              className={`absolute inset-x-0 top-0 mx-auto h-[23rem] w-[92%] overflow-hidden rounded-[34px] border border-white/10 bg-white/5 shadow-[0_25px_90px_rgba(0,0,0,0.38)] transition-all duration-700 ease-out ${styles}`}
+              className={`absolute inset-x-0 top-0 mx-auto h-[23rem] w-[92%] overflow-hidden rounded-[34px] border border-[#eadccf] bg-white/65 shadow-[0_25px_70px_rgba(184,154,129,0.18)] transition-all duration-700 ease-out ${styles}`}
             >
               <Image
                 src={card.src}
@@ -205,15 +211,15 @@ function HeroStackedCarousel({
                 sizes="(max-width: 768px) 100vw, 420px"
                 priority={card.offset === 0}
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#7b6557]/25 via-transparent to-white/10" />
             </div>
           );
         })}
 
       <div className="absolute bottom-0 left-1/2 z-40 flex w-[92%] -translate-x-1/2 items-center justify-between">
-        <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-black/35 px-3 py-2 text-[10px] uppercase tracking-[0.24em] text-white/75 backdrop-blur-xl">
+        <div className="inline-flex items-center gap-2 rounded-full border border-[#eadccf] bg-white/80 px-3 py-2 text-[10px] uppercase tracking-[0.24em] text-[#8c7568] shadow-[0_10px_20px_rgba(184,154,129,0.12)] backdrop-blur-xl">
           <span>{String(activeIndex + 1).padStart(2, "0")}</span>
-          <span className="h-1 w-1 rounded-full bg-white/45" />
+          <span className="h-1 w-1 rounded-full bg-[#b8a092]" />
           <span>{String(images.length).padStart(2, "0")}</span>
         </div>
 
@@ -221,7 +227,7 @@ function HeroStackedCarousel({
           <button
             type="button"
             onClick={goToPrev}
-            className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-black/35 text-white backdrop-blur-xl"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-[#eadccf] bg-white/80 text-[#6d5a4f] shadow-[0_10px_20px_rgba(184,154,129,0.12)] backdrop-blur-xl"
             aria-label="Foto anterior"
           >
             <ChevronLeft size={18} />
@@ -229,7 +235,7 @@ function HeroStackedCarousel({
           <button
             type="button"
             onClick={goToNext}
-            className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-black/35 text-white backdrop-blur-xl"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-[#eadccf] bg-white/80 text-[#6d5a4f] shadow-[0_10px_20px_rgba(184,154,129,0.12)] backdrop-blur-xl"
             aria-label="Siguiente foto"
           >
             <ChevronRight size={18} />
@@ -244,7 +250,7 @@ function HeroStackedCarousel({
             type="button"
             onClick={() => setActiveIndex(index)}
             className={`h-2.5 rounded-full transition-all ${
-              index === activeIndex ? "w-8 bg-[#d8c3a5]" : "w-2.5 bg-white/35"
+              index === activeIndex ? "w-8 bg-[#c7a78b]" : "w-2.5 bg-[#d9c7b9]"
             }`}
             aria-label={`Ir a foto ${index + 1}`}
           />
@@ -261,13 +267,12 @@ export default function WeddingInvitationMobile() {
     dateLabel: "10 de Octubre de 2026",
     ceremonyTimeLabel: "9:00 PM",
     countdownTarget: "2026-10-10T21:00:00-06:00",
-    venue: "Palazzio",
-    address:
-      "Av. Prof. R. Rivera Lara 6031, Parques Industriales, 32625 Juárez, Chih.",
+    venue: "Jardín de Eventos Samalayuca",
+    address: "Galeana, 32730 Samalayuca, Chih.",
     mapsUrl:
       "https://www.google.com/maps/search/?api=1&query=" +
       encodeURIComponent(
-        "Palazzio, Av. Prof. R. Rivera Lara 6031, Parques Industriales, 32625 Juárez, Chihuahua"
+        "Jardín de Eventos Samalayuca, Galeana, 32730 Samalayuca, Chihuahua"
       ),
     galleryClosingQuote:
       "Gracias por acompañarnos a escribir el primer capítulo de esta nueva historia juntos.",
@@ -289,7 +294,6 @@ export default function WeddingInvitationMobile() {
   const womenPalette = [
     { name: "Negro", hex: "#0A0A0A" },
     { name: "Grafito", hex: "#242428" },
-    { name: "Marengo", hex: "#575759" },
     { name: "Ébano", hex: "#4A3E31" },
     { name: "Café negro", hex: "#2B0B00" },
     { name: "Chocolate", hex: "#3A1808" },
@@ -465,20 +469,20 @@ export default function WeddingInvitationMobile() {
   )}%0AComentario: ${encodeURIComponent(afterRsvp.comment || "")}`;
 
   const card =
-    "rounded-[30px] border border-white/10 bg-white/6 p-5 shadow-[0_20px_80px_rgba(0,0,0,0.35)] backdrop-blur-xl";
+    "rounded-[30px] border border-[#eadccf] bg-white/72 p-5 shadow-[0_18px_60px_rgba(184,154,129,0.16)] backdrop-blur-xl";
 
   const input =
-    "w-full rounded-2xl border border-white/10 bg-black/20 px-4 py-3 text-sm text-white outline-none placeholder:text-white/35 focus:border-[#d8c3a5]/50";
+    "w-full rounded-2xl border border-[#e7d8ca] bg-white/80 px-4 py-3 text-sm text-[#4b3d35] outline-none placeholder:text-[#a08d82] focus:border-[#caa98d]";
 
   return (
-    <main className="min-h-screen bg-[#141114] text-white">
+    <main className="min-h-screen bg-[#f8f2ec] text-[#4b3d35]">
       <audio id="wedding-audio" loop preload="none" src={wedding.songSrc} />
 
       <div className="fixed inset-x-0 top-0 z-40 mx-auto flex w-full max-w-md items-center justify-end px-4 pt-4">
         <button
           type="button"
           onClick={() => setIsPlaying((v) => !v)}
-          className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-black/35 px-4 py-2 text-xs font-medium text-white/85 backdrop-blur-xl"
+          className="inline-flex items-center gap-2 rounded-full border border-[#eadccf] bg-white/80 px-4 py-2 text-xs font-medium text-[#6d5a4f] shadow-[0_10px_30px_rgba(184,154,129,0.12)] backdrop-blur-xl"
         >
           <Music2 size={14} />
           {isPlaying ? <Pause size={14} /> : <Play size={14} />}
@@ -488,19 +492,22 @@ export default function WeddingInvitationMobile() {
 
       <div className="relative mx-auto w-full max-w-md px-4 pb-12 pt-6">
         <div className="pointer-events-none absolute inset-0 overflow-hidden">
-          <div className="absolute left-1/2 top-0 h-72 w-72 -translate-x-1/2 rounded-full bg-[#d8c3a5]/12 blur-3xl" />
-          <div className="absolute right-0 top-[28rem] h-56 w-56 rounded-full bg-[#b89b84]/10 blur-3xl" />
-          <div className="absolute bottom-20 left-0 h-56 w-56 rounded-full bg-white/5 blur-3xl" />
+          <div className="absolute left-1/2 top-0 h-80 w-80 -translate-x-1/2 rounded-full bg-[#ead7c4]/45 blur-3xl" />
+          <div className="absolute right-0 top-[24rem] h-72 w-72 rounded-full bg-[#f1dfd6]/40 blur-3xl" />
+          <div className="absolute bottom-20 left-0 h-72 w-72 rounded-full bg-[#efe6dc]/55 blur-3xl" />
+          <div className="absolute left-1/2 top-[48rem] h-64 w-64 -translate-x-1/2 rounded-full bg-[#f6eee7]/70 blur-3xl" />
         </div>
 
         <section className="relative pt-16 text-center">
-          <p className="text-[11px] uppercase tracking-[0.38em] text-white/50">
+          <p className="text-[11px] uppercase tracking-[0.38em] text-[#a28673]">
             Nuestra boda
           </p>
 
-          <h1 className="mt-4 text-5xl font-semibold tracking-tight text-[#f7f1eb]">
+          <h1
+            className={`${greatVibes.className} mt-4 text-[4.6rem] leading-[0.85] tracking-normal text-[#5a463c]`}
+          >
             {wedding.bride}
-            <span className="mx-auto my-2 block text-2xl font-light text-[#d8c3a5]">
+            <span className="mx-auto my-2 block text-[2.2rem] font-light text-[#c5a489]">
               &
             </span>
             {wedding.groom}
@@ -510,19 +517,19 @@ export default function WeddingInvitationMobile() {
             <HeroStackedCarousel images={heroGallery} />
           </div>
 
-          <div className="mt-20 rounded-[30px] border border-white/10 bg-white/6 px-5 py-6 backdrop-blur-xl">
-            <div className="flex items-center justify-center gap-2 text-[#d8c3a5]">
+          <div className="mt-20 rounded-[30px] border border-[#eadccf] bg-white/78 px-5 py-6 shadow-[0_16px_50px_rgba(184,154,129,0.14)] backdrop-blur-xl">
+            <div className="flex items-center justify-center gap-2 text-[#b89479]">
               <Heart size={15} />
               <span className="text-[11px] uppercase tracking-[0.28em]">
                 Estás invitado a nuestra boda
               </span>
             </div>
 
-            <p className="mt-4 text-2xl font-medium text-white">
+            <p className="mt-4 text-2xl font-medium text-[#4b3d35]">
               {wedding.dateLabel}
             </p>
 
-            <p className="mx-auto mt-4 max-w-sm text-sm leading-7 text-white/72">
+            <p className="mx-auto mt-4 max-w-sm text-sm leading-7 text-[#7b6a60]">
               {wedding.introText}
             </p>
           </div>
@@ -549,12 +556,12 @@ export default function WeddingInvitationMobile() {
             ].map((item) => (
               <div
                 key={item.label}
-                className="flex min-h-[108px] flex-col items-center justify-center rounded-3xl border border-white/10 bg-black/20 px-1 py-4"
+                className="flex min-h-[108px] flex-col items-center justify-center rounded-3xl border border-[#eadccf] bg-white/78 px-1 py-4 shadow-[0_10px_30px_rgba(184,154,129,0.10)]"
               >
-                <div className="text-[2rem] font-semibold leading-none text-[#f7f1eb]">
+                <div className="text-[2rem] font-semibold leading-none text-[#5a463c]">
                   {item.value}
                 </div>
-                <div className="mt-3 whitespace-nowrap text-[9px] uppercase tracking-[0.16em] text-white/45">
+                <div className="mt-3 whitespace-nowrap text-[9px] uppercase tracking-[0.16em] text-[#9a8478]">
                   {item.label}
                 </div>
               </div>
@@ -582,7 +589,7 @@ export default function WeddingInvitationMobile() {
               href={weddingCalendarData.google}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center justify-center gap-2 rounded-2xl bg-[#f7f1eb] px-4 py-3 text-sm font-semibold text-[#141114]"
+              className="inline-flex items-center justify-center gap-2 rounded-2xl bg-[#c9a98d] px-4 py-3 text-sm font-semibold text-[#fffaf6] shadow-[0_12px_28px_rgba(184,154,129,0.18)]"
             >
               <CalendarDays size={16} />
               Agregar a Google Calendar
@@ -593,7 +600,7 @@ export default function WeddingInvitationMobile() {
               onClick={() =>
                 downloadIcs("boda-lily-santiago.ics", weddingCalendarData.ics)
               }
-              className="rounded-2xl border border-white/12 bg-white/5 px-4 py-3 text-sm font-medium text-white"
+              className="rounded-2xl border border-[#eadccf] bg-white/82 px-4 py-3 text-sm font-medium text-[#6d5a4f]"
             >
               Guardar en mi calendario
             </button>
@@ -609,12 +616,21 @@ export default function WeddingInvitationMobile() {
           />
 
           <div className="space-y-4">
+            <div className="rounded-[24px] border border-[#eadccf] bg-[#fffaf6]/85 p-4 text-left">
+              <p className="text-sm font-semibold text-[#4b3d35]">
+                Evento solo para adultos
+              </p>
+              <p className="mt-1 text-sm leading-6 text-[#7b6a60]">
+                Amablemente, nuestra boda será una celebración sin niños.
+              </p>
+            </div>
+
             <InvitationImage
               src="/invitacion/fotoSalon.jpeg"
-              alt="Foto exterior del salón Palazzio"
+              alt="Foto exterior del salón"
             />
 
-            <div className="overflow-hidden rounded-[28px] border border-white/10 bg-black/15">
+            <div className="overflow-hidden rounded-[28px] border border-[#eadccf] bg-[#fffaf6]/85">
               <iframe
                 title="Mapa del salón"
                 src={`https://www.google.com/maps?q=${encodeURIComponent(
@@ -629,7 +645,7 @@ export default function WeddingInvitationMobile() {
               href={wedding.mapsUrl}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-[#d8c3a5] px-4 py-3 text-sm font-semibold text-[#141114]"
+              className="inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-[#c9a98d] px-4 py-3 text-sm font-semibold text-[#fffaf6] shadow-[0_12px_28px_rgba(184,154,129,0.18)]"
             >
               <MapPin size={16} />
               Abrir ubicación en Maps
@@ -645,8 +661,8 @@ export default function WeddingInvitationMobile() {
             icon={<Shirt size={13} />}
           />
 
-          <div className="rounded-[26px] border border-white/10 bg-black/15 p-4">
-            <p className="text-sm font-medium text-white">
+          <div className="rounded-[26px] border border-[#eadccf] bg-[#fffaf6]/80 p-4">
+            <p className="text-sm font-medium text-[#4b3d35]">
               Tonos sugeridos para vestidos
             </p>
 
@@ -654,20 +670,20 @@ export default function WeddingInvitationMobile() {
               {womenPalette.map((tone) => (
                 <div
                   key={tone.name}
-                  className="rounded-2xl border border-white/10 bg-white/5 p-3 text-center"
+                  className="rounded-2xl border border-[#eadccf] bg-white/82 p-3 text-center"
                 >
                   <div
-                    className="mx-auto h-12 w-12 rounded-full border border-white/15"
+                    className="mx-auto h-12 w-12 rounded-full border border-white/60"
                     style={{ backgroundColor: tone.hex }}
                   />
-                  <p className="mt-2 text-[11px] leading-4 text-white/70">
+                  <p className="mt-2 text-[11px] leading-4 text-[#7b6a60]">
                     {tone.name}
                   </p>
                 </div>
               ))}
             </div>
 
-            <p className="mt-4 text-sm text-white/70">No rojo · No blanco</p>
+            <p className="mt-4 text-sm text-[#8f7a6d]">No rojo · No blanco</p>
           </div>
 
           <div className="mt-4 grid gap-3">
@@ -682,8 +698,8 @@ export default function WeddingInvitationMobile() {
               />
             </div>
 
-            <div className="rounded-[26px] border border-white/10 bg-black/15 p-4">
-              <ul className="space-y-2 text-sm leading-6 text-white/74">
+            <div className="rounded-[26px] border border-[#eadccf] bg-[#fffaf6]/80 p-4">
+              <ul className="space-y-2 text-sm leading-6 text-[#75655b]">
                 {dressRules.map((rule) => (
                   <li key={rule}>• {rule}</li>
                 ))}
@@ -693,7 +709,7 @@ export default function WeddingInvitationMobile() {
             <button
               type="button"
               onClick={() => setShowDressIdeas(true)}
-              className="rounded-2xl border border-white/12 bg-white/5 px-4 py-3 text-sm font-medium text-white"
+              className="rounded-2xl border border-[#eadccf] bg-white/82 px-4 py-3 text-sm font-medium text-[#6d5a4f]"
             >
               Consultar más ideas
             </button>
@@ -721,6 +737,20 @@ export default function WeddingInvitationMobile() {
             subtitle="Completa tus datos y envía tu confirmación."
             icon={<Users size={13} />}
           />
+
+          <div className="mb-4 rounded-[24px] border border-[#eadccf] bg-[#fffaf6]/85 p-4">
+            <p className="text-sm font-semibold text-[#4b3d35]">
+              Importante
+            </p>
+            <p className="mt-1 text-sm leading-6 text-[#7b6a60]">
+              Tu nombre lo agregaremos a la lista para entrega de pases. Favor
+              de confirmar por persona, no por familia.
+            </p>
+            <p className="mt-2 text-sm leading-6 text-[#7b6a60]">
+              Nuestra boda será solo para adultos, por lo que no habrá acceso
+              para niños.
+            </p>
+          </div>
 
           <div className="space-y-3">
             <input
@@ -755,15 +785,10 @@ export default function WeddingInvitationMobile() {
               )}?text=${weddingMessage}`}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex w-full items-center justify-center rounded-2xl bg-[#f7f1eb] px-4 py-3 text-sm font-semibold text-[#141114]"
+              className="inline-flex w-full items-center justify-center rounded-2xl bg-[#c9a98d] px-4 py-3 text-sm font-semibold text-[#fffaf6] shadow-[0_12px_28px_rgba(184,154,129,0.18)]"
             >
               Confirmo que asistiré
             </a>
-
-            <p className="text-xs leading-5 text-white/55">
-              Tu nombre lo agregaremos a la lista para entrega de pases. Favor
-              de confirmar por persona, no por familia.
-            </p>
           </div>
         </section>
 
@@ -775,13 +800,24 @@ export default function WeddingInvitationMobile() {
             icon={<Sparkles size={13} />}
           />
 
-          <div className="rounded-[26px] border border-white/10 bg-black/15 p-4">
-            <p className="text-lg font-medium text-white">
-              {wedding.tornabodaTime} · {wedding.tornabodaLocation}
-            </p>
-            <p className="mt-2 text-sm leading-6 text-white/72">
-              Solo lleva tu bebida favorita.
-            </p>
+          <div className="space-y-3">
+            <div className="rounded-[26px] border border-[#eadccf] bg-[#fffaf6]/80 p-4">
+              <p className="text-lg font-medium text-[#4b3d35]">
+                {wedding.tornabodaTime} · {wedding.tornabodaLocation}
+              </p>
+              <p className="mt-2 text-sm leading-6 text-[#7b6a60]">
+                Solo lleva tu bebida favorita.
+              </p>
+            </div>
+
+            <div className="rounded-[24px] border border-[#eadccf] bg-[#fffaf6]/85 p-4">
+              <p className="text-sm font-semibold text-[#4b3d35]">
+                Evento familiar
+              </p>
+              <p className="mt-1 text-sm leading-6 text-[#7b6a60]">
+                En la tornaboda se aceptan invitados de todas las edades.
+              </p>
+            </div>
           </div>
 
           <div className="mt-4 space-y-3">
@@ -817,22 +853,22 @@ export default function WeddingInvitationMobile() {
               )}?text=${afterMessage}`}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex w-full items-center justify-center rounded-2xl bg-[#d8c3a5] px-4 py-3 text-sm font-semibold text-[#141114]"
+              className="inline-flex w-full items-center justify-center rounded-2xl bg-[#c9a98d] px-4 py-3 text-sm font-semibold text-[#fffaf6] shadow-[0_12px_28px_rgba(184,154,129,0.18)]"
             >
               Confirmar asistencia a la tornaboda
             </a>
 
-            <div className="space-y-4 rounded-[26px] border border-white/10 bg-black/15 p-4">
+            <div className="space-y-4 rounded-[26px] border border-[#eadccf] bg-[#fffaf6]/80 p-4">
               <div>
-                <p className="text-sm font-medium text-white">
+                <p className="text-sm font-medium text-[#4b3d35]">
                   Ubicación de la tornaboda
                 </p>
-                <p className="mt-2 text-sm leading-6 text-white/72">
+                <p className="mt-2 text-sm leading-6 text-[#7b6a60]">
                   {wedding.tornabodaAddress}
                 </p>
               </div>
 
-              <div className="overflow-hidden rounded-[24px] border border-white/10 bg-black/15">
+              <div className="overflow-hidden rounded-[24px] border border-[#eadccf] bg-[#fffaf6]/85">
                 <iframe
                   title="Mapa de la tornaboda"
                   src={`https://www.google.com/maps?q=${encodeURIComponent(
@@ -847,7 +883,7 @@ export default function WeddingInvitationMobile() {
                 href={wedding.tornabodaMapsUrl}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-[#d8c3a5] px-4 py-3 text-sm font-semibold text-[#141114]"
+                className="inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-[#c9a98d] px-4 py-3 text-sm font-semibold text-[#fffaf6] shadow-[0_12px_28px_rgba(184,154,129,0.18)]"
               >
                 <MapPin size={16} />
                 Abrir ubicación de la tornaboda
@@ -875,18 +911,18 @@ export default function WeddingInvitationMobile() {
         </section>
 
         <footer className="relative px-4 pb-8 pt-8 text-center">
-          <p className="text-xl font-medium italic text-[#f7f1eb]">
+          <p className="text-xl font-medium italic text-[#6c5649]">
             {wedding.galleryClosingQuote}
           </p>
         </footer>
       </div>
 
       {showDressIdeas ? (
-        <div className="fixed inset-0 z-50 flex items-end bg-black/70 backdrop-blur-sm">
-          <div className="max-h-[88vh] w-full overflow-y-auto rounded-t-[34px] border border-white/10 bg-[#171317] p-5 text-white shadow-2xl">
+        <div className="fixed inset-0 z-50 flex items-end bg-[#7b6557]/30 backdrop-blur-sm">
+          <div className="max-h-[88vh] w-full overflow-y-auto rounded-t-[34px] border border-[#eadccf] bg-[#f8f2ec] p-5 text-[#4b3d35] shadow-2xl">
             <div className="mb-4 flex items-center justify-between">
               <div>
-                <p className="text-[11px] uppercase tracking-[0.28em] text-white/45">
+                <p className="text-[11px] uppercase tracking-[0.28em] text-[#9a8478]">
                   Dress code
                 </p>
                 <h3 className="mt-1 text-2xl font-semibold">
@@ -897,7 +933,7 @@ export default function WeddingInvitationMobile() {
               <button
                 type="button"
                 onClick={() => setShowDressIdeas(false)}
-                className="rounded-full border border-white/10 bg-white/5 p-2"
+                className="rounded-full border border-[#eadccf] bg-white/80 p-2 text-[#6d5a4f]"
               >
                 <X size={18} />
               </button>
@@ -907,10 +943,10 @@ export default function WeddingInvitationMobile() {
               {ideas.map((idea) => (
                 <div
                   key={idea.text}
-                  className="rounded-[26px] border border-white/10 bg-white/5 p-4"
+                  className="rounded-[26px] border border-[#eadccf] bg-white/78 p-4"
                 >
                   <InvitationImage src={idea.src} alt={idea.text} />
-                  <p className="mt-3 text-sm leading-6 text-white/74">
+                  <p className="mt-3 text-sm leading-6 text-[#75655b]">
                     {idea.text}
                   </p>
                 </div>
