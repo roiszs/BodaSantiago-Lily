@@ -552,7 +552,7 @@ export default function WeddingInvitationMobile() {
           </h1>
 
           <p className="mx-auto mt-4 max-w-xs text-[11px] uppercase tracking-[0.28em] text-[#9f8678]">
-            {wedding.dateLabel} · Samalayuca, Chihuahua
+            {wedding.dateLabel} · Ciudad Juarez, Chihuahua
           </p>
 
                     <div className="relative mt-10">
