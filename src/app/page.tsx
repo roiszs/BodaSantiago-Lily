@@ -110,7 +110,7 @@ function InvitationImage({
 }) {
   return (
     <div
-      className={`relative overflow-hidden rounded-[28px] border border-[#eadccf] bg-white/70 ${
+      className={`relative overflow-hidden rounded-[30px] border border-[#e9ddd2] bg-white/72 ring-1 ring-white/55 ${
         tall ? "h-80" : "h-56"
       }`}
     >
@@ -121,7 +121,7 @@ function InvitationImage({
         className="object-cover"
         sizes="(max-width: 768px) 100vw, 420px"
       />
-      <div className="absolute inset-0 bg-gradient-to-t from-[#8e7767]/18 via-transparent to-white/10" />
+      <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(92,70,56,0.14),transparent_48%,rgba(255,255,255,0.10))]" />
     </div>
   );
 }
@@ -139,15 +139,17 @@ function SectionTitle({
 }) {
   return (
     <div className="mb-5">
-      <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-[#eadccf] bg-white/70 px-3 py-1 text-[11px] uppercase tracking-[0.25em] text-[#9b7d68]">
+      <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-[#e7d9cc] bg-white/72 px-3 py-1.5 text-[10px] uppercase tracking-[0.26em] text-[#9a7f6f]">
         {icon}
         <span>{eyebrow}</span>
       </div>
-      <h2 className="text-2xl font-semibold tracking-tight text-[#4b3d35]">
+
+      <h2 className="text-[1.95rem] font-semibold tracking-tight text-[#4f3f36]">
         {title}
       </h2>
+
       {subtitle ? (
-        <p className="mt-2 text-sm leading-6 text-[#7b6a60]">{subtitle}</p>
+        <p className="mt-2 text-sm leading-6 text-[#7b695d]">{subtitle}</p>
       ) : null}
     </div>
   );
@@ -155,13 +157,14 @@ function SectionTitle({
 
 function ElegantDivider() {
   return (
-    <div className="relative mx-auto my-6 flex items-center justify-center">
-      <div className="h-px w-24 bg-gradient-to-r from-transparent via-[#d7bca6] to-transparent" />
-      <div className="mx-3 h-2 w-2 rounded-full bg-[#d7bca6]" />
-      <div className="h-px w-24 bg-gradient-to-r from-transparent via-[#d7bca6] to-transparent" />
+    <div className="relative mx-auto my-7 flex items-center justify-center">
+      <div className="h-px w-24 bg-gradient-to-r from-transparent via-[#d5b79b] to-transparent" />
+      <div className="mx-3 h-2 w-2 rounded-full bg-[#d5b79b]" />
+      <div className="h-px w-24 bg-gradient-to-r from-transparent via-[#d5b79b] to-transparent" />
     </div>
   );
 }
+
 function HeroSeal() {
   return (
     <div className="flex h-[88px] w-[88px] flex-col items-center justify-center rounded-full border border-[#eadccf] bg-white/86 shadow-[0_14px_35px_rgba(184,154,129,0.16)] ring-1 ring-white/50 backdrop-blur-xl">
@@ -208,8 +211,8 @@ function HeroStackedCarousel({
   });
 
   return (
-    <div className="relative mx-auto h-[26rem] w-full max-w-sm">
-      <div className="pointer-events-none absolute left-1/2 top-1/2 h-60 w-60 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#e6cdb6]/45 blur-3xl" />
+    <div className="relative mx-auto h-[24.8rem] w-full max-w-sm">
+      <div className="pointer-events-none absolute left-1/2 top-1/2 h-56 w-56 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#e4ccb7]/38 blur-3xl" />
 
       {visibleCards
         .slice()
@@ -219,13 +222,13 @@ function HeroStackedCarousel({
             card.offset === 0
               ? "translate-y-0 rotate-0 scale-100 opacity-100 z-30"
               : card.offset === 1
-              ? "translate-y-4 rotate-[4deg] scale-[0.95] opacity-70 z-20"
-              : "translate-y-8 -rotate-[4deg] scale-[0.9] opacity-45 z-10";
+              ? "translate-y-4 rotate-[3.5deg] scale-[0.955] opacity-70 z-20"
+              : "translate-y-8 -rotate-[3.5deg] scale-[0.91] opacity-45 z-10";
 
           return (
             <div
               key={`${card.src}-${card.offset}-${activeIndex}`}
-              className={`absolute inset-x-0 top-0 mx-auto h-[23.5rem] w-[92%] overflow-hidden rounded-[40px] border border-[#eadccf] bg-white/72 shadow-[0_30px_85px_rgba(184,154,129,0.22)] ring-1 ring-white/50 transition-all duration-700 ease-out ${styles}`}
+              className={`absolute inset-x-0 top-0 mx-auto h-[22.5rem] w-[92%] overflow-hidden rounded-[40px] border border-[#eadccf] bg-white/72 shadow-[0_30px_85px_rgba(184,154,129,0.22)] ring-1 ring-white/50 transition-all duration-700 ease-out ${styles}`}
             >
               <Image
                 src={card.src}
@@ -235,13 +238,13 @@ function HeroStackedCarousel({
                 sizes="(max-width: 768px) 100vw, 420px"
                 priority={card.offset === 0}
               />
-              <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(92,70,56,0.22),transparent_45%,rgba(255,255,255,0.12))]" />
+              <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(92,70,56,0.18),transparent_45%,rgba(255,255,255,0.10))]" />
             </div>
           );
         })}
 
       <div className="absolute bottom-0 left-1/2 z-40 flex w-[92%] -translate-x-1/2 items-center justify-between">
-        <div className="inline-flex items-center gap-2 rounded-full border border-[#eadccf] bg-white/80 px-3 py-2 text-[10px] uppercase tracking-[0.24em] text-[#8c7568] shadow-[0_10px_20px_rgba(184,154,129,0.12)] backdrop-blur-xl">
+        <div className="inline-flex items-center gap-2 rounded-full border border-[#eadccf] bg-white/82 px-3 py-2 text-[10px] uppercase tracking-[0.24em] text-[#8c7568] shadow-[0_10px_20px_rgba(184,154,129,0.12)] backdrop-blur-xl">
           <span>{String(activeIndex + 1).padStart(2, "0")}</span>
           <span className="h-1 w-1 rounded-full bg-[#b8a092]" />
           <span>{String(images.length).padStart(2, "0")}</span>
@@ -251,7 +254,7 @@ function HeroStackedCarousel({
           <button
             type="button"
             onClick={goToPrev}
-            className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-[#eadccf] bg-white/80 text-[#6d5a4f] shadow-[0_10px_20px_rgba(184,154,129,0.12)] backdrop-blur-xl"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-[#eadccf] bg-white/82 text-[#6d5a4f] shadow-[0_10px_20px_rgba(184,154,129,0.12)] backdrop-blur-xl"
             aria-label="Foto anterior"
           >
             <ChevronLeft size={18} />
@@ -259,7 +262,7 @@ function HeroStackedCarousel({
           <button
             type="button"
             onClick={goToNext}
-            className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-[#eadccf] bg-white/80 text-[#6d5a4f] shadow-[0_10px_20px_rgba(184,154,129,0.12)] backdrop-blur-xl"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-[#eadccf] bg-white/82 text-[#6d5a4f] shadow-[0_10px_20px_rgba(184,154,129,0.12)] backdrop-blur-xl"
             aria-label="Siguiente foto"
           >
             <ChevronRight size={18} />
@@ -462,7 +465,9 @@ export default function WeddingInvitationMobile() {
   }, [wedding.countdownTarget]);
 
   useEffect(() => {
-    const audio = document.getElementById("wedding-audio") as HTMLAudioElement | null;
+    const audio = document.getElementById(
+      "wedding-audio"
+    ) as HTMLAudioElement | null;
     if (!audio) return;
 
     if (isPlaying) {
@@ -485,7 +490,7 @@ export default function WeddingInvitationMobile() {
   )}%0AComentario: ${encodeURIComponent(afterRsvp.comment || "")}`;
 
   const card =
-    "rounded-[32px] border border-[#eadccf] bg-white/78 p-5 shadow-[0_22px_70px_rgba(184,154,129,0.14)] backdrop-blur-xl";
+    "rounded-[30px] border border-[#eadccf] bg-white/78 p-5 shadow-[0_22px_70px_rgba(184,154,129,0.14)] ring-1 ring-white/45 backdrop-blur-xl";
 
   const input =
     "w-full rounded-[20px] border border-[#e7d8ca] bg-white/88 px-4 py-3 text-sm text-[#4b3d35] shadow-[inset_0_1px_0_rgba(255,255,255,0.65)] outline-none placeholder:text-[#a08d82] transition focus:border-[#caa98d] focus:shadow-[0_0_0_4px_rgba(201,169,141,0.14)]";
@@ -497,17 +502,17 @@ export default function WeddingInvitationMobile() {
     "inline-flex items-center justify-center gap-2 rounded-2xl border border-[#eadccf] bg-white/84 px-4 py-3 text-sm font-medium text-[#6d5a4f] shadow-[0_10px_22px_rgba(184,154,129,0.10)] transition hover:bg-white";
 
   const softPanel =
-    "rounded-[26px] border border-[#eadccf] bg-[#fffaf6]/82 p-4 shadow-[0_10px_30px_rgba(184,154,129,0.08)]";
+    "rounded-[24px] border border-[#eadccf] bg-[#fffaf6]/84 p-4 shadow-[0_10px_30px_rgba(184,154,129,0.08)]";
 
   return (
     <main className="min-h-screen bg-[#f8f2ec] text-[#4b3d35]">
       <audio id="wedding-audio" loop preload="none" src={wedding.songSrc} />
 
-      <div className="fixed inset-x-0 top-0 z-40 mx-auto flex w-full max-w-md items-center justify-end px-4 pt-4">
+      <div className="fixed inset-x-0 top-0 z-40 mx-auto flex w-full max-w-md items-center justify-end px-5 pt-5 pointer-events-none">
         <button
           type="button"
           onClick={() => setIsPlaying((v) => !v)}
-          className="inline-flex items-center gap-2 rounded-full border border-[#eadccf] bg-white/80 px-4 py-2 text-xs font-medium text-[#6d5a4f] shadow-[0_10px_30px_rgba(184,154,129,0.12)] backdrop-blur-xl"
+          className="pointer-events-auto inline-flex items-center gap-2 rounded-full border border-[#eadccf] bg-white/86 px-3.5 py-2 text-[11px] font-medium text-[#6d5a4f] shadow-[0_10px_30px_rgba(184,154,129,0.12)] backdrop-blur-xl"
         >
           <Music2 size={14} />
           {isPlaying ? <Pause size={14} /> : <Play size={14} />}
@@ -525,69 +530,60 @@ export default function WeddingInvitationMobile() {
           <div className="absolute bottom-24 right-[-3rem] h-72 w-72 rounded-full bg-[#efe2d4]/55 blur-3xl" />
         </div>
 
-              <section className="relative isolate pt-16 text-center">
-        <p className="text-[11px] uppercase tracking-[0.38em] text-[#a28673]">
-          Nuestra boda
-        </p>
+        <section className="relative isolate pt-16 text-center">
+          <p className="text-[11px] uppercase tracking-[0.38em] text-[#a28673]">
+            Nuestra boda
+          </p>
 
-        <div className="mt-3 flex items-center justify-center gap-3">
-          <span className="h-px w-12 bg-gradient-to-r from-transparent to-[#d7bca6]" />
-          <span className="h-1.5 w-1.5 rounded-full bg-[#d7bca6]" />
-          <span className="h-px w-12 bg-gradient-to-l from-transparent to-[#d7bca6]" />
-        </div>
-
-        <h1
-          className={`${greatVibes.className} mt-5 text-[5.2rem] leading-[0.8] tracking-normal text-[#5a463c] drop-shadow-[0_2px_10px_rgba(184,154,129,0.12)]`}
-        >
-          {wedding.bride}
-          <span className="mx-auto my-2 block text-[2.3rem] font-light text-[#c5a489]">
-            &
-          </span>
-          {wedding.groom}
-        </h1>
-
-        <p className="mx-auto mt-4 max-w-xs text-[11px] uppercase tracking-[0.28em] text-[#9f8678]">
-          {wedding.dateLabel} · Samalayuca, Chihuahua
-        </p>
-
-        <div className="relative mt-10">
-          <div className="absolute left-0 top-7 z-40 w-[9.5rem] -rotate-[3deg] rounded-[24px] border border-[#eadccf] bg-white/84 p-3 text-left shadow-[0_14px_35px_rgba(184,154,129,0.14)] ring-1 ring-white/50 backdrop-blur-xl">
-            <p className="text-[9px] uppercase tracking-[0.24em] text-[#a28673]">
-              Una noche para recordar
-            </p>
-            <p className="mt-2 text-sm leading-5 text-[#5d493f]">
-              Celebramos el amor, la unión y el comienzo de nuestra nueva historia.
-            </p>
+          <div className="mt-3 flex items-center justify-center gap-3">
+            <span className="h-px w-12 bg-gradient-to-r from-transparent to-[#d7bca6]" />
+            <span className="h-1.5 w-1.5 rounded-full bg-[#d7bca6]" />
+            <span className="h-px w-12 bg-gradient-to-l from-transparent to-[#d7bca6]" />
           </div>
 
-          <div className="absolute right-2 top-0 z-40">
-            <HeroSeal />
-          </div>
+          <h1
+            className={`${greatVibes.className} mt-5 text-[5.2rem] leading-[0.8] tracking-normal text-[#5a463c] drop-shadow-[0_2px_10px_rgba(184,154,129,0.12)]`}
+          >
+            {wedding.bride}
+            <span className="mx-auto my-2 block text-[2.3rem] font-light text-[#c5a489]">
+              &
+            </span>
+            {wedding.groom}
+          </h1>
 
-          <HeroStackedCarousel images={heroGallery} />
-        </div>
+          <p className="mx-auto mt-4 max-w-xs text-[11px] uppercase tracking-[0.28em] text-[#9f8678]">
+            {wedding.dateLabel} · Samalayuca, Chihuahua
+          </p>
 
-        <div className="mt-20 rounded-[32px] border border-[#eadccf] bg-white/80 px-5 py-6 shadow-[0_18px_55px_rgba(184,154,129,0.15)] backdrop-blur-xl">
-          <div className="flex items-center justify-center gap-3">
-            <span className="h-px w-10 bg-gradient-to-r from-transparent to-[#d7bca6]" />
-            <div className="flex items-center gap-2 text-[#b89479]">
-              <Heart size={15} />
-              <span className="text-[11px] uppercase tracking-[0.28em]">
-                Estás invitado a nuestra boda
-              </span>
+                    <div className="relative mt-10">
+            <div className="absolute right-3 top-3 z-40">
+              <HeroSeal />
             </div>
-            <span className="h-px w-10 bg-gradient-to-l from-transparent to-[#d7bca6]" />
+
+            <HeroStackedCarousel images={heroGallery} />
           </div>
 
-          <p className="mt-4 text-2xl font-medium text-[#4b3d35]">
-            {wedding.dateLabel}
-          </p>
+          <div className="mt-14 rounded-[32px] border border-[#eadccf] bg-white/80 px-5 py-6 shadow-[0_18px_55px_rgba(184,154,129,0.15)] backdrop-blur-xl">
+            <div className="flex items-center justify-center gap-3">
+              <span className="h-px w-10 bg-gradient-to-r from-transparent to-[#d7bca6]" />
+              <div className="flex items-center gap-2 text-[#b89479]">
+                <Heart size={15} />
+                <span className="text-[11px] uppercase tracking-[0.28em]">
+                  Estás invitado a nuestra boda
+                </span>
+              </div>
+              <span className="h-px w-10 bg-gradient-to-l from-transparent to-[#d7bca6]" />
+            </div>
 
-          <p className="mx-auto mt-4 max-w-sm text-sm leading-7 text-[#7b6a60]">
-            {wedding.introText}
-          </p>
-        </div>
-      </section>
+            <p className="mt-4 text-2xl font-medium text-[#4b3d35]">
+              {wedding.dateLabel}
+            </p>
+
+            <p className="mx-auto mt-4 max-w-sm text-sm leading-7 text-[#7b6a60]">
+              {wedding.introText}
+            </p>
+          </div>
+        </section>
 
         <ElegantDivider />
 
@@ -941,7 +937,7 @@ export default function WeddingInvitationMobile() {
               Confirmar asistencia a la tornaboda
             </a>
 
-            <div className="space-y-4 rounded-[26px] border border-[#eadccf] bg-[#fffaf6]/82 p-4 shadow-[0_10px_30px_rgba(184,154,129,0.08)]">
+            <div className={`${softPanel} space-y-4`}>
               <div>
                 <p className="text-sm font-medium text-[#4b3d35]">
                   Ubicación de la tornaboda
@@ -1004,7 +1000,7 @@ export default function WeddingInvitationMobile() {
       </div>
 
       {showDressIdeas ? (
-        <div className="fixed inset-0 z-50 flex items-end bg-[#7b6557]/30 backdrop-blur-sm">
+        <div className="fixed inset-0 z-50 flex items-end bg-[#7b6557]/24 backdrop-blur-sm">
           <div className="max-h-[88vh] w-full overflow-y-auto rounded-t-[34px] border border-[#eadccf] bg-[#f8f2ec] p-5 text-[#4b3d35] shadow-2xl">
             <div className="mb-4 flex items-center justify-between">
               <div>
@@ -1019,7 +1015,7 @@ export default function WeddingInvitationMobile() {
               <button
                 type="button"
                 onClick={() => setShowDressIdeas(false)}
-                className="rounded-full border border-[#eadccf] bg-white/80 p-2 text-[#6d5a4f]"
+                className="rounded-full border border-[#eadccf] bg-white/82 p-2 text-[#6d5a4f]"
               >
                 <X size={18} />
               </button>
@@ -1029,7 +1025,7 @@ export default function WeddingInvitationMobile() {
               {ideas.map((idea) => (
                 <div
                   key={idea.text}
-                  className="rounded-[26px] border border-[#eadccf] bg-white/78 p-4"
+                  className="rounded-[26px] border border-[#eadccf] bg-white/78 p-4 shadow-[0_10px_24px_rgba(184,154,129,0.08)]"
                 >
                   <InvitationImage src={idea.src} alt={idea.text} />
                   <p className="mt-3 text-sm leading-6 text-[#75655b]">
