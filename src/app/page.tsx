@@ -119,7 +119,7 @@ function InvitationImage({
         alt={alt}
         fill
         className="object-cover"
-        sizes="(max-width: 768px) 100vw, 420px"
+        sizes="(max-width: 768px) 100vw, 430px"
       />
       <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(92,70,56,0.14),transparent_48%,rgba(255,255,255,0.10))]" />
     </div>
@@ -138,13 +138,13 @@ function SectionTitle({
   icon?: ReactNode;
 }) {
   return (
-    <div className="mb-5">
+    <div className="mb-4">
       <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-[#e7d9cc] bg-white/72 px-3 py-1.5 text-[10px] uppercase tracking-[0.26em] text-[#9a7f6f]">
         {icon}
         <span>{eyebrow}</span>
       </div>
 
-      <h2 className="text-[1.95rem] font-semibold tracking-tight text-[#4f3f36]">
+      <h2 className="text-[1.85rem] font-semibold tracking-tight text-[#4f3f36]">
         {title}
       </h2>
 
@@ -157,10 +157,10 @@ function SectionTitle({
 
 function ElegantDivider() {
   return (
-    <div className="relative mx-auto my-7 flex items-center justify-center">
-      <div className="h-px w-24 bg-gradient-to-r from-transparent via-[#d5b79b] to-transparent" />
+    <div className="relative mx-auto my-6 flex items-center justify-center">
+      <div className="h-px w-20 bg-gradient-to-r from-transparent via-[#d5b79b] to-transparent" />
       <div className="mx-3 h-2 w-2 rounded-full bg-[#d5b79b]" />
-      <div className="h-px w-24 bg-gradient-to-r from-transparent via-[#d5b79b] to-transparent" />
+      <div className="h-px w-20 bg-gradient-to-r from-transparent via-[#d5b79b] to-transparent" />
     </div>
   );
 }
@@ -211,7 +211,7 @@ function HeroStackedCarousel({
   });
 
   return (
-    <div className="relative mx-auto h-[24.8rem] w-full max-w-sm">
+    <div className="relative mx-auto h-[24.2rem] w-full max-w-sm">
       <div className="pointer-events-none absolute left-1/2 top-1/2 h-56 w-56 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#e4ccb7]/38 blur-3xl" />
 
       {visibleCards
@@ -222,20 +222,20 @@ function HeroStackedCarousel({
             card.offset === 0
               ? "translate-y-0 rotate-0 scale-100 opacity-100 z-30"
               : card.offset === 1
-              ? "translate-y-4 rotate-[3.5deg] scale-[0.955] opacity-70 z-20"
-              : "translate-y-8 -rotate-[3.5deg] scale-[0.91] opacity-45 z-10";
+              ? "translate-y-4 rotate-[3deg] scale-[0.958] opacity-70 z-20"
+              : "translate-y-8 -rotate-[3deg] scale-[0.915] opacity-45 z-10";
 
           return (
             <div
               key={`${card.src}-${card.offset}-${activeIndex}`}
-              className={`absolute inset-x-0 top-0 mx-auto h-[22.5rem] w-[92%] overflow-hidden rounded-[40px] border border-[#eadccf] bg-white/72 shadow-[0_30px_85px_rgba(184,154,129,0.22)] ring-1 ring-white/50 transition-all duration-700 ease-out ${styles}`}
+              className={`absolute inset-x-0 top-0 mx-auto h-[22rem] w-[92%] overflow-hidden rounded-[40px] border border-[#eadccf] bg-white/72 shadow-[0_28px_78px_rgba(184,154,129,0.20)] ring-1 ring-white/50 transition-all duration-700 ease-out ${styles}`}
             >
               <Image
                 src={card.src}
                 alt={card.alt}
                 fill
                 className="object-cover"
-                sizes="(max-width: 768px) 100vw, 420px"
+                sizes="(max-width: 768px) 100vw, 430px"
                 priority={card.offset === 0}
               />
               <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(92,70,56,0.18),transparent_45%,rgba(255,255,255,0.10))]" />
@@ -270,7 +270,7 @@ function HeroStackedCarousel({
         </div>
       </div>
 
-      <div className="absolute -bottom-12 left-1/2 z-40 flex -translate-x-1/2 items-center gap-2">
+      <div className="absolute -bottom-11 left-1/2 z-40 flex -translate-x-1/2 items-center gap-2">
         {images.map((image, index) => (
           <button
             key={image.src}
@@ -494,16 +494,16 @@ export default function WeddingInvitationMobile() {
   )}%0AComentario: ${encodeURIComponent(afterRsvp.comment || "")}`;
 
   const card =
-    "rounded-[30px] border border-[#eadccf] bg-white/78 p-5 shadow-[0_22px_70px_rgba(184,154,129,0.14)] ring-1 ring-white/45 backdrop-blur-xl";
+    "rounded-[30px] border border-[#eadccf] bg-white/78 p-4 shadow-[0_22px_70px_rgba(184,154,129,0.14)] ring-1 ring-white/45 backdrop-blur-xl sm:p-5";
 
   const input =
     "w-full rounded-[20px] border border-[#e7d8ca] bg-white/88 px-4 py-3 text-sm text-[#4b3d35] shadow-[inset_0_1px_0_rgba(255,255,255,0.65)] outline-none placeholder:text-[#a08d82] transition focus:border-[#caa98d] focus:shadow-[0_0_0_4px_rgba(201,169,141,0.14)]";
 
   const primaryButton =
-    "inline-flex items-center justify-center gap-2 rounded-2xl bg-[#c9a98d] px-4 py-3 text-sm font-semibold text-[#fffaf6] shadow-[0_14px_30px_rgba(184,154,129,0.20)] transition hover:translate-y-[-1px] hover:bg-[#c29f82] active:translate-y-0";
+    "inline-flex items-center justify-center gap-2 rounded-[18px] bg-[#c9a98d] px-4 py-3.5 text-sm font-semibold text-[#fffaf6] shadow-[0_14px_30px_rgba(184,154,129,0.20)] transition hover:translate-y-[-1px] hover:bg-[#c29f82] active:translate-y-0";
 
   const secondaryButton =
-    "inline-flex items-center justify-center gap-2 rounded-2xl border border-[#eadccf] bg-white/84 px-4 py-3 text-sm font-medium text-[#6d5a4f] shadow-[0_10px_22px_rgba(184,154,129,0.10)] transition hover:bg-white";
+    "inline-flex items-center justify-center gap-2 rounded-[18px] border border-[#eadccf] bg-white/84 px-4 py-3.5 text-sm font-medium text-[#6d5a4f] shadow-[0_10px_22px_rgba(184,154,129,0.10)] transition hover:bg-white";
 
   const softPanel =
     "rounded-[24px] border border-[#eadccf] bg-[#fffaf6]/84 p-4 shadow-[0_10px_30px_rgba(184,154,129,0.08)]";
@@ -512,7 +512,7 @@ export default function WeddingInvitationMobile() {
     <main className="min-h-screen bg-[#f8f2ec] text-[#4b3d35]">
       <audio id="wedding-audio" loop preload="none" src={wedding.songSrc} />
 
-      <div className="fixed inset-x-0 top-0 z-40 mx-auto flex w-full max-w-md items-center justify-end px-5 pt-5 pointer-events-none">
+      <div className="fixed inset-x-0 top-0 z-40 mx-auto flex w-full max-w-[430px] items-center justify-end px-4 pt-4 pointer-events-none">
         <button
           type="button"
           onClick={() => setIsPlaying((v) => !v)}
@@ -524,17 +524,18 @@ export default function WeddingInvitationMobile() {
         </button>
       </div>
 
-      <div className="relative mx-auto w-full max-w-md px-4 pb-12 pt-6">
+      <div className="relative mx-auto w-full max-w-[430px] px-4 pb-12 pt-3">
         <div className="pointer-events-none absolute inset-0 overflow-hidden">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.78),transparent_34%)]" />
-          <div className="absolute left-1/2 top-0 h-[28rem] w-[28rem] -translate-x-1/2 rounded-full bg-[#ead7c4]/45 blur-3xl" />
-          <div className="absolute -left-10 top-[18rem] h-72 w-72 rounded-full bg-[#f4e5dc]/60 blur-3xl" />
-          <div className="absolute right-0 top-[24rem] h-72 w-72 rounded-full bg-[#efd8d2]/45 blur-3xl" />
-          <div className="absolute left-1/2 top-[52rem] h-80 w-80 -translate-x-1/2 rounded-full bg-[#f6eee7]/80 blur-3xl" />
-          <div className="absolute bottom-24 right-[-3rem] h-72 w-72 rounded-full bg-[#efe2d4]/55 blur-3xl" />
+          <div className="absolute inset-0 bg-[linear-gradient(180deg,#fbf7f3_0%,#f9f1ea_40%,#f7eee7_100%)]" />
+          <div className="absolute inset-0 opacity-[0.14] [background-image:radial-gradient(circle_at_1px_1px,rgba(181,152,128,0.18)_1px,transparent_0)] [background-size:22px_22px]" />
+          <div className="absolute left-1/2 top-0 h-[30rem] w-[30rem] -translate-x-1/2 rounded-full bg-[#ead7c4]/45 blur-3xl" />
+          <div className="absolute -left-12 top-[16rem] h-80 w-80 rounded-full bg-[#f4e5dc]/58 blur-3xl" />
+          <div className="absolute right-[-2rem] top-[22rem] h-72 w-72 rounded-full bg-[#efd8d2]/40 blur-3xl" />
+          <div className="absolute left-1/2 top-[50rem] h-[24rem] w-[24rem] -translate-x-1/2 rounded-full bg-[#f7eee7]/82 blur-3xl" />
+          <div className="absolute bottom-24 right-[-4rem] h-72 w-72 rounded-full bg-[#efe2d4]/50 blur-3xl" />
         </div>
 
-        <section className="relative isolate pt-16 text-center">
+        <section className="relative isolate pt-14 text-center">
           <p className="text-[11px] uppercase tracking-[0.38em] text-[#a28673]">
             Nuestra boda
           </p>
@@ -545,23 +546,23 @@ export default function WeddingInvitationMobile() {
             <span className="h-px w-12 bg-gradient-to-l from-transparent to-[#d7bca6]" />
           </div>
 
-          <div className="mt-5 flex flex-col items-center">
+          <div className="mt-4 flex flex-col items-center">
             <h1
-              className={`${greatVibes.className} w-full text-center text-[5.2rem] leading-[0.8] tracking-normal text-[#5a463c] drop-shadow-[0_2px_10px_rgba(184,154,129,0.12)]`}
+              className={`${greatVibes.className} w-full text-center text-[4.9rem] leading-[0.82] tracking-normal text-[#5a463c] drop-shadow-[0_2px_10px_rgba(184,154,129,0.12)]`}
             >
               <span className="block">Lily</span>
-              <span className="mx-auto my-2 block text-[2.3rem] font-light text-[#c5a489]">
+              <span className="mx-auto my-1.5 block text-[2.25rem] font-light text-[#c5a489]">
                 &
               </span>
               <span className="block">Santiago</span>
             </h1>
           </div>
 
-          <p className="mx-auto mt-4 max-w-xs text-center text-[11px] uppercase tracking-[0.28em] text-[#9f8678]">
+          <p className="mx-auto mt-4 max-w-[18rem] text-center text-[11px] uppercase tracking-[0.28em] text-[#9f8678]">
             {wedding.dateLabel} · Juárez, Chihuahua
           </p>
 
-          <div className="relative mt-10">
+          <div className="relative mt-8">
             <div className="absolute right-3 top-3 z-40">
               <HeroSeal />
             </div>
@@ -569,7 +570,7 @@ export default function WeddingInvitationMobile() {
             <HeroStackedCarousel images={heroGallery} />
           </div>
 
-          <div className="mt-14 rounded-[32px] border border-[#eadccf] bg-white/80 px-5 py-6 shadow-[0_18px_55px_rgba(184,154,129,0.15)] backdrop-blur-xl">
+          <div className="mt-12 rounded-[32px] border border-[#eadccf] bg-white/80 px-5 py-5 shadow-[0_18px_55px_rgba(184,154,129,0.15)] backdrop-blur-xl">
             <div className="flex items-center justify-center gap-3">
               <span className="h-px w-10 bg-gradient-to-r from-transparent to-[#d7bca6]" />
               <div className="flex items-center gap-2 text-[#b89479]">
@@ -585,7 +586,7 @@ export default function WeddingInvitationMobile() {
               {wedding.dateLabel}
             </p>
 
-            <p className="mx-auto mt-4 max-w-sm text-sm leading-7 text-[#7b6a60]">
+            <p className="mx-auto mt-3 max-w-sm text-sm leading-7 text-[#7b6a60]">
               {wedding.introText}
             </p>
           </div>
@@ -593,7 +594,7 @@ export default function WeddingInvitationMobile() {
 
         <ElegantDivider />
 
-        <section className={`relative mt-5 ${card}`}>
+        <section className={`relative mt-4 ${card}`}>
           <SectionTitle
             eyebrow="Cuenta regresiva"
             title="Falta muy poco para el gran día"
@@ -605,7 +606,7 @@ export default function WeddingInvitationMobile() {
             icon={<Sparkles size={13} />}
           />
 
-          <div className="grid grid-cols-4 gap-3 text-center">
+          <div className="grid grid-cols-4 gap-2.5 text-center">
             {[
               { label: "Días", value: pad(timeLeft.days) },
               { label: "Horas", value: pad(timeLeft.hours) },
@@ -614,12 +615,12 @@ export default function WeddingInvitationMobile() {
             ].map((item) => (
               <div
                 key={item.label}
-                className="flex min-h-[114px] flex-col items-center justify-center rounded-[28px] border border-[#eadccf] bg-[linear-gradient(180deg,rgba(255,255,255,0.92),rgba(255,249,244,0.82))] px-2 py-4 shadow-[0_12px_28px_rgba(184,154,129,0.10)]"
+                className="flex min-h-[108px] flex-col items-center justify-center rounded-[26px] border border-[#eadccf] bg-[linear-gradient(180deg,rgba(255,255,255,0.92),rgba(255,249,244,0.82))] px-2 py-4 shadow-[0_12px_28px_rgba(184,154,129,0.10)]"
               >
-                <div className="text-[2.15rem] font-semibold leading-none text-[#5a463c]">
+                <div className="text-[2rem] font-semibold leading-none text-[#5a463c]">
                   {item.value}
                 </div>
-                <div className="mt-3 whitespace-nowrap text-[9px] uppercase tracking-[0.2em] text-[#9a8478]">
+                <div className="mt-3 whitespace-nowrap text-[9px] uppercase tracking-[0.18em] text-[#9a8478]">
                   {item.label}
                 </div>
               </div>
@@ -627,14 +628,14 @@ export default function WeddingInvitationMobile() {
           </div>
         </section>
 
-        <section className="relative mt-5">
+        <section className="relative mt-4">
           <InvitationImage
             src="/invitacion/fotoSecundaria.jpeg"
             alt="Foto secundaria de Lily y Santiago"
           />
         </section>
 
-        <section className={`relative mt-5 ${card}`}>
+        <section className={`relative mt-4 ${card}`}>
           <SectionTitle
             eyebrow="Hora"
             title={wedding.ceremonyTimeLabel}
@@ -647,7 +648,7 @@ export default function WeddingInvitationMobile() {
               href={weddingCalendarData.google}
               target="_blank"
               rel="noreferrer"
-              className={`${primaryButton} rounded-[18px] py-3.5`}
+              className={primaryButton}
             >
               <CalendarDays size={16} />
               Agregar a Google Calendar
@@ -658,7 +659,7 @@ export default function WeddingInvitationMobile() {
               onClick={() =>
                 downloadIcs("boda-lily-santiago.ics", weddingCalendarData.ics)
               }
-              className={`${secondaryButton} rounded-[18px] py-3.5`}
+              className={secondaryButton}
             >
               Guardar en mi calendario
             </button>
@@ -667,7 +668,7 @@ export default function WeddingInvitationMobile() {
 
         <ElegantDivider />
 
-        <section className={`relative mt-5 ${card}`}>
+        <section className={`relative mt-4 ${card}`}>
           <SectionTitle
             eyebrow="Ubicación"
             title={wedding.venue}
@@ -707,7 +708,7 @@ export default function WeddingInvitationMobile() {
               href={wedding.mapsUrl}
               target="_blank"
               rel="noreferrer"
-              className={`${primaryButton} rounded-[18px] py-3.5`}
+              className={primaryButton}
             >
               <MapPin size={16} />
               Abrir ubicación en Maps
@@ -717,7 +718,7 @@ export default function WeddingInvitationMobile() {
 
         <ElegantDivider />
 
-        <section className={`relative mt-5 ${card}`}>
+        <section className={`relative mt-4 ${card}`}>
           <SectionTitle
             eyebrow="Dress code"
             title="Elegante clásico con toque minimalista"
@@ -726,28 +727,39 @@ export default function WeddingInvitationMobile() {
           />
 
           <div className="rounded-[28px] border border-[#eadccf] bg-[linear-gradient(180deg,rgba(255,255,255,0.90),rgba(255,250,246,0.82))] p-4 shadow-[0_14px_35px_rgba(184,154,129,0.10)]">
-            <p className="text-sm font-medium text-[#4b3d35]">
-              Tonos sugeridos para vestidos
-            </p>
-
-            <div className="mt-4 grid grid-cols-2 gap-3">
-              {womenPalette.map((tone) => (
-                <div
-                  key={tone.name}
-                  className="rounded-[20px] border border-[#eadccf] bg-white/90 p-3 text-center shadow-[0_8px_20px_rgba(184,154,129,0.08)]"
-                >
-                  <div
-                    className="mx-auto h-12 w-12 rounded-full border border-white/60"
-                    style={{ backgroundColor: tone.hex }}
-                  />
-                  <p className="mt-2 text-[11px] leading-4 text-[#7b6a60]">
-                    {tone.name}
-                  </p>
-                </div>
-              ))}
+            <div className="flex items-center justify-between gap-3">
+              <p className="text-sm font-medium text-[#4b3d35]">
+                Tonos sugeridos para vestidos
+              </p>
+              <div className="inline-flex items-center gap-1 text-[10px] uppercase tracking-[0.18em] text-[#9a8478]">
+                <span>Desliza</span>
+                <ChevronRight size={13} />
+              </div>
             </div>
 
-            <p className="mt-4 text-sm text-[#8f7a6d]">No rojo · No blanco</p>
+            <div className="relative mt-4">
+              <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-6 bg-gradient-to-r from-[#fffaf6] to-transparent" />
+              <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-6 bg-gradient-to-l from-[#fffaf6] to-transparent" />
+
+              <div className="flex snap-x snap-mandatory gap-3 overflow-x-auto pb-2 pr-4 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
+                {womenPalette.map((tone) => (
+                  <div
+                    key={tone.name}
+                    className="min-w-[108px] snap-start rounded-[20px] border border-[#eadccf] bg-white/90 p-3 text-center shadow-[0_8px_20px_rgba(184,154,129,0.08)]"
+                  >
+                    <div
+                      className="mx-auto h-12 w-12 rounded-full border border-white/60"
+                      style={{ backgroundColor: tone.hex }}
+                    />
+                    <p className="mt-2 text-[11px] leading-4 text-[#7b6a60]">
+                      {tone.name}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <p className="mt-3 text-sm text-[#8f7a6d]">No rojo · No blanco</p>
           </div>
 
           <div className="mt-4 grid gap-3">
@@ -773,7 +785,7 @@ export default function WeddingInvitationMobile() {
             <button
               type="button"
               onClick={() => setShowDressIdeas(true)}
-              className={`${secondaryButton} rounded-[18px] py-3.5`}
+              className={secondaryButton}
             >
               Consultar más ideas
             </button>
@@ -782,7 +794,7 @@ export default function WeddingInvitationMobile() {
 
         <ElegantDivider />
 
-        <section className={`relative mt-5 ${card}`}>
+        <section className={`relative mt-4 ${card}`}>
           <SectionTitle
             eyebrow="Buzón de dinero"
             title="Tu presencia es lo más importante"
@@ -798,7 +810,7 @@ export default function WeddingInvitationMobile() {
 
         <ElegantDivider />
 
-        <section className={`relative mt-5 ${card}`}>
+        <section className={`relative mt-4 ${card}`}>
           <SectionTitle
             eyebrow="Confirmación"
             title="Confirma tu asistencia a la boda"
@@ -860,7 +872,7 @@ export default function WeddingInvitationMobile() {
               )}?text=${weddingMessage}`}
               target="_blank"
               rel="noreferrer"
-              className={`${primaryButton} rounded-[18px] py-3.5`}
+              className={primaryButton}
             >
               Confirmo que asistiré
             </a>
@@ -869,7 +881,7 @@ export default function WeddingInvitationMobile() {
 
         <ElegantDivider />
 
-        <section className={`relative mt-5 ${card}`}>
+        <section className={`relative mt-4 ${card}`}>
           <SectionTitle
             eyebrow="Tornaboda"
             title="Y que la celebración continúe..."
@@ -940,7 +952,7 @@ export default function WeddingInvitationMobile() {
               )}?text=${afterMessage}`}
               target="_blank"
               rel="noreferrer"
-              className={`${primaryButton} rounded-[18px] py-3.5`}
+              className={primaryButton}
             >
               Confirmar asistencia a la tornaboda
             </a>
@@ -970,7 +982,7 @@ export default function WeddingInvitationMobile() {
                 href={wedding.tornabodaMapsUrl}
                 target="_blank"
                 rel="noreferrer"
-                className={`${primaryButton} rounded-[18px] py-3.5`}
+                className={primaryButton}
               >
                 <MapPin size={16} />
                 Abrir ubicación de la tornaboda
@@ -981,7 +993,7 @@ export default function WeddingInvitationMobile() {
 
         <ElegantDivider />
 
-        <section className={`relative mt-5 ${card}`}>
+        <section className={`relative mt-4 ${card}`}>
           <SectionTitle
             eyebrow="Nuestra sesión"
             title="Un pequeño vistazo de nosotros"
