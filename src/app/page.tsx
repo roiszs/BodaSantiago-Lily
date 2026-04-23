@@ -291,13 +291,17 @@ export default function WeddingInvitationMobile() {
   const wedding = {
     bride: "Lily",
     groom: "Santiago",
-    dateLabel: "10 de Octubre de 2026",
+    dateLabel: "10 de Octubre 2026",
     ceremonyTimeLabel: "9:00 PM",
     countdownTarget: "2026-10-10T21:00:00-06:00",
-    venue: "Jardín de Eventos Samalayuca",
-    address: "Galeana, 32730 Samalayuca, Chih.",
+    venue: "Salón Palazzio",
+    address:
+      "Av. Prof. R. Rivera Lara 6031, Parques Industriales, 32625 Juárez, Chih.",
     mapsUrl:
-      "https://www.google.pl/maps/place/Jard%C3%ADn+de+Eventos+Samalayuca/@31.3508856,-106.4785693,16z/data=!4m6!3m5!1s0x86e77fafe090cd85:0x4b18b7e218e90841!8m2!3d31.3508856!4d-106.4785693!16s%2Fg%2F11p0y67y4m?hl=es-419&entry=ttu&g_ep=EgoyMDI2MDQxOS4wIKXMDSoASAFQAw%3D%3D",
+      "https://www.google.com/maps/search/?api=1&query=" +
+      encodeURIComponent(
+        "Salón Palazzio, Av. Prof. R. Rivera Lara 6031, Parques Industriales, 32625 Juárez, Chihuahua"
+      ),
     galleryClosingQuote:
       "Gracias por acompañarnos a escribir el primer capítulo de esta nueva historia juntos.",
     introText:
@@ -541,21 +545,23 @@ export default function WeddingInvitationMobile() {
             <span className="h-px w-12 bg-gradient-to-l from-transparent to-[#d7bca6]" />
           </div>
 
-          <h1
-            className={`${greatVibes.className} mt-5 text-[5.2rem] leading-[0.8] tracking-normal text-[#5a463c] drop-shadow-[0_2px_10px_rgba(184,154,129,0.12)]`}
-          >
-            {wedding.bride}
-            <span className="mx-auto my-2 block text-[2.3rem] font-light text-[#c5a489]">
-              &
-            </span>
-            {wedding.groom}
-          </h1>
+          <div className="mt-5 flex flex-col items-center">
+            <h1
+              className={`${greatVibes.className} w-full text-center text-[5.2rem] leading-[0.8] tracking-normal text-[#5a463c] drop-shadow-[0_2px_10px_rgba(184,154,129,0.12)]`}
+            >
+              <span className="block">Lily</span>
+              <span className="mx-auto my-2 block text-[2.3rem] font-light text-[#c5a489]">
+                &
+              </span>
+              <span className="block">Santiago</span>
+            </h1>
+          </div>
 
-          <p className="mx-auto mt-4 max-w-xs text-[11px] uppercase tracking-[0.28em] text-[#9f8678]">
-            {wedding.dateLabel} · Ciudad Juarez, Chihuahua
+          <p className="mx-auto mt-4 max-w-xs text-center text-[11px] uppercase tracking-[0.28em] text-[#9f8678]">
+            {wedding.dateLabel} · Juárez, Chihuahua
           </p>
 
-                    <div className="relative mt-10">
+          <div className="relative mt-10">
             <div className="absolute right-3 top-3 z-40">
               <HeroSeal />
             </div>
@@ -599,7 +605,7 @@ export default function WeddingInvitationMobile() {
             icon={<Sparkles size={13} />}
           />
 
-          <div className="grid grid-cols-4 gap-2 text-center">
+          <div className="grid grid-cols-4 gap-3 text-center">
             {[
               { label: "Días", value: pad(timeLeft.days) },
               { label: "Horas", value: pad(timeLeft.hours) },
@@ -608,12 +614,12 @@ export default function WeddingInvitationMobile() {
             ].map((item) => (
               <div
                 key={item.label}
-                className="flex min-h-[108px] flex-col items-center justify-center rounded-3xl border border-[#eadccf] bg-white/78 px-1 py-4 shadow-[0_10px_30px_rgba(184,154,129,0.10)]"
+                className="flex min-h-[114px] flex-col items-center justify-center rounded-[28px] border border-[#eadccf] bg-[linear-gradient(180deg,rgba(255,255,255,0.92),rgba(255,249,244,0.82))] px-2 py-4 shadow-[0_12px_28px_rgba(184,154,129,0.10)]"
               >
-                <div className="text-[2rem] font-semibold leading-none text-[#5a463c]">
+                <div className="text-[2.15rem] font-semibold leading-none text-[#5a463c]">
                   {item.value}
                 </div>
-                <div className="mt-3 whitespace-nowrap text-[9px] uppercase tracking-[0.16em] text-[#9a8478]">
+                <div className="mt-3 whitespace-nowrap text-[9px] uppercase tracking-[0.2em] text-[#9a8478]">
                   {item.label}
                 </div>
               </div>
@@ -641,7 +647,7 @@ export default function WeddingInvitationMobile() {
               href={weddingCalendarData.google}
               target="_blank"
               rel="noreferrer"
-              className={primaryButton}
+              className={`${primaryButton} rounded-[18px] py-3.5`}
             >
               <CalendarDays size={16} />
               Agregar a Google Calendar
@@ -652,7 +658,7 @@ export default function WeddingInvitationMobile() {
               onClick={() =>
                 downloadIcs("boda-lily-santiago.ics", weddingCalendarData.ics)
               }
-              className={secondaryButton}
+              className={`${secondaryButton} rounded-[18px] py-3.5`}
             >
               Guardar en mi calendario
             </button>
@@ -672,16 +678,18 @@ export default function WeddingInvitationMobile() {
           <div className="space-y-4">
             <div className={softPanel}>
               <p className="text-sm font-semibold text-[#4b3d35]">
-                Evento solo para adultos
+                Información importante
               </p>
               <p className="mt-1 text-sm leading-6 text-[#7b6a60]">
-                Amablemente, nuestra boda será una celebración sin niños.
+                Con mucho cariño, queremos que este día sea una celebración para
+                adultos, por lo que la invitación está pensada para invitados
+                mayores de 15 años. Gracias por comprender y acompañarnos.
               </p>
             </div>
 
             <InvitationImage
               src="/invitacion/fotoSalon.jpeg"
-              alt="Foto exterior del salón"
+              alt="Foto exterior del salón Palazzio"
             />
 
             <div className="overflow-hidden rounded-[30px] border border-[#eadccf] bg-white/90 shadow-[0_16px_40px_rgba(184,154,129,0.10)]">
@@ -699,7 +707,7 @@ export default function WeddingInvitationMobile() {
               href={wedding.mapsUrl}
               target="_blank"
               rel="noreferrer"
-              className={primaryButton}
+              className={`${primaryButton} rounded-[18px] py-3.5`}
             >
               <MapPin size={16} />
               Abrir ubicación en Maps
@@ -765,7 +773,7 @@ export default function WeddingInvitationMobile() {
             <button
               type="button"
               onClick={() => setShowDressIdeas(true)}
-              className={secondaryButton}
+              className={`${secondaryButton} rounded-[18px] py-3.5`}
             >
               Consultar más ideas
             </button>
@@ -805,8 +813,8 @@ export default function WeddingInvitationMobile() {
               de confirmar por persona, no por familia.
             </p>
             <p className="mt-2 text-sm leading-6 text-[#7b6a60]">
-              Nuestra boda será solo para adultos, por lo que no habrá acceso
-              para niños.
+              La invitación para la boda está pensada para invitados mayores de
+              15 años.
             </p>
           </div>
 
@@ -852,7 +860,7 @@ export default function WeddingInvitationMobile() {
               )}?text=${weddingMessage}`}
               target="_blank"
               rel="noreferrer"
-              className={primaryButton}
+              className={`${primaryButton} rounded-[18px] py-3.5`}
             >
               Confirmo que asistiré
             </a>
@@ -932,7 +940,7 @@ export default function WeddingInvitationMobile() {
               )}?text=${afterMessage}`}
               target="_blank"
               rel="noreferrer"
-              className={primaryButton}
+              className={`${primaryButton} rounded-[18px] py-3.5`}
             >
               Confirmar asistencia a la tornaboda
             </a>
@@ -962,7 +970,7 @@ export default function WeddingInvitationMobile() {
                 href={wedding.tornabodaMapsUrl}
                 target="_blank"
                 rel="noreferrer"
-                className={primaryButton}
+                className={`${primaryButton} rounded-[18px] py-3.5`}
               >
                 <MapPin size={16} />
                 Abrir ubicación de la tornaboda

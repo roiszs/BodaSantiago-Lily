@@ -10,7 +10,7 @@ export default function InvitacionPage() {
         <h1 className="mt-4 text-4xl font-semibold">
           Lily <span className="text-white/60">&</span> Santiago
         </h1>
-        <p className="mt-4 text-white/75">10 de Octubre de 2026</p>
+        <p className="mt-4 text-white/75">10 de Octubre 2026</p>
       </div>
     </main>
   );
