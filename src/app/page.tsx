@@ -112,12 +112,12 @@ function SectionHeading({
 }) {
   return (
     <div className="mb-4">
-      <div className="mb-3 flex items-center gap-2 text-[10px] uppercase tracking-[0.28em] text-[#8D9C8F]">
+      <div className="mb-3 flex items-center gap-2 text-[10px] uppercase tracking-[0.32em] text-[#8D9C8F]">
         {icon ? <span className="opacity-80">{icon}</span> : null}
         <span>{eyebrow}</span>
       </div>
 
-      <h2 className="text-[1.9rem] font-semibold tracking-tight text-[#435045]">
+      <h2 className="text-[1.92rem] font-semibold tracking-[-0.02em] text-[#435045]">
         {title}
       </h2>
 
@@ -149,7 +149,7 @@ function InvitationImage({
 }) {
   return (
     <div
-      className={`relative overflow-hidden rounded-[32px] border border-[#DCE7D8] bg-white/72 ring-1 ring-white/60 ${
+      className={`relative overflow-hidden rounded-[32px] border border-[#DCE7D8] bg-white/74 ring-1 ring-white/60 ${
         tall ? "h-80" : "h-56"
       }`}
     >
@@ -162,6 +162,121 @@ function InvitationImage({
       />
       <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(67,80,69,0.10),transparent_48%,rgba(255,255,255,0.10))]" />
     </div>
+  );
+}
+
+function FloralCorner({
+  className = "",
+  flip = false,
+}: {
+  className?: string;
+  flip?: boolean;
+}) {
+  return (
+    <div
+      className={`pointer-events-none absolute opacity-40 ${className} ${
+        flip ? "scale-x-[-1]" : ""
+      }`}
+      aria-hidden="true"
+    >
+      <svg
+        width="180"
+        height="180"
+        viewBox="0 0 180 180"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M22 156C42 134 58 113 64 91C68 76 67 63 61 50C56 39 46 29 31 22"
+          stroke="#9CB39A"
+          strokeWidth="1.4"
+          strokeLinecap="round"
+        />
+        <path
+          d="M63 91C77 92 90 88 100 80C112 70 119 55 121 36"
+          stroke="#9CB39A"
+          strokeWidth="1.2"
+          strokeLinecap="round"
+        />
+        <path
+          d="M58 102C70 108 81 117 88 128C93 136 96 145 98 156"
+          stroke="#9CB39A"
+          strokeWidth="1.2"
+          strokeLinecap="round"
+        />
+        <path
+          d="M45 118C36 114 29 107 24 98"
+          stroke="#9CB39A"
+          strokeWidth="1.1"
+          strokeLinecap="round"
+        />
+        <path
+          d="M77 69C86 63 93 54 97 44"
+          stroke="#9CB39A"
+          strokeWidth="1.1"
+          strokeLinecap="round"
+        />
+        <path
+          d="M50 66C44 60 40 53 38 45"
+          stroke="#9CB39A"
+          strokeWidth="1.1"
+          strokeLinecap="round"
+        />
+        <ellipse
+          cx="31"
+          cy="22"
+          rx="7"
+          ry="12"
+          transform="rotate(-28 31 22)"
+          stroke="#9CB39A"
+          strokeWidth="1.1"
+        />
+        <ellipse
+          cx="120"
+          cy="35"
+          rx="7"
+          ry="12"
+          transform="rotate(18 120 35)"
+          stroke="#9CB39A"
+          strokeWidth="1.1"
+        />
+        <ellipse
+          cx="97"
+          cy="156"
+          rx="7"
+          ry="12"
+          transform="rotate(-10 97 156)"
+          stroke="#9CB39A"
+          strokeWidth="1.1"
+        />
+      </svg>
+    </div>
+  );
+}
+
+function HeroMonogramWatermark() {
+  return (
+    <div
+      className="pointer-events-none absolute inset-0 flex items-center justify-center"
+      aria-hidden="true"
+    >
+      <div className="rounded-full border border-[#DCE7D8]/80 px-10 py-6 backdrop-blur-[1px]">
+        <span
+          className={`${greatVibes.className} text-[8rem] leading-none text-[#A8BFA6]/10`}
+        >
+          L&S
+        </span>
+      </div>
+    </div>
+  );
+}
+
+function EditorialArch() {
+  return (
+    <div
+      className="pointer-events-none absolute inset-x-6 top-6 h-[78%] rounded-t-[999px] border border-[#DCE7D8]/65"
+      aria-hidden="true"
+    />
   );
 }
 
@@ -351,7 +466,7 @@ function RSVPForm({
         href={href}
         target="_blank"
         rel="noreferrer"
-        className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-[18px] bg-[#A8BFA6] px-4 py-3.5 text-sm font-semibold text-[#FBFBF7] shadow-[0_14px_30px_rgba(143,165,141,0.18)] transition hover:translate-y-[-1px] hover:bg-[#95AF93] active:translate-y-0"
+        className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-[18px] bg-[#9FB79D] px-4 py-3.5 text-sm font-semibold text-[#FBFBF7] shadow-[0_14px_30px_rgba(143,165,141,0.18)] transition hover:translate-y-[-1px] hover:bg-[#8DA88B] active:translate-y-0"
       >
         {buttonLabel}
       </a>
@@ -471,16 +586,13 @@ export default function WeddingInvitationMobile() {
     seconds: 0,
     ended: false,
   });
-
   const [showDressIdeas, setShowDressIdeas] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
-
   const [weddingRsvp, setWeddingRsvp] = useState<RSVPState>({
     name: "",
     lastName: "",
     comment: "",
   });
-
   const [afterRsvp, setAfterRsvp] = useState<RSVPState>({
     name: "",
     lastName: "",
@@ -544,9 +656,7 @@ export default function WeddingInvitationMobile() {
   }, [wedding.countdownTarget]);
 
   useEffect(() => {
-    const audio = document.getElementById(
-      "wedding-audio"
-    ) as HTMLAudioElement | null;
+    const audio = document.getElementById("wedding-audio") as HTMLAudioElement | null;
     if (!audio) return;
 
     if (isPlaying) {
@@ -587,12 +697,16 @@ export default function WeddingInvitationMobile() {
       <div className="relative z-10 mx-auto w-full max-w-[430px] px-4 pb-12 pt-3">
         <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
           <div className="absolute inset-0 bg-[linear-gradient(180deg,#FCFBF7_0%,#F6F6F1_42%,#F2F5F0_100%)]" />
-          <div className="absolute inset-0 opacity-[0.10] [background-image:radial-gradient(circle_at_1px_1px,rgba(143,165,141,0.18)_1px,transparent_0)] [background-size:24px_24px]" />
+          <div className="absolute inset-0 opacity-[0.08] [background-image:radial-gradient(circle_at_1px_1px,rgba(143,165,141,0.18)_1px,transparent_0)] [background-size:24px_24px]" />
           <div className="absolute left-1/2 top-0 h-[30rem] w-[30rem] -translate-x-1/2 rounded-full bg-[#DCE8D9]/55 blur-3xl" />
           <div className="absolute -left-12 top-[15rem] h-80 w-80 rounded-full bg-[#E7F0E4]/55 blur-3xl" />
           <div className="absolute right-[-2rem] top-[22rem] h-72 w-72 rounded-full bg-[#EDF4EA]/65 blur-3xl" />
           <div className="absolute left-1/2 top-[50rem] h-[24rem] w-[24rem] -translate-x-1/2 rounded-full bg-[#F5F7F2]/90 blur-3xl" />
           <div className="absolute bottom-24 right-[-4rem] h-72 w-72 rounded-full bg-[#D8E8D7]/45 blur-3xl" />
+
+          <FloralCorner className="-left-8 top-16" />
+          <FloralCorner className="-right-8 top-[36rem]" flip />
+          <FloralCorner className="-left-10 bottom-[18rem]" />
         </div>
 
         <section className="relative isolate pt-14 text-center">
@@ -623,6 +737,9 @@ export default function WeddingInvitationMobile() {
           </p>
 
           <div className="relative mt-8">
+            <HeroMonogramWatermark />
+            <EditorialArch />
+
             <div className="absolute right-3 top-3 z-40">
               <HeroSeal />
             </div>
@@ -707,7 +824,7 @@ export default function WeddingInvitationMobile() {
               href={weddingCalendarData.google}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center justify-center gap-2 rounded-[18px] bg-[#A8BFA6] px-4 py-3.5 text-sm font-semibold text-[#FBFBF7] shadow-[0_14px_30px_rgba(143,165,141,0.18)] transition hover:translate-y-[-1px] hover:bg-[#95AF93] active:translate-y-0"
+              className="inline-flex items-center justify-center gap-2 rounded-[18px] bg-[#9FB79D] px-4 py-3.5 text-sm font-semibold text-[#FBFBF7] shadow-[0_14px_30px_rgba(143,165,141,0.18)] transition hover:translate-y-[-1px] hover:bg-[#8DA88B] active:translate-y-0"
             >
               <CalendarDays size={16} />
               Agregar a Google Calendar
@@ -736,7 +853,7 @@ export default function WeddingInvitationMobile() {
           />
 
           <div className="space-y-4">
-            <div className="rounded-[28px] bg-[#F8FBF7]/88 px-4 py-4 ring-1 ring-[#DCE7D8] shadow-[0_12px_34px_rgba(143,165,141,0.08)]">
+            <div className="rounded-[28px] bg-[linear-gradient(180deg,rgba(255,255,255,0.82),rgba(248,251,247,0.64))] px-4 py-4 ring-1 ring-[#DCE7D8]/90 shadow-[0_16px_38px_rgba(143,165,141,0.10)]">
               <p className="text-sm font-semibold text-[#435045]">
                 Información importante
               </p>
@@ -767,7 +884,7 @@ export default function WeddingInvitationMobile() {
               href={wedding.mapsUrl}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center justify-center gap-2 rounded-[18px] bg-[#A8BFA6] px-4 py-3.5 text-sm font-semibold text-[#FBFBF7] shadow-[0_14px_30px_rgba(143,165,141,0.18)] transition hover:translate-y-[-1px] hover:bg-[#95AF93] active:translate-y-0"
+              className="inline-flex items-center justify-center gap-2 rounded-[18px] bg-[#9FB79D] px-4 py-3.5 text-sm font-semibold text-[#FBFBF7] shadow-[0_14px_30px_rgba(143,165,141,0.18)] transition hover:translate-y-[-1px] hover:bg-[#8DA88B] active:translate-y-0"
             >
               <MapPin size={16} />
               Abrir ubicación en Maps
@@ -833,7 +950,7 @@ export default function WeddingInvitationMobile() {
               />
             </div>
 
-            <div className="rounded-[28px] bg-[#F8FBF7]/88 px-4 py-4 ring-1 ring-[#DCE7D8] shadow-[0_12px_34px_rgba(143,165,141,0.08)]">
+            <div className="rounded-[28px] bg-[linear-gradient(180deg,rgba(255,255,255,0.82),rgba(248,251,247,0.64))] px-4 py-4 ring-1 ring-[#DCE7D8]/90 shadow-[0_16px_38px_rgba(143,165,141,0.10)]">
               <ul className="space-y-2 text-sm leading-6 text-[#6A786E]">
                 {dressRules.map((rule) => (
                   <li key={rule}>• {rule}</li>
@@ -877,7 +994,7 @@ export default function WeddingInvitationMobile() {
             icon={<Users size={12} />}
           />
 
-          <div className="mb-4 rounded-[28px] bg-[#F8FBF7]/88 px-4 py-4 ring-1 ring-[#DCE7D8] shadow-[0_12px_34px_rgba(143,165,141,0.08)]">
+          <div className="mb-4 rounded-[28px] bg-[linear-gradient(180deg,rgba(255,255,255,0.82),rgba(248,251,247,0.64))] px-4 py-4 ring-1 ring-[#DCE7D8]/90 shadow-[0_16px_38px_rgba(143,165,141,0.10)]">
             <p className="text-sm font-semibold text-[#435045]">Importante</p>
             <p className="mt-2 text-sm leading-6 text-[#6F7C73]">
               Favor de confirmar por persona, no por familia. La invitación para
@@ -909,7 +1026,7 @@ export default function WeddingInvitationMobile() {
           />
 
           <div className="space-y-3">
-            <div className="rounded-[28px] bg-[#F8FBF7]/88 px-4 py-4 ring-1 ring-[#DCE7D8] shadow-[0_12px_34px_rgba(143,165,141,0.08)]">
+            <div className="rounded-[28px] bg-[linear-gradient(180deg,rgba(255,255,255,0.82),rgba(248,251,247,0.64))] px-4 py-4 ring-1 ring-[#DCE7D8]/90 shadow-[0_16px_38px_rgba(143,165,141,0.10)]">
               <p className="text-lg font-medium text-[#435045]">
                 {wedding.tornabodaTime} · {wedding.tornabodaLocation}
               </p>
@@ -918,7 +1035,7 @@ export default function WeddingInvitationMobile() {
               </p>
             </div>
 
-            <div className="rounded-[28px] bg-[#F8FBF7]/88 px-4 py-4 ring-1 ring-[#DCE7D8] shadow-[0_12px_34px_rgba(143,165,141,0.08)]">
+            <div className="rounded-[28px] bg-[linear-gradient(180deg,rgba(255,255,255,0.82),rgba(248,251,247,0.64))] px-4 py-4 ring-1 ring-[#DCE7D8]/90 shadow-[0_16px_38px_rgba(143,165,141,0.10)]">
               <p className="text-sm font-semibold text-[#435045]">
                 Evento familiar
               </p>
@@ -942,7 +1059,7 @@ export default function WeddingInvitationMobile() {
             />
           </div>
 
-          <div className="mt-4 rounded-[30px] bg-[#F8FBF7]/88 px-4 py-4 ring-1 ring-[#DCE7D8] shadow-[0_12px_34px_rgba(143,165,141,0.08)]">
+          <div className="mt-4 rounded-[30px] bg-[linear-gradient(180deg,rgba(255,255,255,0.82),rgba(248,251,247,0.64))] px-4 py-4 ring-1 ring-[#DCE7D8]/90 shadow-[0_16px_38px_rgba(143,165,141,0.10)]">
             <p className="text-sm font-medium text-[#435045]">
               Ubicación de la tornaboda
             </p>
@@ -965,7 +1082,7 @@ export default function WeddingInvitationMobile() {
               href={wedding.tornabodaMapsUrl}
               target="_blank"
               rel="noreferrer"
-              className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-[18px] bg-[#A8BFA6] px-4 py-3.5 text-sm font-semibold text-[#FBFBF7] shadow-[0_14px_30px_rgba(143,165,141,0.18)] transition hover:translate-y-[-1px] hover:bg-[#95AF93] active:translate-y-0"
+              className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-[18px] bg-[#9FB79D] px-4 py-3.5 text-sm font-semibold text-[#FBFBF7] shadow-[0_14px_30px_rgba(143,165,141,0.18)] transition hover:translate-y-[-1px] hover:bg-[#8DA88B] active:translate-y-0"
             >
               <MapPin size={16} />
               Abrir ubicación de la tornaboda
