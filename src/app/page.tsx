@@ -584,8 +584,8 @@ export default function WeddingInvitationMobile() {
         </button>
       </div>
 
-      <div className="relative mx-auto w-full max-w-[430px] px-4 pb-12 pt-3">
-        <div className="pointer-events-none absolute inset-0 overflow-hidden">
+      <div className="relative z-10 mx-auto w-full max-w-[430px] px-4 pb-12 pt-3">
+      <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
           <div className="absolute inset-0 bg-[linear-gradient(180deg,#fbf7f3_0%,#f9f1ea_40%,#f7eee7_100%)]" />
           <div className="absolute inset-0 opacity-[0.14] [background-image:radial-gradient(circle_at_1px_1px,rgba(181,152,128,0.18)_1px,transparent_0)] [background-size:22px_22px]" />
           <div className="absolute left-1/2 top-0 h-[30rem] w-[30rem] -translate-x-1/2 rounded-full bg-[#ead7c4]/45 blur-3xl" />
