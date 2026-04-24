@@ -112,17 +112,17 @@ function SectionHeading({
 }) {
   return (
     <div className="mb-4">
-      <div className="mb-3 flex items-center gap-2 text-[10px] uppercase tracking-[0.28em] text-[#9d8371]">
+      <div className="mb-3 flex items-center gap-2 text-[10px] uppercase tracking-[0.28em] text-[#8D9C8F]">
         {icon ? <span className="opacity-80">{icon}</span> : null}
         <span>{eyebrow}</span>
       </div>
 
-      <h2 className="text-[1.9rem] font-semibold tracking-tight text-[#4d3f36]">
+      <h2 className="text-[1.9rem] font-semibold tracking-tight text-[#435045]">
         {title}
       </h2>
 
       {subtitle ? (
-        <p className="mt-2 text-sm leading-6 text-[#7c695d]">{subtitle}</p>
+        <p className="mt-2 text-sm leading-6 text-[#6F7C73]">{subtitle}</p>
       ) : null}
     </div>
   );
@@ -131,9 +131,9 @@ function SectionHeading({
 function ElegantDivider() {
   return (
     <div className="relative mx-auto my-6 flex items-center justify-center">
-      <div className="h-px w-20 bg-gradient-to-r from-transparent via-[#d5b79b] to-transparent" />
-      <div className="mx-3 h-2 w-2 rounded-full bg-[#d5b79b]" />
-      <div className="h-px w-20 bg-gradient-to-r from-transparent via-[#d5b79b] to-transparent" />
+      <div className="h-px w-20 bg-gradient-to-r from-transparent via-[#A9BEA7] to-transparent" />
+      <div className="mx-3 h-2 w-2 rounded-full bg-[#A9BEA7]" />
+      <div className="h-px w-20 bg-gradient-to-r from-transparent via-[#A9BEA7] to-transparent" />
     </div>
   );
 }
@@ -149,7 +149,7 @@ function InvitationImage({
 }) {
   return (
     <div
-      className={`relative overflow-hidden rounded-[32px] border border-[#eadfd4] bg-white/70 ring-1 ring-white/60 ${
+      className={`relative overflow-hidden rounded-[32px] border border-[#DCE7D8] bg-white/72 ring-1 ring-white/60 ${
         tall ? "h-80" : "h-56"
       }`}
     >
@@ -160,20 +160,20 @@ function InvitationImage({
         className="object-cover"
         sizes="(max-width: 768px) 100vw, 430px"
       />
-      <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(92,70,56,0.14),transparent_48%,rgba(255,255,255,0.10))]" />
+      <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(67,80,69,0.10),transparent_48%,rgba(255,255,255,0.10))]" />
     </div>
   );
 }
 
 function HeroSeal() {
   return (
-    <div className="flex h-[88px] w-[88px] flex-col items-center justify-center rounded-full border border-[#eadccf] bg-white/88 shadow-[0_14px_35px_rgba(184,154,129,0.16)] ring-1 ring-white/55 backdrop-blur-xl">
+    <div className="flex h-[88px] w-[88px] flex-col items-center justify-center rounded-full border border-[#D8E3D3] bg-white/90 shadow-[0_14px_35px_rgba(143,165,141,0.16)] ring-1 ring-white/60 backdrop-blur-xl">
       <span
-        className={`${greatVibes.className} text-[1.9rem] leading-none text-[#7a5d4b]`}
+        className={`${greatVibes.className} text-[1.9rem] leading-none text-[#5B6B5E]`}
       >
         L&S
       </span>
-      <span className="mt-1 text-[8px] uppercase tracking-[0.26em] text-[#a28673]">
+      <span className="mt-1 text-[8px] uppercase tracking-[0.26em] text-[#8A9B8B]">
         10 · 10 · 26
       </span>
     </div>
@@ -212,7 +212,7 @@ function HeroStackedCarousel({
 
   return (
     <div className="relative mx-auto h-[24rem] w-full max-w-sm">
-      <div className="pointer-events-none absolute left-1/2 top-1/2 h-56 w-56 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#e5cdb9]/35 blur-3xl" />
+      <div className="pointer-events-none absolute left-1/2 top-1/2 h-56 w-56 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#DCE8D9]/45 blur-3xl" />
 
       {visibleCards
         .slice()
@@ -228,7 +228,7 @@ function HeroStackedCarousel({
           return (
             <div
               key={`${card.src}-${card.offset}-${activeIndex}`}
-              className={`absolute inset-x-0 top-0 mx-auto h-[21.8rem] w-[92%] overflow-hidden rounded-[40px] border border-[#eadccf] bg-white/72 shadow-[0_28px_78px_rgba(184,154,129,0.20)] ring-1 ring-white/50 transition-all duration-700 ease-out ${styles}`}
+              className={`absolute inset-x-0 top-0 mx-auto h-[21.8rem] w-[92%] overflow-hidden rounded-[40px] border border-[#D8E3D3] bg-white/74 shadow-[0_28px_78px_rgba(143,165,141,0.16)] ring-1 ring-white/60 transition-all duration-700 ease-out ${styles}`}
             >
               <Image
                 src={card.src}
@@ -238,15 +238,15 @@ function HeroStackedCarousel({
                 sizes="(max-width: 768px) 100vw, 430px"
                 priority={card.offset === 0}
               />
-              <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(92,70,56,0.18),transparent_45%,rgba(255,255,255,0.10))]" />
+              <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(67,80,69,0.16),transparent_45%,rgba(255,255,255,0.10))]" />
             </div>
           );
         })}
 
       <div className="absolute bottom-0 left-1/2 z-40 flex w-[92%] -translate-x-1/2 items-center justify-between">
-        <div className="inline-flex items-center gap-2 rounded-full border border-[#eadccf] bg-white/82 px-3 py-2 text-[10px] uppercase tracking-[0.24em] text-[#8c7568] shadow-[0_10px_20px_rgba(184,154,129,0.12)] backdrop-blur-xl">
+        <div className="inline-flex items-center gap-2 rounded-full border border-[#D8E3D3] bg-white/86 px-3 py-2 text-[10px] uppercase tracking-[0.24em] text-[#738276] shadow-[0_10px_20px_rgba(143,165,141,0.12)] backdrop-blur-xl">
           <span>{String(activeIndex + 1).padStart(2, "0")}</span>
-          <span className="h-1 w-1 rounded-full bg-[#b8a092]" />
+          <span className="h-1 w-1 rounded-full bg-[#98AA99]" />
           <span>{String(images.length).padStart(2, "0")}</span>
         </div>
 
@@ -254,7 +254,7 @@ function HeroStackedCarousel({
           <button
             type="button"
             onClick={goToPrev}
-            className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-[#eadccf] bg-white/82 text-[#6d5a4f] shadow-[0_10px_20px_rgba(184,154,129,0.12)] backdrop-blur-xl"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-[#D8E3D3] bg-white/86 text-[#5E6C61] shadow-[0_10px_20px_rgba(143,165,141,0.12)] backdrop-blur-xl"
             aria-label="Foto anterior"
           >
             <ChevronLeft size={18} />
@@ -262,7 +262,7 @@ function HeroStackedCarousel({
           <button
             type="button"
             onClick={goToNext}
-            className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-[#eadccf] bg-white/82 text-[#6d5a4f] shadow-[0_10px_20px_rgba(184,154,129,0.12)] backdrop-blur-xl"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-[#D8E3D3] bg-white/86 text-[#5E6C61] shadow-[0_10px_20px_rgba(143,165,141,0.12)] backdrop-blur-xl"
             aria-label="Siguiente foto"
           >
             <ChevronRight size={18} />
@@ -277,7 +277,7 @@ function HeroStackedCarousel({
             type="button"
             onClick={() => setActiveIndex(index)}
             className={`h-2.5 rounded-full transition-all ${
-              index === activeIndex ? "w-8 bg-[#c7a78b]" : "w-2.5 bg-[#d9c7b9]"
+              index === activeIndex ? "w-8 bg-[#94AE92]" : "w-2.5 bg-[#C7D6C5]"
             }`}
             aria-label={`Ir a foto ${index + 1}`}
           />
@@ -303,19 +303,19 @@ function RSVPForm({
   href: string;
 }) {
   return (
-    <div className="rounded-[30px] bg-[linear-gradient(180deg,rgba(255,255,255,0.78),rgba(255,250,245,0.60))] px-4 py-4 ring-1 ring-[#eadfd4] shadow-[0_16px_45px_rgba(184,154,129,0.10)]">
-      <p className="text-[10px] uppercase tracking-[0.24em] text-[#a08a7c]">
+    <div className="rounded-[30px] bg-[linear-gradient(180deg,rgba(255,255,255,0.84),rgba(248,251,247,0.70))] px-4 py-4 ring-1 ring-[#DCE7D8] shadow-[0_16px_45px_rgba(143,165,141,0.10)]">
+      <p className="text-[10px] uppercase tracking-[0.24em] text-[#8D9C8F]">
         {title}
       </p>
-      <p className="mt-2 text-sm leading-6 text-[#776558]">{note}</p>
+      <p className="mt-2 text-sm leading-6 text-[#6A786E]">{note}</p>
 
       <div className="mt-5 space-y-4">
         <div>
-          <label className="text-[10px] uppercase tracking-[0.24em] text-[#a08a7c]">
+          <label className="text-[10px] uppercase tracking-[0.24em] text-[#8D9C8F]">
             Nombre
           </label>
           <input
-            className="mt-2 w-full border-b border-[#ddcbbd] bg-transparent px-0 pb-2.5 pt-1 text-[15px] text-[#4b3d35] outline-none placeholder:text-[#b39e90] focus:border-[#c8a284]"
+            className="mt-2 w-full border-b border-[#D8E3D3] bg-transparent px-0 pb-2.5 pt-1 text-[15px] text-[#435045] outline-none placeholder:text-[#A2B1A5] focus:border-[#95AF93]"
             placeholder="Escribe tu nombre"
             value={state.name}
             onChange={(e) => setState({ ...state, name: e.target.value })}
@@ -323,11 +323,11 @@ function RSVPForm({
         </div>
 
         <div>
-          <label className="text-[10px] uppercase tracking-[0.24em] text-[#a08a7c]">
+          <label className="text-[10px] uppercase tracking-[0.24em] text-[#8D9C8F]">
             Apellido
           </label>
           <input
-            className="mt-2 w-full border-b border-[#ddcbbd] bg-transparent px-0 pb-2.5 pt-1 text-[15px] text-[#4b3d35] outline-none placeholder:text-[#b39e90] focus:border-[#c8a284]"
+            className="mt-2 w-full border-b border-[#D8E3D3] bg-transparent px-0 pb-2.5 pt-1 text-[15px] text-[#435045] outline-none placeholder:text-[#A2B1A5] focus:border-[#95AF93]"
             placeholder="Escribe tu apellido"
             value={state.lastName}
             onChange={(e) => setState({ ...state, lastName: e.target.value })}
@@ -335,11 +335,11 @@ function RSVPForm({
         </div>
 
         <div>
-          <label className="text-[10px] uppercase tracking-[0.24em] text-[#a08a7c]">
+          <label className="text-[10px] uppercase tracking-[0.24em] text-[#8D9C8F]">
             Comentario
           </label>
           <textarea
-            className="mt-2 min-h-[110px] w-full rounded-[22px] border border-[#eadccf] bg-white/70 p-4 text-[15px] text-[#4b3d35] outline-none placeholder:text-[#b39e90] focus:border-[#c8a284]"
+            className="mt-2 min-h-[110px] w-full rounded-[22px] border border-[#D8E3D3] bg-white/74 p-4 text-[15px] text-[#435045] outline-none placeholder:text-[#A2B1A5] focus:border-[#95AF93]"
             placeholder="Mensaje para los novios"
             value={state.comment}
             onChange={(e) => setState({ ...state, comment: e.target.value })}
@@ -351,7 +351,7 @@ function RSVPForm({
         href={href}
         target="_blank"
         rel="noreferrer"
-        className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-[18px] bg-[#c9a98d] px-4 py-3.5 text-sm font-semibold text-[#fffaf6] shadow-[0_14px_30px_rgba(184,154,129,0.20)] transition hover:translate-y-[-1px] hover:bg-[#c29f82] active:translate-y-0"
+        className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-[18px] bg-[#A8BFA6] px-4 py-3.5 text-sm font-semibold text-[#FBFBF7] shadow-[0_14px_30px_rgba(143,165,141,0.18)] transition hover:translate-y-[-1px] hover:bg-[#95AF93] active:translate-y-0"
       >
         {buttonLabel}
       </a>
@@ -569,14 +569,14 @@ export default function WeddingInvitationMobile() {
   )}%0AComentario: ${encodeURIComponent(afterRsvp.comment || "")}`;
 
   return (
-    <main className="min-h-screen bg-[#f8f2ec] text-[#4b3d35]">
+    <main className="relative min-h-screen bg-[#F6F6F1] text-[#3F4B43]">
       <audio id="wedding-audio" loop preload="none" src={wedding.songSrc} />
 
       <div className="fixed inset-x-0 top-0 z-40 mx-auto flex w-full max-w-[430px] items-center justify-end px-4 pt-4 pointer-events-none">
         <button
           type="button"
           onClick={() => setIsPlaying((v) => !v)}
-          className="pointer-events-auto inline-flex items-center gap-2 rounded-full border border-[#eadccf] bg-white/86 px-3.5 py-2 text-[11px] font-medium text-[#6d5a4f] shadow-[0_10px_30px_rgba(184,154,129,0.12)] backdrop-blur-xl"
+          className="pointer-events-auto inline-flex items-center gap-2 rounded-full border border-[#D8E3D3] bg-white/88 px-3.5 py-2 text-[11px] font-medium text-[#5E6D63] shadow-[0_10px_30px_rgba(143,165,141,0.12)] backdrop-blur-xl"
         >
           <Music2 size={14} />
           {isPlaying ? <Pause size={14} /> : <Play size={14} />}
@@ -585,40 +585,40 @@ export default function WeddingInvitationMobile() {
       </div>
 
       <div className="relative z-10 mx-auto w-full max-w-[430px] px-4 pb-12 pt-3">
-      <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
-          <div className="absolute inset-0 bg-[linear-gradient(180deg,#fbf7f3_0%,#f9f1ea_40%,#f7eee7_100%)]" />
-          <div className="absolute inset-0 opacity-[0.14] [background-image:radial-gradient(circle_at_1px_1px,rgba(181,152,128,0.18)_1px,transparent_0)] [background-size:22px_22px]" />
-          <div className="absolute left-1/2 top-0 h-[30rem] w-[30rem] -translate-x-1/2 rounded-full bg-[#ead7c4]/45 blur-3xl" />
-          <div className="absolute -left-12 top-[16rem] h-80 w-80 rounded-full bg-[#f4e5dc]/58 blur-3xl" />
-          <div className="absolute right-[-2rem] top-[22rem] h-72 w-72 rounded-full bg-[#efd8d2]/40 blur-3xl" />
-          <div className="absolute left-1/2 top-[50rem] h-[24rem] w-[24rem] -translate-x-1/2 rounded-full bg-[#f7eee7]/82 blur-3xl" />
-          <div className="absolute bottom-24 right-[-4rem] h-72 w-72 rounded-full bg-[#efe2d4]/50 blur-3xl" />
+        <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
+          <div className="absolute inset-0 bg-[linear-gradient(180deg,#FCFBF7_0%,#F6F6F1_42%,#F2F5F0_100%)]" />
+          <div className="absolute inset-0 opacity-[0.10] [background-image:radial-gradient(circle_at_1px_1px,rgba(143,165,141,0.18)_1px,transparent_0)] [background-size:24px_24px]" />
+          <div className="absolute left-1/2 top-0 h-[30rem] w-[30rem] -translate-x-1/2 rounded-full bg-[#DCE8D9]/55 blur-3xl" />
+          <div className="absolute -left-12 top-[15rem] h-80 w-80 rounded-full bg-[#E7F0E4]/55 blur-3xl" />
+          <div className="absolute right-[-2rem] top-[22rem] h-72 w-72 rounded-full bg-[#EDF4EA]/65 blur-3xl" />
+          <div className="absolute left-1/2 top-[50rem] h-[24rem] w-[24rem] -translate-x-1/2 rounded-full bg-[#F5F7F2]/90 blur-3xl" />
+          <div className="absolute bottom-24 right-[-4rem] h-72 w-72 rounded-full bg-[#D8E8D7]/45 blur-3xl" />
         </div>
 
         <section className="relative isolate pt-14 text-center">
-          <p className="text-[11px] uppercase tracking-[0.38em] text-[#a28673]">
+          <p className="text-[11px] uppercase tracking-[0.38em] text-[#8A9B8B]">
             Nuestra boda
           </p>
 
           <div className="mt-3 flex items-center justify-center gap-3">
-            <span className="h-px w-12 bg-gradient-to-r from-transparent to-[#d7bca6]" />
-            <span className="h-1.5 w-1.5 rounded-full bg-[#d7bca6]" />
-            <span className="h-px w-12 bg-gradient-to-l from-transparent to-[#d7bca6]" />
+            <span className="h-px w-12 bg-gradient-to-r from-transparent to-[#A9BEA7]" />
+            <span className="h-1.5 w-1.5 rounded-full bg-[#A9BEA7]" />
+            <span className="h-px w-12 bg-gradient-to-l from-transparent to-[#A9BEA7]" />
           </div>
 
           <div className="mt-4 flex flex-col items-center">
             <h1
-              className={`${greatVibes.className} w-full text-center text-[4.9rem] leading-[0.82] tracking-normal text-[#5a463c] drop-shadow-[0_2px_10px_rgba(184,154,129,0.12)]`}
+              className={`${greatVibes.className} w-full text-center text-[4.9rem] leading-[0.82] tracking-normal text-[#465248] drop-shadow-[0_2px_10px_rgba(143,165,141,0.12)]`}
             >
               <span className="block">Lily</span>
-              <span className="mx-auto my-1.5 block text-[2.25rem] font-light text-[#c5a489]">
+              <span className="mx-auto my-1.5 block text-[2.25rem] font-light text-[#91A88F]">
                 &
               </span>
               <span className="block">Santiago</span>
             </h1>
           </div>
 
-          <p className="mx-auto mt-4 max-w-[18rem] text-center text-[11px] uppercase tracking-[0.28em] text-[#9f8678]">
+          <p className="mx-auto mt-4 max-w-[18rem] text-center text-[11px] uppercase tracking-[0.28em] text-[#8A9A8C]">
             {wedding.dateLabel} · Juárez, Chihuahua
           </p>
 
@@ -630,23 +630,23 @@ export default function WeddingInvitationMobile() {
             <HeroStackedCarousel images={heroGallery} />
           </div>
 
-          <div className="mt-12 rounded-[34px] bg-white/72 px-5 py-5 ring-1 ring-[#eadfd4] shadow-[0_18px_55px_rgba(184,154,129,0.15)] backdrop-blur-xl">
+          <div className="mt-12 rounded-[34px] bg-white/74 px-5 py-5 ring-1 ring-[#DCE7D8] shadow-[0_18px_55px_rgba(143,165,141,0.12)] backdrop-blur-xl">
             <div className="flex items-center justify-center gap-3">
-              <span className="h-px w-10 bg-gradient-to-r from-transparent to-[#d7bca6]" />
-              <div className="flex items-center gap-2 text-[#b89479]">
+              <span className="h-px w-10 bg-gradient-to-r from-transparent to-[#A9BEA7]" />
+              <div className="flex items-center gap-2 text-[#8FA58D]">
                 <Heart size={15} />
                 <span className="text-[11px] uppercase tracking-[0.28em]">
                   Estás invitado a nuestra boda
                 </span>
               </div>
-              <span className="h-px w-10 bg-gradient-to-l from-transparent to-[#d7bca6]" />
+              <span className="h-px w-10 bg-gradient-to-l from-transparent to-[#A9BEA7]" />
             </div>
 
-            <p className="mt-4 text-2xl font-medium text-[#4b3d35]">
+            <p className="mt-4 text-2xl font-medium text-[#435045]">
               {wedding.dateLabel}
             </p>
 
-            <p className="mx-auto mt-3 max-w-sm text-sm leading-7 text-[#7b6a60]">
+            <p className="mx-auto mt-3 max-w-sm text-sm leading-7 text-[#6F7C73]">
               {wedding.introText}
             </p>
           </div>
@@ -666,8 +666,8 @@ export default function WeddingInvitationMobile() {
             icon={<Sparkles size={12} />}
           />
 
-          <div className="overflow-hidden rounded-[34px] bg-[linear-gradient(180deg,rgba(255,255,255,0.86),rgba(255,249,244,0.72))] px-3 py-3 ring-1 ring-[#eadfd4] shadow-[0_18px_50px_rgba(184,154,129,0.12)]">
-            <div className="grid grid-cols-4 divide-x divide-[#ead8c8]">
+          <div className="overflow-hidden rounded-[34px] bg-[linear-gradient(180deg,rgba(255,255,255,0.90),rgba(248,251,247,0.76))] px-3 py-3 ring-1 ring-[#DCE7D8] shadow-[0_18px_50px_rgba(143,165,141,0.10)]">
+            <div className="grid grid-cols-4 divide-x divide-[#D8E3D3]">
               {[
                 { label: "Días", value: pad(timeLeft.days) },
                 { label: "Horas", value: pad(timeLeft.hours) },
@@ -675,10 +675,10 @@ export default function WeddingInvitationMobile() {
                 { label: "Seg", value: pad(timeLeft.seconds) },
               ].map((item) => (
                 <div key={item.label} className="px-2 py-4 text-center">
-                  <div className="text-[2rem] font-semibold leading-none text-[#5a463c]">
+                  <div className="text-[2rem] font-semibold leading-none text-[#435045]">
                     {item.value}
                   </div>
-                  <div className="mt-3 text-[9px] uppercase tracking-[0.2em] text-[#9a8478]">
+                  <div className="mt-3 text-[9px] uppercase tracking-[0.2em] text-[#8A9A8C]">
                     {item.label}
                   </div>
                 </div>
@@ -707,7 +707,7 @@ export default function WeddingInvitationMobile() {
               href={weddingCalendarData.google}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center justify-center gap-2 rounded-[18px] bg-[#c9a98d] px-4 py-3.5 text-sm font-semibold text-[#fffaf6] shadow-[0_14px_30px_rgba(184,154,129,0.20)] transition hover:translate-y-[-1px] hover:bg-[#c29f82] active:translate-y-0"
+              className="inline-flex items-center justify-center gap-2 rounded-[18px] bg-[#A8BFA6] px-4 py-3.5 text-sm font-semibold text-[#FBFBF7] shadow-[0_14px_30px_rgba(143,165,141,0.18)] transition hover:translate-y-[-1px] hover:bg-[#95AF93] active:translate-y-0"
             >
               <CalendarDays size={16} />
               Agregar a Google Calendar
@@ -718,7 +718,7 @@ export default function WeddingInvitationMobile() {
               onClick={() =>
                 downloadIcs("boda-lily-santiago.ics", weddingCalendarData.ics)
               }
-              className="inline-flex items-center justify-center gap-2 rounded-[18px] border border-[#eadccf] bg-white/84 px-4 py-3.5 text-sm font-medium text-[#6d5a4f] shadow-[0_10px_22px_rgba(184,154,129,0.10)] transition hover:bg-white"
+              className="inline-flex items-center justify-center gap-2 rounded-[18px] border border-[#D8E3D3] bg-white/88 px-4 py-3.5 text-sm font-medium text-[#5D6B61] shadow-[0_10px_22px_rgba(143,165,141,0.10)] transition hover:bg-white"
             >
               Guardar en mi calendario
             </button>
@@ -736,11 +736,11 @@ export default function WeddingInvitationMobile() {
           />
 
           <div className="space-y-4">
-            <div className="rounded-[28px] bg-[#fff8f3]/84 px-4 py-4 ring-1 ring-[#eadfd4] shadow-[0_12px_34px_rgba(184,154,129,0.08)]">
-              <p className="text-sm font-semibold text-[#4b3d35]">
+            <div className="rounded-[28px] bg-[#F8FBF7]/88 px-4 py-4 ring-1 ring-[#DCE7D8] shadow-[0_12px_34px_rgba(143,165,141,0.08)]">
+              <p className="text-sm font-semibold text-[#435045]">
                 Información importante
               </p>
-              <p className="mt-2 text-[15px] leading-7 text-[#756458]">
+              <p className="mt-2 text-[15px] leading-7 text-[#6A786E]">
                 Con mucho cariño, queremos que este día sea una celebración para
                 adultos, por lo que la invitación está pensada para invitados
                 mayores de 15 años. Gracias por comprender y acompañarnos.
@@ -752,7 +752,7 @@ export default function WeddingInvitationMobile() {
               alt="Foto exterior del salón Palazzio"
             />
 
-            <div className="overflow-hidden rounded-[32px] border border-[#eadccf] bg-white/88 shadow-[0_16px_40px_rgba(184,154,129,0.10)]">
+            <div className="overflow-hidden rounded-[32px] border border-[#D8E3D3] bg-white/90 shadow-[0_16px_40px_rgba(143,165,141,0.10)]">
               <iframe
                 title="Mapa del salón"
                 src={`https://www.google.com/maps?q=${encodeURIComponent(
@@ -767,7 +767,7 @@ export default function WeddingInvitationMobile() {
               href={wedding.mapsUrl}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center justify-center gap-2 rounded-[18px] bg-[#c9a98d] px-4 py-3.5 text-sm font-semibold text-[#fffaf6] shadow-[0_14px_30px_rgba(184,154,129,0.20)] transition hover:translate-y-[-1px] hover:bg-[#c29f82] active:translate-y-0"
+              className="inline-flex items-center justify-center gap-2 rounded-[18px] bg-[#A8BFA6] px-4 py-3.5 text-sm font-semibold text-[#FBFBF7] shadow-[0_14px_30px_rgba(143,165,141,0.18)] transition hover:translate-y-[-1px] hover:bg-[#95AF93] active:translate-y-0"
             >
               <MapPin size={16} />
               Abrir ubicación en Maps
@@ -785,32 +785,32 @@ export default function WeddingInvitationMobile() {
             icon={<Shirt size={12} />}
           />
 
-          <div className="rounded-[32px] bg-[linear-gradient(180deg,rgba(255,255,255,0.90),rgba(255,250,246,0.82))] p-4 ring-1 ring-[#eadfd4] shadow-[0_14px_35px_rgba(184,154,129,0.10)]">
+          <div className="rounded-[32px] bg-[linear-gradient(180deg,rgba(255,255,255,0.90),rgba(248,251,247,0.82))] p-4 ring-1 ring-[#DCE7D8] shadow-[0_14px_35px_rgba(143,165,141,0.08)]">
             <div className="flex items-center justify-between gap-3">
-              <p className="text-sm font-medium text-[#4b3d35]">
+              <p className="text-sm font-medium text-[#435045]">
                 Tonos sugeridos para vestidos
               </p>
-              <div className="inline-flex items-center gap-1 text-[10px] uppercase tracking-[0.18em] text-[#9a8478]">
+              <div className="inline-flex items-center gap-1 text-[10px] uppercase tracking-[0.18em] text-[#8A9A8C]">
                 <span>Desliza</span>
                 <ChevronRight size={13} />
               </div>
             </div>
 
             <div className="relative mt-4">
-              <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-6 bg-gradient-to-r from-[#fffaf6] to-transparent" />
-              <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-6 bg-gradient-to-l from-[#fffaf6] to-transparent" />
+              <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-6 bg-gradient-to-r from-[#F8FBF7] to-transparent" />
+              <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-6 bg-gradient-to-l from-[#F8FBF7] to-transparent" />
 
               <div className="flex snap-x snap-mandatory gap-3 overflow-x-auto pb-2 pr-4 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
                 {womenPalette.map((tone) => (
                   <div
                     key={tone.name}
-                    className="min-w-[112px] snap-start rounded-[22px] bg-white/92 p-3 text-center ring-1 ring-[#eadfd4] shadow-[0_8px_20px_rgba(184,154,129,0.08)]"
+                    className="min-w-[112px] snap-start rounded-[22px] bg-white/92 p-3 text-center ring-1 ring-[#DCE7D8] shadow-[0_8px_20px_rgba(143,165,141,0.08)]"
                   >
                     <div
                       className="mx-auto h-12 w-12 rounded-full border border-white/70"
                       style={{ backgroundColor: tone.hex }}
                     />
-                    <p className="mt-2 text-[11px] leading-4 text-[#7b6a60]">
+                    <p className="mt-2 text-[11px] leading-4 text-[#6F7C73]">
                       {tone.name}
                     </p>
                   </div>
@@ -818,7 +818,7 @@ export default function WeddingInvitationMobile() {
               </div>
             </div>
 
-            <p className="mt-3 text-sm text-[#8f7a6d]">No rojo · No blanco</p>
+            <p className="mt-3 text-sm text-[#7F8E84]">No rojo · No blanco</p>
           </div>
 
           <div className="mt-4 grid gap-3">
@@ -833,8 +833,8 @@ export default function WeddingInvitationMobile() {
               />
             </div>
 
-            <div className="rounded-[28px] bg-[#fff8f3]/84 px-4 py-4 ring-1 ring-[#eadfd4] shadow-[0_12px_34px_rgba(184,154,129,0.08)]">
-              <ul className="space-y-2 text-sm leading-6 text-[#75655b]">
+            <div className="rounded-[28px] bg-[#F8FBF7]/88 px-4 py-4 ring-1 ring-[#DCE7D8] shadow-[0_12px_34px_rgba(143,165,141,0.08)]">
+              <ul className="space-y-2 text-sm leading-6 text-[#6A786E]">
                 {dressRules.map((rule) => (
                   <li key={rule}>• {rule}</li>
                 ))}
@@ -844,7 +844,7 @@ export default function WeddingInvitationMobile() {
             <button
               type="button"
               onClick={() => setShowDressIdeas(true)}
-              className="inline-flex items-center justify-center gap-2 rounded-[18px] border border-[#eadccf] bg-white/84 px-4 py-3.5 text-sm font-medium text-[#6d5a4f] shadow-[0_10px_22px_rgba(184,154,129,0.10)] transition hover:bg-white"
+              className="inline-flex items-center justify-center gap-2 rounded-[18px] border border-[#D8E3D3] bg-white/88 px-4 py-3.5 text-sm font-medium text-[#5D6B61] shadow-[0_10px_22px_rgba(143,165,141,0.10)] transition hover:bg-white"
             >
               Consultar más ideas
             </button>
@@ -877,9 +877,9 @@ export default function WeddingInvitationMobile() {
             icon={<Users size={12} />}
           />
 
-          <div className="mb-4 rounded-[28px] bg-[#fff8f3]/84 px-4 py-4 ring-1 ring-[#eadfd4] shadow-[0_12px_34px_rgba(184,154,129,0.08)]">
-            <p className="text-sm font-semibold text-[#4b3d35]">Importante</p>
-            <p className="mt-2 text-sm leading-6 text-[#7b6a60]">
+          <div className="mb-4 rounded-[28px] bg-[#F8FBF7]/88 px-4 py-4 ring-1 ring-[#DCE7D8] shadow-[0_12px_34px_rgba(143,165,141,0.08)]">
+            <p className="text-sm font-semibold text-[#435045]">Importante</p>
+            <p className="mt-2 text-sm leading-6 text-[#6F7C73]">
               Favor de confirmar por persona, no por familia. La invitación para
               la boda está pensada para invitados mayores de 15 años.
             </p>
@@ -909,20 +909,20 @@ export default function WeddingInvitationMobile() {
           />
 
           <div className="space-y-3">
-            <div className="rounded-[28px] bg-[#fff8f3]/84 px-4 py-4 ring-1 ring-[#eadfd4] shadow-[0_12px_34px_rgba(184,154,129,0.08)]">
-              <p className="text-lg font-medium text-[#4b3d35]">
+            <div className="rounded-[28px] bg-[#F8FBF7]/88 px-4 py-4 ring-1 ring-[#DCE7D8] shadow-[0_12px_34px_rgba(143,165,141,0.08)]">
+              <p className="text-lg font-medium text-[#435045]">
                 {wedding.tornabodaTime} · {wedding.tornabodaLocation}
               </p>
-              <p className="mt-2 text-sm leading-6 text-[#7b6a60]">
+              <p className="mt-2 text-sm leading-6 text-[#6F7C73]">
                 Solo lleva tu bebida favorita.
               </p>
             </div>
 
-            <div className="rounded-[28px] bg-[#fff8f3]/84 px-4 py-4 ring-1 ring-[#eadfd4] shadow-[0_12px_34px_rgba(184,154,129,0.08)]">
-              <p className="text-sm font-semibold text-[#4b3d35]">
+            <div className="rounded-[28px] bg-[#F8FBF7]/88 px-4 py-4 ring-1 ring-[#DCE7D8] shadow-[0_12px_34px_rgba(143,165,141,0.08)]">
+              <p className="text-sm font-semibold text-[#435045]">
                 Evento familiar
               </p>
-              <p className="mt-2 text-sm leading-6 text-[#7b6a60]">
+              <p className="mt-2 text-sm leading-6 text-[#6F7C73]">
                 En la tornaboda se aceptan invitados de todas las edades.
               </p>
             </div>
@@ -942,15 +942,15 @@ export default function WeddingInvitationMobile() {
             />
           </div>
 
-          <div className="mt-4 rounded-[30px] bg-[#fff8f3]/84 px-4 py-4 ring-1 ring-[#eadfd4] shadow-[0_12px_34px_rgba(184,154,129,0.08)]">
-            <p className="text-sm font-medium text-[#4b3d35]">
+          <div className="mt-4 rounded-[30px] bg-[#F8FBF7]/88 px-4 py-4 ring-1 ring-[#DCE7D8] shadow-[0_12px_34px_rgba(143,165,141,0.08)]">
+            <p className="text-sm font-medium text-[#435045]">
               Ubicación de la tornaboda
             </p>
-            <p className="mt-2 text-sm leading-6 text-[#7b6a60]">
+            <p className="mt-2 text-sm leading-6 text-[#6F7C73]">
               {wedding.tornabodaAddress}
             </p>
 
-            <div className="mt-4 overflow-hidden rounded-[30px] border border-[#eadccf] bg-white/90 shadow-[0_16px_40px_rgba(184,154,129,0.10)]">
+            <div className="mt-4 overflow-hidden rounded-[30px] border border-[#D8E3D3] bg-white/90 shadow-[0_16px_40px_rgba(143,165,141,0.10)]">
               <iframe
                 title="Mapa de la tornaboda"
                 src={`https://www.google.com/maps?q=${encodeURIComponent(
@@ -965,7 +965,7 @@ export default function WeddingInvitationMobile() {
               href={wedding.tornabodaMapsUrl}
               target="_blank"
               rel="noreferrer"
-              className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-[18px] bg-[#c9a98d] px-4 py-3.5 text-sm font-semibold text-[#fffaf6] shadow-[0_14px_30px_rgba(184,154,129,0.20)] transition hover:translate-y-[-1px] hover:bg-[#c29f82] active:translate-y-0"
+              className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-[18px] bg-[#A8BFA6] px-4 py-3.5 text-sm font-semibold text-[#FBFBF7] shadow-[0_14px_30px_rgba(143,165,141,0.18)] transition hover:translate-y-[-1px] hover:bg-[#95AF93] active:translate-y-0"
             >
               <MapPin size={16} />
               Abrir ubicación de la tornaboda
@@ -994,19 +994,19 @@ export default function WeddingInvitationMobile() {
         </section>
 
         <footer className="relative px-4 pb-10 pt-10 text-center">
-          <div className="mx-auto mb-5 h-px w-28 bg-gradient-to-r from-transparent via-[#d7bca6] to-transparent" />
-          <p className="text-[1.08rem] font-medium italic tracking-[0.01em] text-[#6c5649]">
+          <div className="mx-auto mb-5 h-px w-28 bg-gradient-to-r from-transparent via-[#A9BEA7] to-transparent" />
+          <p className="text-[1.08rem] font-medium italic tracking-[0.01em] text-[#66746A]">
             {wedding.galleryClosingQuote}
           </p>
         </footer>
       </div>
 
       {showDressIdeas ? (
-        <div className="fixed inset-0 z-50 flex items-end bg-[#7b6557]/24 backdrop-blur-sm">
-          <div className="max-h-[88vh] w-full overflow-y-auto rounded-t-[34px] border border-[#eadccf] bg-[#f8f2ec] p-5 text-[#4b3d35] shadow-2xl">
+        <div className="fixed inset-0 z-50 flex items-end bg-[#556459]/20 backdrop-blur-sm">
+          <div className="max-h-[88vh] w-full overflow-y-auto rounded-t-[34px] border border-[#D8E3D3] bg-[#F6F6F1] p-5 text-[#3F4B43] shadow-2xl">
             <div className="mb-4 flex items-center justify-between">
               <div>
-                <p className="text-[11px] uppercase tracking-[0.28em] text-[#9a8478]">
+                <p className="text-[11px] uppercase tracking-[0.28em] text-[#8A9A8C]">
                   Dress code
                 </p>
                 <h3 className="mt-1 text-2xl font-semibold">
@@ -1017,7 +1017,7 @@ export default function WeddingInvitationMobile() {
               <button
                 type="button"
                 onClick={() => setShowDressIdeas(false)}
-                className="rounded-full border border-[#eadccf] bg-white/82 p-2 text-[#6d5a4f]"
+                className="rounded-full border border-[#D8E3D3] bg-white/86 p-2 text-[#5D6B61]"
               >
                 <X size={18} />
               </button>
@@ -1027,10 +1027,10 @@ export default function WeddingInvitationMobile() {
               {ideas.map((idea) => (
                 <div
                   key={idea.text}
-                  className="rounded-[28px] bg-white/78 p-4 ring-1 ring-[#eadfd4] shadow-[0_10px_24px_rgba(184,154,129,0.08)]"
+                  className="rounded-[28px] bg-white/80 p-4 ring-1 ring-[#DCE7D8] shadow-[0_10px_24px_rgba(143,165,141,0.08)]"
                 >
                   <InvitationImage src={idea.src} alt={idea.text} />
-                  <p className="mt-3 text-sm leading-6 text-[#75655b]">
+                  <p className="mt-3 text-sm leading-6 text-[#6A786E]">
                     {idea.text}
                   </p>
                 </div>
