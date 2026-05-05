@@ -112,12 +112,12 @@ function SectionHeading({
 }) {
   return (
     <div className="mb-4">
-      <div className="mb-3 flex items-center gap-2 text-[10px] uppercase tracking-[0.32em] text-[#8D9C8F]">
+      <div className="mb-3 flex items-center gap-2 text-[10px] uppercase tracking-[0.34em] text-[#8D9C8F]">
         {icon ? <span className="opacity-80">{icon}</span> : null}
         <span>{eyebrow}</span>
       </div>
 
-      <h2 className="text-[1.92rem] font-semibold tracking-[-0.02em] text-[#435045]">
+      <h2 className="text-[1.95rem] font-semibold tracking-[-0.03em] text-[#435045]">
         {title}
       </h2>
 
@@ -160,7 +160,7 @@ function InvitationImage({
         className="object-cover"
         sizes="(max-width: 768px) 100vw, 430px"
       />
-      <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(67,80,69,0.10),transparent_48%,rgba(255,255,255,0.10))]" />
+      <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(67,80,69,0.12),transparent_48%,rgba(255,255,255,0.10))]" />
     </div>
   );
 }
@@ -301,15 +301,18 @@ function EditorialArch() {
 
 function HeroSeal() {
   return (
-    <div className="flex h-[88px] w-[88px] flex-col items-center justify-center rounded-full border border-[#D8E3D3] bg-white/90 shadow-[0_14px_35px_rgba(143,165,141,0.16)] ring-1 ring-white/60 backdrop-blur-xl">
-      <span
-        className={`${greatVibes.className} text-[1.9rem] leading-none text-[#5B6B5E]`}
-      >
-        L&S
-      </span>
-      <span className="mt-1 text-[8px] uppercase tracking-[0.26em] text-[#8A9B8B]">
-        10 · 10 · 26
-      </span>
+    <div className="relative flex h-[92px] w-[92px] flex-col items-center justify-center rounded-full border border-[#D8E3D3] bg-white/90 shadow-[0_16px_38px_rgba(143,165,141,0.18)] ring-1 ring-white/60 backdrop-blur-xl">
+      <div className="absolute inset-[6px] rounded-full border border-[#E7EFE4]" />
+      <div className="relative z-10 flex flex-col items-center justify-center">
+        <span
+          className={`${greatVibes.className} text-[2rem] leading-none text-[#5B6B5E]`}
+        >
+          L&S
+        </span>
+        <span className="mt-1 text-[8px] uppercase tracking-[0.26em] text-[#8A9B8B]">
+          10 · 10 · 26
+        </span>
+      </div>
     </div>
   );
 }
@@ -345,8 +348,10 @@ function HeroStackedCarousel({
   });
 
   return (
-    <div className="relative mx-auto h-[24rem] w-full max-w-sm">
-      <div className="pointer-events-none absolute left-1/2 top-1/2 h-56 w-56 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#DCE8D9]/45 blur-3xl" />
+    <div className="relative mx-auto h-[24.6rem] w-full max-w-sm">
+      <div className="pointer-events-none absolute left-1/2 top-1/2 h-64 w-64 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#DCE8D9]/50 blur-3xl" />
+      <div className="pointer-events-none absolute inset-x-4 top-3 h-[22.2rem] rounded-[44px] border border-[#DCE7D8]/70" />
+      <div className="pointer-events-none absolute inset-x-7 top-6 h-[21.2rem] rounded-[40px] border border-white/60" />
 
       {visibleCards
         .slice()
@@ -362,7 +367,7 @@ function HeroStackedCarousel({
           return (
             <div
               key={`${card.src}-${card.offset}-${activeIndex}`}
-              className={`absolute inset-x-0 top-0 mx-auto h-[21.8rem] w-[92%] overflow-hidden rounded-[40px] border border-[#D8E3D3] bg-white/74 shadow-[0_28px_78px_rgba(143,165,141,0.16)] ring-1 ring-white/60 transition-all duration-700 ease-out ${styles}`}
+              className={`absolute inset-x-0 top-0 mx-auto h-[21.8rem] w-[92%] overflow-hidden rounded-[40px] border border-[#D8E3D3] bg-white/74 shadow-[0_30px_82px_rgba(143,165,141,0.18)] ring-1 ring-white/60 transition-all duration-700 ease-out ${styles}`}
             >
               <Image
                 src={card.src}
@@ -372,7 +377,7 @@ function HeroStackedCarousel({
                 sizes="(max-width: 768px) 100vw, 430px"
                 priority={card.offset === 0}
               />
-              <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(67,80,69,0.16),transparent_45%,rgba(255,255,255,0.10))]" />
+              <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(67,80,69,0.18),transparent_45%,rgba(255,255,255,0.10))]" />
             </div>
           );
         })}
@@ -421,7 +426,7 @@ function HeroStackedCarousel({
   );
 }
 
-function EditorialGalleryCarousel({
+function PremiumGalleryCarousel({
   images,
 }: {
   images: { src: string; alt: string }[];
@@ -433,7 +438,7 @@ function EditorialGalleryCarousel({
 
     const interval = setInterval(() => {
       setActiveIndex((current) => (current + 1) % images.length);
-    }, 4200);
+    }, 4600);
 
     return () => clearInterval(interval);
   }, [images.length]);
@@ -447,9 +452,11 @@ function EditorialGalleryCarousel({
   };
 
   return (
-    <div className="rounded-[34px] bg-[linear-gradient(180deg,rgba(255,255,255,0.88),rgba(248,251,247,0.72))] p-3 ring-1 ring-[#DCE7D8] shadow-[0_18px_46px_rgba(143,165,141,0.12)]">
-      <div className="relative overflow-hidden rounded-[30px] border border-[#D8E3D3] bg-white/80">
-        <div className="relative h-[24rem]">
+    <div className="rounded-[36px] bg-[linear-gradient(180deg,rgba(255,255,255,0.86),rgba(248,251,247,0.74))] p-3 ring-1 ring-[#DCE7D8] shadow-[0_20px_54px_rgba(143,165,141,0.12)]">
+      <div className="relative overflow-hidden rounded-[32px] border border-[#D8E3D3] bg-white/82">
+        <div className="pointer-events-none absolute inset-x-8 top-4 z-10 h-[88%] rounded-t-[999px] border border-white/35" />
+
+        <div className="relative h-[25rem]">
           <Image
             src={images[activeIndex].src}
             alt={images[activeIndex].alt}
@@ -457,23 +464,33 @@ function EditorialGalleryCarousel({
             className="object-cover"
             sizes="(max-width: 768px) 100vw, 430px"
           />
-          <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(34,48,38,0.28),rgba(34,48,38,0.05),transparent_55%)]" />
+          <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(34,48,38,0.34),rgba(34,48,38,0.08),transparent_58%)]" />
 
-          <div className="absolute left-4 top-4 rounded-full border border-white/40 bg-white/18 px-3 py-1.5 text-[10px] uppercase tracking-[0.24em] text-white backdrop-blur-md">
-            Nuestra galería
+          <div className="absolute left-4 top-4 rounded-full border border-white/45 bg-white/18 px-3 py-1.5 text-[10px] uppercase tracking-[0.24em] text-white backdrop-blur-md">
+            Sesión editorial
           </div>
 
-          <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between">
-            <div className="rounded-full border border-white/40 bg-white/18 px-3 py-2 text-[10px] uppercase tracking-[0.24em] text-white backdrop-blur-md">
-              {String(activeIndex + 1).padStart(2, "0")} /{" "}
-              {String(images.length).padStart(2, "0")}
+          <div className="absolute right-4 top-4 rounded-full border border-white/45 bg-white/18 px-3 py-1.5 text-[10px] uppercase tracking-[0.22em] text-white backdrop-blur-md">
+            {String(activeIndex + 1).padStart(2, "0")} /{" "}
+            {String(images.length).padStart(2, "0")}
+          </div>
+
+          <div className="absolute bottom-4 left-4 right-4 flex items-end justify-between gap-4">
+            <div className="max-w-[68%] rounded-[22px] border border-white/35 bg-white/14 px-4 py-3 text-left backdrop-blur-md">
+              <p className="text-[10px] uppercase tracking-[0.24em] text-white/85">
+                Lily & Santiago
+              </p>
+              <p className="mt-2 text-sm leading-6 text-white/95">
+                Un pequeño recorrido por algunos instantes que quedarán para
+                siempre con nosotros.
+              </p>
             </div>
 
             <div className="flex items-center gap-2">
               <button
                 type="button"
                 onClick={prev}
-                className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/40 bg-white/18 text-white backdrop-blur-md"
+                className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/45 bg-white/18 text-white backdrop-blur-md"
                 aria-label="Foto anterior"
               >
                 <ChevronLeft size={18} />
@@ -481,7 +498,7 @@ function EditorialGalleryCarousel({
               <button
                 type="button"
                 onClick={next}
-                className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/40 bg-white/18 text-white backdrop-blur-md"
+                className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/45 bg-white/18 text-white backdrop-blur-md"
                 aria-label="Siguiente foto"
               >
                 <ChevronRight size={18} />
@@ -491,15 +508,15 @@ function EditorialGalleryCarousel({
         </div>
       </div>
 
-      <div className="mt-3 grid grid-cols-4 gap-2">
+      <div className="mt-3 flex gap-2 overflow-x-auto pb-1 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
         {images.map((image, index) => (
           <button
             key={image.src}
             type="button"
             onClick={() => setActiveIndex(index)}
-            className={`relative h-20 overflow-hidden rounded-[18px] border transition ${
+            className={`relative h-20 min-w-[78px] overflow-hidden rounded-[18px] border transition ${
               activeIndex === index
-                ? "scale-[1.02] border-[#9FB79D] shadow-[0_10px_24px_rgba(143,165,141,0.16)]"
+                ? "scale-[1.03] border-[#9FB79D] shadow-[0_10px_24px_rgba(143,165,141,0.16)]"
                 : "border-[#D8E3D3] opacity-75"
             }`}
             aria-label={`Seleccionar foto ${index + 1}`}
@@ -509,12 +526,12 @@ function EditorialGalleryCarousel({
               alt={image.alt}
               fill
               className="object-cover"
-              sizes="96px"
+              sizes="78px"
             />
             <div
               className={`absolute inset-0 ${
                 activeIndex === index
-                  ? "bg-[linear-gradient(to_top,rgba(67,80,69,0.10),transparent)]"
+                  ? "bg-[linear-gradient(to_top,rgba(67,80,69,0.12),transparent)]"
                   : "bg-black/10"
               }`}
             />
@@ -792,9 +809,7 @@ export default function WeddingInvitationMobile() {
   }, [wedding.countdownTarget]);
 
   useEffect(() => {
-    const audio = document.getElementById(
-      "wedding-audio"
-    ) as HTMLAudioElement | null;
+    const audio = document.getElementById("wedding-audio") as HTMLAudioElement | null;
     if (!audio) return;
 
     if (isPlaying) {
@@ -876,17 +891,17 @@ export default function WeddingInvitationMobile() {
 
           <div className="mt-4 flex flex-col items-center">
             <h1
-              className={`${greatVibes.className} w-full text-center text-[4.9rem] leading-[0.82] tracking-normal text-[#465248] drop-shadow-[0_2px_10px_rgba(143,165,141,0.12)]`}
+              className={`${greatVibes.className} w-full text-center text-[5.15rem] leading-[0.8] tracking-normal text-[#465248] drop-shadow-[0_2px_10px_rgba(143,165,141,0.12)]`}
             >
               <span className="block">Lily</span>
-              <span className="mx-auto my-1.5 block text-[2.25rem] font-light text-[#91A88F]">
+              <span className="mx-auto my-1.5 block text-[2.35rem] font-light text-[#91A88F]">
                 &
               </span>
               <span className="block">Santiago</span>
             </h1>
           </div>
 
-          <div className="mt-4 flex flex-col items-center gap-2">
+          <div className="mt-4 flex flex-col items-center gap-2.5">
             <p className="text-[11px] uppercase tracking-[0.28em] text-[#8A9A8C]">
               {wedding.dateLabel}
             </p>
@@ -908,7 +923,28 @@ export default function WeddingInvitationMobile() {
             <HeroStackedCarousel images={heroGallery} />
           </div>
 
-          <div className="mt-12 rounded-[34px] bg-white/74 px-5 py-5 ring-1 ring-[#DCE7D8] shadow-[0_18px_55px_rgba(143,165,141,0.12)] backdrop-blur-xl">
+          <div className="mt-5 rounded-[30px] bg-[linear-gradient(180deg,rgba(255,255,255,0.84),rgba(248,251,247,0.68))] px-4 py-3 ring-1 ring-[#DCE7D8] shadow-[0_16px_38px_rgba(143,165,141,0.10)]">
+            <div className="grid grid-cols-2 divide-x divide-[#D8E3D3]">
+              <div className="px-3 py-2 text-center">
+                <p className="text-[10px] uppercase tracking-[0.24em] text-[#8A9A8C]">
+                  Hora
+                </p>
+                <p className="mt-2 text-sm font-medium text-[#435045]">
+                  {wedding.ceremonyTimeLabel}
+                </p>
+              </div>
+              <div className="px-3 py-2 text-center">
+                <p className="text-[10px] uppercase tracking-[0.24em] text-[#8A9A8C]">
+                  Lugar
+                </p>
+                <p className="mt-2 text-sm font-medium text-[#435045]">
+                  {wedding.venue}
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-5 rounded-[34px] bg-white/74 px-5 py-5 ring-1 ring-[#DCE7D8] shadow-[0_18px_55px_rgba(143,165,141,0.12)] backdrop-blur-xl">
             <div className="flex items-center justify-center gap-3">
               <span className="h-px w-10 bg-gradient-to-r from-transparent to-[#A9BEA7]" />
               <div className="flex items-center gap-2 text-[#8FA58D]">
@@ -1285,11 +1321,11 @@ export default function WeddingInvitationMobile() {
           <SectionHeading
             eyebrow="Nuestra sesión"
             title="Un pequeño vistazo de nosotros"
-            subtitle="Desliza, explora y disfruta algunos recuerdos de nuestra sesión."
+            subtitle="Desliza y descubre algunos de nuestros momentos favoritos."
             icon={<Heart size={12} />}
           />
 
-          <EditorialGalleryCarousel images={sessionGallery} />
+          <PremiumGalleryCarousel images={sessionGallery} />
         </section>
 
         <footer className="relative px-4 pb-10 pt-10 text-center">
