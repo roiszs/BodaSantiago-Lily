@@ -254,6 +254,25 @@ function FloralCorner({
   );
 }
 
+function GhostMonogram({
+  className = "",
+}: {
+  className?: string;
+}) {
+  return (
+    <div
+      className={`pointer-events-none absolute ${className}`}
+      aria-hidden="true"
+    >
+      <span
+        className={`${greatVibes.className} text-[8rem] leading-none text-[#A8BFA6]/10`}
+      >
+        L&S
+      </span>
+    </div>
+  );
+}
+
 function HeroMonogramWatermark() {
   return (
     <div
@@ -402,6 +421,110 @@ function HeroStackedCarousel({
   );
 }
 
+function EditorialGalleryCarousel({
+  images,
+}: {
+  images: { src: string; alt: string }[];
+}) {
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  useEffect(() => {
+    if (images.length <= 1) return;
+
+    const interval = setInterval(() => {
+      setActiveIndex((current) => (current + 1) % images.length);
+    }, 4200);
+
+    return () => clearInterval(interval);
+  }, [images.length]);
+
+  const prev = () => {
+    setActiveIndex((current) => (current - 1 + images.length) % images.length);
+  };
+
+  const next = () => {
+    setActiveIndex((current) => (current + 1) % images.length);
+  };
+
+  return (
+    <div className="rounded-[34px] bg-[linear-gradient(180deg,rgba(255,255,255,0.88),rgba(248,251,247,0.72))] p-3 ring-1 ring-[#DCE7D8] shadow-[0_18px_46px_rgba(143,165,141,0.12)]">
+      <div className="relative overflow-hidden rounded-[30px] border border-[#D8E3D3] bg-white/80">
+        <div className="relative h-[24rem]">
+          <Image
+            src={images[activeIndex].src}
+            alt={images[activeIndex].alt}
+            fill
+            className="object-cover"
+            sizes="(max-width: 768px) 100vw, 430px"
+          />
+          <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(34,48,38,0.28),rgba(34,48,38,0.05),transparent_55%)]" />
+
+          <div className="absolute left-4 top-4 rounded-full border border-white/40 bg-white/18 px-3 py-1.5 text-[10px] uppercase tracking-[0.24em] text-white backdrop-blur-md">
+            Nuestra galería
+          </div>
+
+          <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between">
+            <div className="rounded-full border border-white/40 bg-white/18 px-3 py-2 text-[10px] uppercase tracking-[0.24em] text-white backdrop-blur-md">
+              {String(activeIndex + 1).padStart(2, "0")} /{" "}
+              {String(images.length).padStart(2, "0")}
+            </div>
+
+            <div className="flex items-center gap-2">
+              <button
+                type="button"
+                onClick={prev}
+                className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/40 bg-white/18 text-white backdrop-blur-md"
+                aria-label="Foto anterior"
+              >
+                <ChevronLeft size={18} />
+              </button>
+              <button
+                type="button"
+                onClick={next}
+                className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/40 bg-white/18 text-white backdrop-blur-md"
+                aria-label="Siguiente foto"
+              >
+                <ChevronRight size={18} />
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="mt-3 grid grid-cols-4 gap-2">
+        {images.map((image, index) => (
+          <button
+            key={image.src}
+            type="button"
+            onClick={() => setActiveIndex(index)}
+            className={`relative h-20 overflow-hidden rounded-[18px] border transition ${
+              activeIndex === index
+                ? "scale-[1.02] border-[#9FB79D] shadow-[0_10px_24px_rgba(143,165,141,0.16)]"
+                : "border-[#D8E3D3] opacity-75"
+            }`}
+            aria-label={`Seleccionar foto ${index + 1}`}
+          >
+            <Image
+              src={image.src}
+              alt={image.alt}
+              fill
+              className="object-cover"
+              sizes="96px"
+            />
+            <div
+              className={`absolute inset-0 ${
+                activeIndex === index
+                  ? "bg-[linear-gradient(to_top,rgba(67,80,69,0.10),transparent)]"
+                  : "bg-black/10"
+              }`}
+            />
+          </button>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 function RSVPForm({
   title,
   note,
@@ -479,6 +602,7 @@ export default function WeddingInvitationMobile() {
     bride: "Lily",
     groom: "Santiago",
     dateLabel: "10 de Octubre 2026",
+    cityLabel: "Juárez, Chihuahua",
     ceremonyTimeLabel: "9:00 PM",
     countdownTarget: "2026-10-10T21:00:00-06:00",
     venue: "Salón Palazzio",
@@ -573,10 +697,22 @@ export default function WeddingInvitationMobile() {
   ];
 
   const sessionGallery = [
-    "Foto sesión 1",
-    "Foto sesión 2",
-    "Foto sesión 3",
-    "Foto sesión 4",
+    {
+      src: "/invitacion/foto1.jpeg",
+      alt: "Foto de sesión 1 de Lily y Santiago",
+    },
+    {
+      src: "/invitacion/foto2.jpeg",
+      alt: "Foto de sesión 2 de Lily y Santiago",
+    },
+    {
+      src: "/invitacion/foto3.jpeg",
+      alt: "Foto de sesión 3 de Lily y Santiago",
+    },
+    {
+      src: "/invitacion/foto4.jpeg",
+      alt: "Foto de sesión 4 de Lily y Santiago",
+    },
   ];
 
   const [timeLeft, setTimeLeft] = useState({
@@ -656,7 +792,9 @@ export default function WeddingInvitationMobile() {
   }, [wedding.countdownTarget]);
 
   useEffect(() => {
-    const audio = document.getElementById("wedding-audio") as HTMLAudioElement | null;
+    const audio = document.getElementById(
+      "wedding-audio"
+    ) as HTMLAudioElement | null;
     if (!audio) return;
 
     if (isPlaying) {
@@ -696,17 +834,33 @@ export default function WeddingInvitationMobile() {
 
       <div className="relative z-10 mx-auto w-full max-w-[430px] px-4 pb-12 pt-3">
         <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
-          <div className="absolute inset-0 bg-[linear-gradient(180deg,#FCFBF7_0%,#F6F6F1_42%,#F2F5F0_100%)]" />
+          <div className="absolute inset-0 bg-[linear-gradient(180deg,#FCFBF7_0%,#F6F6F1_38%,#F2F5F0_100%)]" />
           <div className="absolute inset-0 opacity-[0.08] [background-image:radial-gradient(circle_at_1px_1px,rgba(143,165,141,0.18)_1px,transparent_0)] [background-size:24px_24px]" />
+
           <div className="absolute left-1/2 top-0 h-[30rem] w-[30rem] -translate-x-1/2 rounded-full bg-[#DCE8D9]/55 blur-3xl" />
           <div className="absolute -left-12 top-[15rem] h-80 w-80 rounded-full bg-[#E7F0E4]/55 blur-3xl" />
           <div className="absolute right-[-2rem] top-[22rem] h-72 w-72 rounded-full bg-[#EDF4EA]/65 blur-3xl" />
           <div className="absolute left-1/2 top-[50rem] h-[24rem] w-[24rem] -translate-x-1/2 rounded-full bg-[#F5F7F2]/90 blur-3xl" />
           <div className="absolute bottom-24 right-[-4rem] h-72 w-72 rounded-full bg-[#D8E8D7]/45 blur-3xl" />
+          <div className="absolute left-[-2rem] bottom-[32rem] h-60 w-60 rounded-full bg-[#E3EFE0]/55 blur-3xl" />
+
+          <div className="absolute inset-x-8 top-[9rem] h-[33rem] rounded-t-[999px] border border-[#DCE7D8]/55" />
+          <div className="absolute inset-x-14 top-[10.5rem] h-[30rem] rounded-t-[999px] border border-[#DCE7D8]/40" />
+          <div className="absolute inset-x-10 top-[82rem] h-[30rem] rounded-t-[999px] border border-[#DCE7D8]/40" />
+          <div className="absolute inset-x-14 top-[83.5rem] h-[27rem] rounded-t-[999px] border border-[#DCE7D8]/30" />
+          <div className="absolute inset-x-8 top-[154rem] h-[26rem] rounded-t-[999px] border border-[#DCE7D8]/35" />
+          <div className="absolute inset-x-12 top-[155.5rem] h-[23rem] rounded-t-[999px] border border-[#DCE7D8]/25" />
+
+          <GhostMonogram className="left-1/2 top-[61rem] -translate-x-1/2" />
+          <GhostMonogram className="left-1/2 top-[138rem] -translate-x-1/2" />
+          <GhostMonogram className="left-1/2 top-[214rem] -translate-x-1/2" />
 
           <FloralCorner className="-left-8 top-16" />
           <FloralCorner className="-right-8 top-[36rem]" flip />
+          <FloralCorner className="-left-10 top-[88rem] scale-90" />
+          <FloralCorner className="-right-8 top-[138rem] rotate-[12deg] scale-90" flip />
           <FloralCorner className="-left-10 bottom-[18rem]" />
+          <FloralCorner className="-right-10 bottom-[5rem] scale-90" flip />
         </div>
 
         <section className="relative isolate pt-14 text-center">
@@ -732,9 +886,16 @@ export default function WeddingInvitationMobile() {
             </h1>
           </div>
 
-          <p className="mx-auto mt-4 max-w-[18rem] text-center text-[11px] uppercase tracking-[0.28em] text-[#8A9A8C]">
-            {wedding.dateLabel} · Juárez, Chihuahua
-          </p>
+          <div className="mt-4 flex flex-col items-center gap-2">
+            <p className="text-[11px] uppercase tracking-[0.28em] text-[#8A9A8C]">
+              {wedding.dateLabel}
+            </p>
+
+            <div className="inline-flex items-center gap-2 rounded-full border border-[#D8E3D3] bg-white/78 px-4 py-2 text-[11px] uppercase tracking-[0.22em] text-[#6F7C73] shadow-[0_10px_22px_rgba(143,165,141,0.10)] backdrop-blur-xl">
+              <MapPin size={12} />
+              <span>{wedding.cityLabel}</span>
+            </div>
+          </div>
 
           <div className="relative mt-8">
             <HeroMonogramWatermark />
@@ -994,12 +1155,40 @@ export default function WeddingInvitationMobile() {
             icon={<Users size={12} />}
           />
 
-          <div className="mb-4 rounded-[28px] bg-[linear-gradient(180deg,rgba(255,255,255,0.82),rgba(248,251,247,0.64))] px-4 py-4 ring-1 ring-[#DCE7D8]/90 shadow-[0_16px_38px_rgba(143,165,141,0.10)]">
-            <p className="text-sm font-semibold text-[#435045]">Importante</p>
-            <p className="mt-2 text-sm leading-6 text-[#6F7C73]">
-              Favor de confirmar por persona, no por familia. La invitación para
-              la boda está pensada para invitados mayores de 15 años.
-            </p>
+          <div className="relative mb-5 overflow-hidden rounded-[32px] border border-[#DCE7D8] bg-[linear-gradient(180deg,rgba(255,255,255,0.92),rgba(241,247,239,0.88))] p-5 shadow-[0_18px_42px_rgba(143,165,141,0.14)]">
+            <div className="absolute inset-y-0 left-0 w-1.5 bg-[#9FB79D]" />
+            <div className="absolute -right-10 -top-10 h-32 w-32 rounded-full bg-[#DCE8D9]/55 blur-2xl" />
+            <div className="absolute right-4 top-4 opacity-20">
+              <Sparkles size={28} className="text-[#7F9680]" />
+            </div>
+
+            <div className="relative">
+              <div className="inline-flex items-center gap-2 rounded-full border border-[#D8E3D3] bg-white/75 px-3 py-1.5 text-[10px] uppercase tracking-[0.26em] text-[#70806F]">
+                <Sparkles size={12} />
+                <span>Importante</span>
+              </div>
+
+              <p className="mt-4 text-base font-semibold leading-7 text-[#435045]">
+                Favor de confirmar por persona, no por familia.
+              </p>
+
+              <p className="mt-2 text-sm leading-7 text-[#617066]">
+                La invitación para la boda está pensada para invitados mayores
+                de 15 años. Gracias por su comprensión y por acompañarnos en
+                este día tan especial.
+              </p>
+
+              <div className="mt-4 grid gap-2">
+                <div className="flex items-start gap-2 text-sm text-[#617066]">
+                  <span className="mt-1 h-2 w-2 rounded-full bg-[#9FB79D]" />
+                  <span>Confirmación individual por invitado.</span>
+                </div>
+                <div className="flex items-start gap-2 text-sm text-[#617066]">
+                  <span className="mt-1 h-2 w-2 rounded-full bg-[#9FB79D]" />
+                  <span>Acceso para invitados mayores de 15 años.</span>
+                </div>
+              </div>
+            </div>
           </div>
 
           <RSVPForm
@@ -1096,18 +1285,11 @@ export default function WeddingInvitationMobile() {
           <SectionHeading
             eyebrow="Nuestra sesión"
             title="Un pequeño vistazo de nosotros"
+            subtitle="Desliza, explora y disfruta algunos recuerdos de nuestra sesión."
             icon={<Heart size={12} />}
           />
 
-          <div className="grid grid-cols-2 gap-3">
-            {sessionGallery.map((item, index) => (
-              <InvitationImage
-                key={item}
-                src={`/invitacion/foto${index + 1}.jpeg`}
-                alt={`Foto de sesión ${index + 1} de Lily y Santiago`}
-              />
-            ))}
-          </div>
+          <EditorialGalleryCarousel images={sessionGallery} />
         </section>
 
         <footer className="relative px-4 pb-10 pt-10 text-center">
