@@ -111,18 +111,18 @@ function SectionHeading({
   icon?: ReactNode;
 }) {
   return (
-    <div className="mb-4">
-      <div className="mb-3 flex items-center gap-2 text-[10px] uppercase tracking-[0.34em] text-[#8D9C8F]">
+    <div className="mb-5 text-left">
+      <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-[#C8D7C5] bg-white/60 px-3 py-1.5 text-[10px] uppercase tracking-[0.28em] text-[#7B8A7D] shadow-[0_8px_20px_rgba(143,165,141,0.08)]">
         {icon ? <span className="opacity-80">{icon}</span> : null}
         <span>{eyebrow}</span>
       </div>
 
-      <h2 className="text-[1.95rem] font-semibold tracking-[-0.03em] text-[#435045]">
+      <h2 className="text-[1.9rem] font-semibold tracking-[-0.03em] text-[#435045]">
         {title}
       </h2>
 
       {subtitle ? (
-        <p className="mt-2 text-sm leading-6 text-[#6F7C73]">{subtitle}</p>
+        <p className="mt-2 text-sm leading-6 text-[#657368]">{subtitle}</p>
       ) : null}
     </div>
   );
@@ -130,10 +130,47 @@ function SectionHeading({
 
 function ElegantDivider() {
   return (
-    <div className="relative mx-auto my-6 flex items-center justify-center">
-      <div className="h-px w-20 bg-gradient-to-r from-transparent via-[#A9BEA7] to-transparent" />
-      <div className="mx-3 h-2 w-2 rounded-full bg-[#A9BEA7]" />
-      <div className="h-px w-20 bg-gradient-to-r from-transparent via-[#A9BEA7] to-transparent" />
+    <div className="relative mx-auto my-7 flex items-center justify-center">
+      <div className="h-px w-20 bg-gradient-to-r from-transparent via-[#A6B8A3] to-transparent" />
+      <div className="mx-3 h-2.5 w-2.5 rounded-full bg-[#9DB39B]" />
+      <div className="h-px w-20 bg-gradient-to-r from-transparent via-[#A6B8A3] to-transparent" />
+    </div>
+  );
+}
+
+function StageFrame({
+  children,
+  className = "",
+}: {
+  children: ReactNode;
+  className?: string;
+}) {
+  return (
+    <div
+      className={`relative overflow-hidden rounded-[36px] border border-[#D3E0CF] bg-[linear-gradient(180deg,rgba(234,244,232,0.96),rgba(245,249,243,0.94))] p-4 shadow-[0_20px_55px_rgba(143,165,141,0.12)] ring-1 ring-[#E8F0E5]/80 backdrop-blur-xl ${className}`}
+    >
+      <div className="pointer-events-none absolute inset-x-5 top-4 h-[88%] rounded-t-[999px] border border-[#CDDBCA]/70" />
+      <div className="pointer-events-none absolute inset-x-9 top-8 h-[78%] rounded-t-[999px] border border-white/45" />
+      <div className="pointer-events-none absolute -right-10 -top-10 h-32 w-32 rounded-full bg-[#D8E8D5]/55 blur-2xl" />
+      <div className="pointer-events-none absolute -left-10 bottom-0 h-24 w-24 rounded-full bg-[#E8F1E5]/75 blur-2xl" />
+      <div className="pointer-events-none absolute right-6 top-6 h-20 w-20 rounded-full border border-white/35" />
+      <div className="relative z-10">{children}</div>
+    </div>
+  );
+}
+
+function SoftCard({
+  children,
+  className = "",
+}: {
+  children: ReactNode;
+  className?: string;
+}) {
+  return (
+    <div
+      className={`rounded-[28px] border border-[#D8E4D5] bg-[linear-gradient(180deg,rgba(255,255,255,0.82),rgba(249,251,247,0.70))] p-4 shadow-[0_14px_34px_rgba(143,165,141,0.08)] ring-1 ring-white/60 ${className}`}
+    >
+      {children}
     </div>
   );
 }
@@ -149,7 +186,7 @@ function InvitationImage({
 }) {
   return (
     <div
-      className={`relative overflow-hidden rounded-[32px] border border-[#DCE7D8] bg-white/74 ring-1 ring-white/60 ${
+      className={`relative overflow-hidden rounded-[32px] border border-[#D7E2D3] bg-white/70 ring-1 ring-white/60 shadow-[0_18px_40px_rgba(143,165,141,0.10)] ${
         tall ? "h-80" : "h-56"
       }`}
     >
@@ -160,7 +197,7 @@ function InvitationImage({
         className="object-cover"
         sizes="(max-width: 768px) 100vw, 430px"
       />
-      <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(67,80,69,0.12),transparent_48%,rgba(255,255,255,0.10))]" />
+      <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(67,80,69,0.14),transparent_48%,rgba(255,255,255,0.10))]" />
     </div>
   );
 }
@@ -348,7 +385,7 @@ function HeroStackedCarousel({
   });
 
   return (
-    <div className="relative mx-auto h-[24.6rem] w-full max-w-sm">
+    <div className="relative mx-auto h-[24.8rem] w-full max-w-sm">
       <div className="pointer-events-none absolute left-1/2 top-1/2 h-64 w-64 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#DCE8D9]/50 blur-3xl" />
       <div className="pointer-events-none absolute inset-x-4 top-3 h-[22.2rem] rounded-[44px] border border-[#DCE7D8]/70" />
       <div className="pointer-events-none absolute inset-x-7 top-6 h-[21.2rem] rounded-[40px] border border-white/60" />
@@ -452,7 +489,7 @@ function PremiumGalleryCarousel({
   };
 
   return (
-    <div className="rounded-[36px] bg-[linear-gradient(180deg,rgba(255,255,255,0.86),rgba(248,251,247,0.74))] p-3 ring-1 ring-[#DCE7D8] shadow-[0_20px_54px_rgba(143,165,141,0.12)]">
+    <div className="rounded-[36px] bg-[linear-gradient(180deg,rgba(255,255,255,0.90),rgba(248,251,247,0.78))] p-3 ring-1 ring-[#DCE7D8] shadow-[0_20px_54px_rgba(143,165,141,0.12)]">
       <div className="relative overflow-hidden rounded-[32px] border border-[#D8E3D3] bg-white/82">
         <div className="pointer-events-none absolute inset-x-8 top-4 z-10 h-[88%] rounded-t-[999px] border border-white/35" />
 
@@ -558,7 +595,7 @@ function RSVPForm({
   href: string;
 }) {
   return (
-    <div className="rounded-[30px] bg-[linear-gradient(180deg,rgba(255,255,255,0.84),rgba(248,251,247,0.70))] px-4 py-4 ring-1 ring-[#DCE7D8] shadow-[0_16px_45px_rgba(143,165,141,0.10)]">
+    <div className="rounded-[30px] border border-[#D8E4D5] bg-[linear-gradient(180deg,rgba(255,255,255,0.86),rgba(249,251,247,0.74))] px-4 py-4 shadow-[0_16px_45px_rgba(143,165,141,0.10)] ring-1 ring-white/60">
       <p className="text-[10px] uppercase tracking-[0.24em] text-[#8D9C8F]">
         {title}
       </p>
@@ -570,7 +607,7 @@ function RSVPForm({
             Nombre
           </label>
           <input
-            className="mt-2 w-full border-b border-[#D8E3D3] bg-transparent px-0 pb-2.5 pt-1 text-[15px] text-[#435045] outline-none placeholder:text-[#A2B1A5] focus:border-[#95AF93]"
+            className="mt-2 w-full rounded-none border-b border-[#CFE0CC] bg-transparent px-0 pb-2.5 pt-1 text-[15px] text-[#435045] outline-none placeholder:text-[#A2B1A5] focus:border-[#95AF93]"
             placeholder="Escribe tu nombre"
             value={state.name}
             onChange={(e) => setState({ ...state, name: e.target.value })}
@@ -582,7 +619,7 @@ function RSVPForm({
             Apellido
           </label>
           <input
-            className="mt-2 w-full border-b border-[#D8E3D3] bg-transparent px-0 pb-2.5 pt-1 text-[15px] text-[#435045] outline-none placeholder:text-[#A2B1A5] focus:border-[#95AF93]"
+            className="mt-2 w-full rounded-none border-b border-[#CFE0CC] bg-transparent px-0 pb-2.5 pt-1 text-[15px] text-[#435045] outline-none placeholder:text-[#A2B1A5] focus:border-[#95AF93]"
             placeholder="Escribe tu apellido"
             value={state.lastName}
             onChange={(e) => setState({ ...state, lastName: e.target.value })}
@@ -594,7 +631,7 @@ function RSVPForm({
             Comentario
           </label>
           <textarea
-            className="mt-2 min-h-[110px] w-full rounded-[22px] border border-[#D8E3D3] bg-white/74 p-4 text-[15px] text-[#435045] outline-none placeholder:text-[#A2B1A5] focus:border-[#95AF93]"
+            className="mt-2 min-h-[110px] w-full rounded-[22px] border border-[#D8E4D5] bg-white/82 p-4 text-[15px] text-[#435045] outline-none placeholder:text-[#A2B1A5] focus:border-[#95AF93]"
             placeholder="Mensaje para los novios"
             value={state.comment}
             onChange={(e) => setState({ ...state, comment: e.target.value })}
@@ -606,7 +643,7 @@ function RSVPForm({
         href={href}
         target="_blank"
         rel="noreferrer"
-        className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-[18px] bg-[#9FB79D] px-4 py-3.5 text-sm font-semibold text-[#FBFBF7] shadow-[0_14px_30px_rgba(143,165,141,0.18)] transition hover:translate-y-[-1px] hover:bg-[#8DA88B] active:translate-y-0"
+        className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-[18px] border border-[#95AF93]/25 bg-[#9FB79D] px-4 py-3.5 text-sm font-semibold text-[#FBFBF7] shadow-[0_14px_30px_rgba(143,165,141,0.18)] transition duration-200 hover:-translate-y-[1px] hover:bg-[#8DA88B] active:translate-y-0"
       >
         {buttonLabel}
       </a>
@@ -641,8 +678,7 @@ export default function WeddingInvitationMobile() {
     tornabodaLocation: "Samalayuca",
     tornabodaAddress: "Galeana, 32730 Samalayuca, Chih.",
     tornabodaMapsUrl:
-      "https://www.google.com/maps/place/Jard%C3%ADn+de+Eventos+Samalayuca/@31.3508856,-106.4811442,17z/data=!4m22!1m15!4m14!1m6!1m2!1s0x86e77fafe090cd85:0x4b18b7e218e90841!2sJard%C3%ADn+de+Eventos+Samalayuca,+Galeana,+32730+Samalayuca,+Chih.!2m2!1d-106.4785693!2d31.3508856!1m6!1m2!1s0x86e77fafe090cd85:0x4b18b7e218e90841!2sJard%C3%ADn+de+Eventos+Samalayuca,+Galeana,+32730+Samalayuca,+Chih.!2m2!1d-106.4785693!2d31.3508856!3m5!1s0x86e77fafe090cd85:0x4b18b7e218e90841!8m2!3d31.3508856!4d-106.4785693!16s%2Fg%2F11p0y67y4m?entry=ttu&g_ep=EgoyMDI2MDUwMi4wIKXMDSoASAFQAw%3D%3D" +
-      encodeURIComponent("Galeana, 32730 Samalayuca, Chihuahua"),
+      "https://www.google.com/maps/place/Jard%C3%ADn+de+Eventos+Samalayuca/@31.3508856,-106.4811442,17z/data=!4m22!1m15!4m14!1m6!1m2!1s0x86e77fafe090cd85:0x4b18b7e218e90841!2sJard%C3%ADn+de+Eventos+Samalayuca,+Galeana,+32730+Samalayuca,+Chih.!2m2!1d-106.4785693!2d31.3508856!1m6!1m2!1s0x86e77fafe090cd85:0x4b18b7e218e90841!2sJard%C3%ADn+de+Eventos+Samalayuca,+Galeana,+32730+Samalayuca,+Chih.!2m2!1d-106.4785693!2d31.3508856!3m5!1s0x86e77fafe090cd85:0x4b18b7e218e90841!8m2!3d31.3508856!4d-106.4785693!16s%2Fg%2F11p0y67y4m?entry=ttu&g_ep=EgoyMDI2MDUwMi4wIKXMDSoASAFQAw%3D%3D",
     tornabodaTime: "12:00 PM",
     songSrc: "/music/boda2.mp3",
   };
@@ -741,6 +777,7 @@ export default function WeddingInvitationMobile() {
   });
   const [showDressIdeas, setShowDressIdeas] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
+  const [audioBlocked, setAudioBlocked] = useState(false);
   const [weddingRsvp, setWeddingRsvp] = useState<RSVPState>({
     name: "",
     lastName: "",
@@ -808,16 +845,57 @@ export default function WeddingInvitationMobile() {
     return () => clearInterval(interval);
   }, [wedding.countdownTarget]);
 
-  useEffect(() => {
+  const toggleAudio = async () => {
     const audio = document.getElementById("wedding-audio") as HTMLAudioElement | null;
     if (!audio) return;
 
     if (isPlaying) {
-      audio.play().catch(() => setIsPlaying(false));
-    } else {
       audio.pause();
+      setIsPlaying(false);
+      return;
     }
-  }, [isPlaying]);
+
+    try {
+      audio.volume = 0.85;
+      await audio.play();
+      setIsPlaying(true);
+      setAudioBlocked(false);
+    } catch {
+      setIsPlaying(false);
+      setAudioBlocked(true);
+    }
+  };
+
+  useEffect(() => {
+    const audio = document.getElementById("wedding-audio") as HTMLAudioElement | null;
+    if (!audio) return;
+
+    audio.volume = 0.85;
+
+    const tryAutoplay = async () => {
+      try {
+        await audio.play();
+        setIsPlaying(true);
+        setAudioBlocked(false);
+      } catch {
+        setIsPlaying(false);
+        setAudioBlocked(true);
+      }
+    };
+
+    const handlePause = () => setIsPlaying(false);
+    const handlePlay = () => setIsPlaying(true);
+
+    audio.addEventListener("pause", handlePause);
+    audio.addEventListener("play", handlePlay);
+
+    tryAutoplay();
+
+    return () => {
+      audio.removeEventListener("pause", handlePause);
+      audio.removeEventListener("play", handlePlay);
+    };
+  }, []);
 
   const weddingMessage = `Hola, confirmo mi asistencia a la boda.%0A%0ANombre: ${encodeURIComponent(
     weddingRsvp.name || ""
@@ -833,19 +911,7 @@ export default function WeddingInvitationMobile() {
 
   return (
     <main className="relative min-h-screen bg-[#F6F6F1] text-[#3F4B43]">
-      <audio id="wedding-audio" loop preload="none" src={wedding.songSrc} />
-
-      <div className="fixed inset-x-0 top-0 z-40 mx-auto flex w-full max-w-[430px] items-center justify-end px-4 pt-4 pointer-events-none">
-        <button
-          type="button"
-          onClick={() => setIsPlaying((v) => !v)}
-          className="pointer-events-auto inline-flex items-center gap-2 rounded-full border border-[#D8E3D3] bg-white/88 px-3.5 py-2 text-[11px] font-medium text-[#5E6D63] shadow-[0_10px_30px_rgba(143,165,141,0.12)] backdrop-blur-xl"
-        >
-          <Music2 size={14} />
-          {isPlaying ? <Pause size={14} /> : <Play size={14} />}
-          <span>{isPlaying ? "Pausar música" : "Reproducir música"}</span>
-        </button>
-      </div>
+      <audio id="wedding-audio" loop preload="auto" src={wedding.songSrc} />
 
       <div className="relative z-10 mx-auto w-full max-w-[430px] px-4 pb-12 pt-3">
         <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
@@ -855,7 +921,9 @@ export default function WeddingInvitationMobile() {
           <div className="absolute left-1/2 top-0 h-[30rem] w-[30rem] -translate-x-1/2 rounded-full bg-[#DCE8D9]/55 blur-3xl" />
           <div className="absolute -left-12 top-[15rem] h-80 w-80 rounded-full bg-[#E7F0E4]/55 blur-3xl" />
           <div className="absolute right-[-2rem] top-[22rem] h-72 w-72 rounded-full bg-[#EDF4EA]/65 blur-3xl" />
+          <div className="absolute left-1/2 top-[28rem] h-[34rem] w-[34rem] -translate-x-1/2 rounded-full bg-[#E5EFE2]/42 blur-3xl" />
           <div className="absolute left-1/2 top-[50rem] h-[24rem] w-[24rem] -translate-x-1/2 rounded-full bg-[#F5F7F2]/90 blur-3xl" />
+          <div className="absolute left-1/2 top-[112rem] h-[32rem] w-[32rem] -translate-x-1/2 rounded-full bg-[#E3EEE0]/34 blur-3xl" />
           <div className="absolute bottom-24 right-[-4rem] h-72 w-72 rounded-full bg-[#D8E8D7]/45 blur-3xl" />
           <div className="absolute left-[-2rem] bottom-[32rem] h-60 w-60 rounded-full bg-[#E3EFE0]/55 blur-3xl" />
 
@@ -912,6 +980,24 @@ export default function WeddingInvitationMobile() {
             </div>
           </div>
 
+          <div className="mt-4 flex justify-center">
+            <button
+              type="button"
+              onClick={toggleAudio}
+              className="inline-flex items-center gap-2 rounded-full border border-[#D8E3D3] bg-[linear-gradient(180deg,rgba(255,255,255,0.94),rgba(237,245,235,0.90))] px-5 py-3 text-[11px] font-medium uppercase tracking-[0.22em] text-[#5E6D63] shadow-[0_14px_28px_rgba(143,165,141,0.14)] backdrop-blur-xl"
+            >
+              <Music2 size={14} />
+              {isPlaying ? <Pause size={14} /> : <Play size={14} />}
+              <span>
+                {isPlaying
+                  ? "La música ya está sonando"
+                  : audioBlocked
+                  ? "Toca para reproducir música"
+                  : "Reproducir música"}
+              </span>
+            </button>
+          </div>
+
           <div className="relative mt-8">
             <HeroMonogramWatermark />
             <EditorialArch />
@@ -923,7 +1009,7 @@ export default function WeddingInvitationMobile() {
             <HeroStackedCarousel images={heroGallery} />
           </div>
 
-          <div className="mt-5 rounded-[30px] bg-[linear-gradient(180deg,rgba(255,255,255,0.84),rgba(248,251,247,0.68))] px-4 py-3 ring-1 ring-[#DCE7D8] shadow-[0_16px_38px_rgba(143,165,141,0.10)]">
+          <SoftCard className="mt-5">
             <div className="grid grid-cols-2 divide-x divide-[#D8E3D3]">
               <div className="px-3 py-2 text-center">
                 <p className="text-[10px] uppercase tracking-[0.24em] text-[#8A9A8C]">
@@ -942,9 +1028,9 @@ export default function WeddingInvitationMobile() {
                 </p>
               </div>
             </div>
-          </div>
+          </SoftCard>
 
-          <div className="mt-5 rounded-[34px] bg-white/74 px-5 py-5 ring-1 ring-[#DCE7D8] shadow-[0_18px_55px_rgba(143,165,141,0.12)] backdrop-blur-xl">
+          <SoftCard className="mt-5">
             <div className="flex items-center justify-center gap-3">
               <span className="h-px w-10 bg-gradient-to-r from-transparent to-[#A9BEA7]" />
               <div className="flex items-center gap-2 text-[#8FA58D]">
@@ -963,42 +1049,44 @@ export default function WeddingInvitationMobile() {
             <p className="mx-auto mt-3 max-w-sm text-sm leading-7 text-[#6F7C73]">
               {wedding.introText}
             </p>
-          </div>
+          </SoftCard>
         </section>
 
         <ElegantDivider />
 
         <section className="mt-4">
-          <SectionHeading
-            eyebrow="Cuenta regresiva"
-            title="Falta muy poco para el gran día"
-            subtitle={
-              timeLeft.ended
-                ? "Hoy celebramos juntos."
-                : "Nos emociona compartir este momento contigo."
-            }
-            icon={<Sparkles size={12} />}
-          />
+          <StageFrame>
+            <SectionHeading
+              eyebrow="Cuenta regresiva"
+              title="Falta muy poco para el gran día"
+              subtitle={
+                timeLeft.ended
+                  ? "Hoy celebramos juntos."
+                  : "Nos emociona compartir este momento contigo."
+              }
+              icon={<Sparkles size={12} />}
+            />
 
-          <div className="overflow-hidden rounded-[34px] bg-[linear-gradient(180deg,rgba(255,255,255,0.90),rgba(248,251,247,0.76))] px-3 py-3 ring-1 ring-[#DCE7D8] shadow-[0_18px_50px_rgba(143,165,141,0.10)]">
-            <div className="grid grid-cols-4 divide-x divide-[#D8E3D3]">
-              {[
-                { label: "Días", value: pad(timeLeft.days) },
-                { label: "Horas", value: pad(timeLeft.hours) },
-                { label: "Min", value: pad(timeLeft.minutes) },
-                { label: "Seg", value: pad(timeLeft.seconds) },
-              ].map((item) => (
-                <div key={item.label} className="px-2 py-4 text-center">
-                  <div className="text-[2rem] font-semibold leading-none text-[#435045]">
-                    {item.value}
+            <SoftCard className="p-3">
+              <div className="grid grid-cols-4 divide-x divide-[#D8E3D3]">
+                {[
+                  { label: "Días", value: pad(timeLeft.days) },
+                  { label: "Horas", value: pad(timeLeft.hours) },
+                  { label: "Min", value: pad(timeLeft.minutes) },
+                  { label: "Seg", value: pad(timeLeft.seconds) },
+                ].map((item) => (
+                  <div key={item.label} className="px-2 py-4 text-center">
+                    <div className="text-[2rem] font-semibold leading-none text-[#435045]">
+                      {item.value}
+                    </div>
+                    <div className="mt-3 text-[9px] uppercase tracking-[0.2em] text-[#8A9A8C]">
+                      {item.label}
+                    </div>
                   </div>
-                  <div className="mt-3 text-[9px] uppercase tracking-[0.2em] text-[#8A9A8C]">
-                    {item.label}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
+                ))}
+              </div>
+            </SoftCard>
+          </StageFrame>
         </section>
 
         <section className="relative mt-5">
@@ -1009,319 +1097,331 @@ export default function WeddingInvitationMobile() {
         </section>
 
         <section className="mt-5">
-          <SectionHeading
-            eyebrow="Hora"
-            title={wedding.ceremonyTimeLabel}
-            subtitle="Guárdalo en tu calendario para que no se te pase ningún detalle."
-            icon={<Clock3 size={12} />}
-          />
+          <StageFrame>
+            <SectionHeading
+              eyebrow="Hora"
+              title={wedding.ceremonyTimeLabel}
+              subtitle="Guárdalo en tu calendario para que no se te pase ningún detalle."
+              icon={<Clock3 size={12} />}
+            />
 
-          <div className="grid gap-3">
-            <a
-              href={weddingCalendarData.google}
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center justify-center gap-2 rounded-[18px] bg-[#9FB79D] px-4 py-3.5 text-sm font-semibold text-[#FBFBF7] shadow-[0_14px_30px_rgba(143,165,141,0.18)] transition hover:translate-y-[-1px] hover:bg-[#8DA88B] active:translate-y-0"
-            >
-              <CalendarDays size={16} />
-              Agregar a Google Calendar
-            </a>
+            <div className="grid gap-3">
+              <a
+                href={weddingCalendarData.google}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center justify-center gap-2 rounded-[18px] border border-[#95AF93]/25 bg-[#9FB79D] px-4 py-3.5 text-sm font-semibold text-[#FBFBF7] shadow-[0_14px_30px_rgba(143,165,141,0.18)] transition duration-200 hover:-translate-y-[1px] hover:bg-[#8DA88B] active:translate-y-0"
+              >
+                <CalendarDays size={16} />
+                Agregar a Google Calendar
+              </a>
 
-            <button
-              type="button"
-              onClick={() =>
-                downloadIcs("boda-lily-santiago.ics", weddingCalendarData.ics)
-              }
-              className="inline-flex items-center justify-center gap-2 rounded-[18px] border border-[#D8E3D3] bg-white/88 px-4 py-3.5 text-sm font-medium text-[#5D6B61] shadow-[0_10px_22px_rgba(143,165,141,0.10)] transition hover:bg-white"
-            >
-              Guardar en mi calendario
-            </button>
-          </div>
+              <button
+                type="button"
+                onClick={() =>
+                  downloadIcs("boda-lily-santiago.ics", weddingCalendarData.ics)
+                }
+                className="inline-flex items-center justify-center gap-2 rounded-[18px] border border-[#D8E3D3] bg-white/90 px-4 py-3.5 text-sm font-medium text-[#5D6B61] shadow-[0_10px_22px_rgba(143,165,141,0.10)] transition duration-200 hover:bg-white"
+              >
+                Guardar en mi calendario
+              </button>
+            </div>
+          </StageFrame>
         </section>
 
         <ElegantDivider />
 
         <section className="mt-4">
-          <SectionHeading
-            eyebrow="Ubicación"
-            title={wedding.venue}
-            subtitle={wedding.address}
-            icon={<MapPin size={12} />}
-          />
+          <StageFrame>
+            <SectionHeading
+              eyebrow="Ubicación"
+              title={wedding.venue}
+              subtitle={wedding.address}
+              icon={<MapPin size={12} />}
+            />
 
-          <div className="space-y-4">
-            <div className="rounded-[28px] bg-[linear-gradient(180deg,rgba(255,255,255,0.82),rgba(248,251,247,0.64))] px-4 py-4 ring-1 ring-[#DCE7D8]/90 shadow-[0_16px_38px_rgba(143,165,141,0.10)]">
-              <p className="text-sm font-semibold text-[#435045]">
-                Información importante
-              </p>
-              <p className="mt-2 text-[15px] leading-7 text-[#6A786E]">
-                Con mucho cariño, queremos que este día sea una celebración para
-                adultos, por lo que la fiesta está pensada para
-                mayores de 15 años. Gracias por comprender y acompañarnos.
-              </p>
+            <div className="space-y-4">
+              <SoftCard>
+                <p className="text-sm font-semibold text-[#435045]">
+                  Información importante
+                </p>
+                <p className="mt-2 text-[15px] leading-7 text-[#6A786E]">
+                  Con mucho cariño, queremos que este día sea una celebración para
+                  adultos, por lo que la fiesta está pensada para mayores de 15
+                  años. Gracias por comprender y acompañarnos.
+                </p>
+              </SoftCard>
+
+              <InvitationImage
+                src="/invitacion/fotoSalon.jpeg"
+                alt="Foto exterior del salón Palazzio"
+              />
+
+              <div className="overflow-hidden rounded-[32px] border border-[#D8E3D3] bg-white/90 shadow-[0_16px_40px_rgba(143,165,141,0.10)] ring-1 ring-white/60">
+                <iframe
+                  title="Mapa del salón"
+                  src={`https://www.google.com/maps?q=${encodeURIComponent(
+                    `${wedding.venue}, ${wedding.address}`
+                  )}&output=embed`}
+                  className="h-64 w-full"
+                  loading="lazy"
+                />
+              </div>
+
+              <a
+                href={wedding.mapsUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center justify-center gap-2 rounded-[18px] border border-[#95AF93]/25 bg-[#9FB79D] px-4 py-3.5 text-sm font-semibold text-[#FBFBF7] shadow-[0_14px_30px_rgba(143,165,141,0.18)] transition duration-200 hover:-translate-y-[1px] hover:bg-[#8DA88B] active:translate-y-0"
+              >
+                <MapPin size={16} />
+                Abrir ubicación en Maps
+              </a>
             </div>
+          </StageFrame>
+        </section>
+
+        <ElegantDivider />
+
+        <section className="mt-4">
+          <StageFrame>
+            <SectionHeading
+              eyebrow="Dress code"
+              title="Elegante clásico con toque minimalista"
+              subtitle="Queremos que te sientas increíble y en armonía con la celebración."
+              icon={<Shirt size={12} />}
+            />
+
+            <SoftCard>
+              <div className="flex items-center justify-between gap-3">
+                <p className="text-sm font-medium text-[#435045]">
+                  Tonos sugeridos para vestidos
+                </p>
+                <div className="inline-flex items-center gap-1 text-[10px] uppercase tracking-[0.18em] text-[#8A9A8C]">
+                  <span>Desliza</span>
+                  <ChevronRight size={13} />
+                </div>
+              </div>
+
+              <div className="relative mt-4">
+                <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-6 bg-gradient-to-r from-[#FAFCF8] to-transparent" />
+                <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-6 bg-gradient-to-l from-[#FAFCF8] to-transparent" />
+
+                <div className="flex snap-x snap-mandatory gap-3 overflow-x-auto pb-2 pr-4 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
+                  {womenPalette.map((tone) => (
+                    <div
+                      key={tone.name}
+                      className="min-w-[112px] snap-start rounded-[22px] border border-[#DCE7D8] bg-white/94 p-3 text-center shadow-[0_8px_20px_rgba(143,165,141,0.08)]"
+                    >
+                      <div
+                        className="mx-auto h-12 w-12 rounded-full border border-white/70"
+                        style={{ backgroundColor: tone.hex }}
+                      />
+                      <p className="mt-2 text-[11px] leading-4 text-[#6F7C73]">
+                        {tone.name}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <p className="mt-3 text-sm text-[#7F8E84]">No rojo · No blanco</p>
+            </SoftCard>
+
+            <div className="mt-4 grid gap-3">
+              <div className="grid grid-cols-2 gap-3">
+                <InvitationImage
+                  src="/invitacion/hombre-traje1.webp"
+                  alt="Referencia de traje formal para hombre"
+                />
+                <InvitationImage
+                  src="/invitacion/hombre-vaquero-1.jpeg"
+                  alt="Referencia de traje vaquero formal para hombre"
+                />
+              </div>
+
+              <SoftCard>
+                <ul className="space-y-2 text-sm leading-6 text-[#6A786E]">
+                  {dressRules.map((rule) => (
+                    <li key={rule}>• {rule}</li>
+                  ))}
+                </ul>
+              </SoftCard>
+
+              <button
+                type="button"
+                onClick={() => setShowDressIdeas(true)}
+                className="inline-flex items-center justify-center gap-2 rounded-[18px] border border-[#D8E3D3] bg-white/90 px-4 py-3.5 text-sm font-medium text-[#5D6B61] shadow-[0_10px_22px_rgba(143,165,141,0.10)] transition duration-200 hover:bg-white"
+              >
+                Consultar más ideas
+              </button>
+            </div>
+          </StageFrame>
+        </section>
+
+        <ElegantDivider />
+
+        <section className="mt-4">
+          <StageFrame>
+            <SectionHeading
+              eyebrow="Buzón de dinero"
+              title="Tu presencia es lo más importante"
+              subtitle={wedding.moneyBoxText}
+              icon={<Gift size={12} />}
+            />
 
             <InvitationImage
-              src="/invitacion/fotoSalon.jpeg"
-              alt="Foto exterior del salón Palazzio"
+              src="/invitacion/buzonDeDinero.jpg"
+              alt="Buzón de dinero"
+            />
+          </StageFrame>
+        </section>
+
+        <ElegantDivider />
+
+        <section className="mt-4">
+          <StageFrame>
+            <SectionHeading
+              eyebrow="Confirmación"
+              title="Confirma tu asistencia a la boda"
+              subtitle="Tu registro será agregado a la lista de acceso."
+              icon={<Users size={12} />}
             />
 
-            <div className="overflow-hidden rounded-[32px] border border-[#D8E3D3] bg-white/90 shadow-[0_16px_40px_rgba(143,165,141,0.10)]">
-              <iframe
-                title="Mapa del salón"
-                src={`https://www.google.com/maps?q=${encodeURIComponent(
-                  `${wedding.venue}, ${wedding.address}`
-                )}&output=embed`}
-                className="h-64 w-full"
-                loading="lazy"
-              />
-            </div>
-
-            <a
-              href={wedding.mapsUrl}
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center justify-center gap-2 rounded-[18px] bg-[#9FB79D] px-4 py-3.5 text-sm font-semibold text-[#FBFBF7] shadow-[0_14px_30px_rgba(143,165,141,0.18)] transition hover:translate-y-[-1px] hover:bg-[#8DA88B] active:translate-y-0"
-            >
-              <MapPin size={16} />
-              Abrir ubicación en Maps
-            </a>
-          </div>
-        </section>
-
-        <ElegantDivider />
-
-        <section className="mt-4">
-          <SectionHeading
-            eyebrow="Dress code"
-            title="Elegante clásico con toque minimalista"
-            subtitle="Queremos que te sientas increíble y en armonía con la celebración."
-            icon={<Shirt size={12} />}
-          />
-
-          <div className="rounded-[32px] bg-[linear-gradient(180deg,rgba(255,255,255,0.90),rgba(248,251,247,0.82))] p-4 ring-1 ring-[#DCE7D8] shadow-[0_14px_35px_rgba(143,165,141,0.08)]">
-            <div className="flex items-center justify-between gap-3">
-              <p className="text-sm font-medium text-[#435045]">
-                Tonos sugeridos para vestidos
-              </p>
-              <div className="inline-flex items-center gap-1 text-[10px] uppercase tracking-[0.18em] text-[#8A9A8C]">
-                <span>Desliza</span>
-                <ChevronRight size={13} />
+            <div className="relative mb-5 overflow-hidden rounded-[32px] border border-[#DCE7D8] bg-[linear-gradient(180deg,rgba(255,255,255,0.92),rgba(241,247,239,0.88))] p-5 shadow-[0_18px_42px_rgba(143,165,141,0.14)] ring-1 ring-white/60">
+              <div className="absolute inset-y-0 left-0 w-1.5 bg-[#9FB79D]" />
+              <div className="absolute -right-10 -top-10 h-32 w-32 rounded-full bg-[#DCE8D9]/55 blur-2xl" />
+              <div className="absolute right-4 top-4 opacity-20">
+                <Sparkles size={28} className="text-[#7F9680]" />
               </div>
-            </div>
 
-            <div className="relative mt-4">
-              <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-6 bg-gradient-to-r from-[#F8FBF7] to-transparent" />
-              <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-6 bg-gradient-to-l from-[#F8FBF7] to-transparent" />
+              <div className="relative">
+                <div className="inline-flex items-center gap-2 rounded-full border border-[#D8E3D3] bg-white/75 px-3 py-1.5 text-[10px] uppercase tracking-[0.26em] text-[#70806F]">
+                  <Sparkles size={12} />
+                  <span>Importante</span>
+                </div>
 
-              <div className="flex snap-x snap-mandatory gap-3 overflow-x-auto pb-2 pr-4 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
-                {womenPalette.map((tone) => (
-                  <div
-                    key={tone.name}
-                    className="min-w-[112px] snap-start rounded-[22px] bg-white/92 p-3 text-center ring-1 ring-[#DCE7D8] shadow-[0_8px_20px_rgba(143,165,141,0.08)]"
-                  >
-                    <div
-                      className="mx-auto h-12 w-12 rounded-full border border-white/70"
-                      style={{ backgroundColor: tone.hex }}
-                    />
-                    <p className="mt-2 text-[11px] leading-4 text-[#6F7C73]">
-                      {tone.name}
-                    </p>
+                <p className="mt-4 text-base font-semibold leading-7 text-[#435045]">
+                  Favor de confirmar por persona, no por familia.
+                </p>
+
+                <div className="mt-4 grid gap-2">
+                  <div className="flex items-start gap-2 text-sm text-[#617066]">
+                    <span className="mt-1 h-2 w-2 rounded-full bg-[#9FB79D]" />
+                    <span>Confirmación individual por invitado.</span>
                   </div>
-                ))}
-              </div>
-            </div>
-
-            <p className="mt-3 text-sm text-[#7F8E84]">No rojo · No blanco</p>
-          </div>
-
-          <div className="mt-4 grid gap-3">
-            <div className="grid grid-cols-2 gap-3">
-              <InvitationImage
-                src="/invitacion/hombre-traje1.webp"
-                alt="Referencia de traje formal para hombre"
-              />
-              <InvitationImage
-                src="/invitacion/hombre-vaquero-1.jpeg"
-                alt="Referencia de traje vaquero formal para hombre"
-              />
-            </div>
-
-            <div className="rounded-[28px] bg-[linear-gradient(180deg,rgba(255,255,255,0.82),rgba(248,251,247,0.64))] px-4 py-4 ring-1 ring-[#DCE7D8]/90 shadow-[0_16px_38px_rgba(143,165,141,0.10)]">
-              <ul className="space-y-2 text-sm leading-6 text-[#6A786E]">
-                {dressRules.map((rule) => (
-                  <li key={rule}>• {rule}</li>
-                ))}
-              </ul>
-            </div>
-
-            <button
-              type="button"
-              onClick={() => setShowDressIdeas(true)}
-              className="inline-flex items-center justify-center gap-2 rounded-[18px] border border-[#D8E3D3] bg-white/88 px-4 py-3.5 text-sm font-medium text-[#5D6B61] shadow-[0_10px_22px_rgba(143,165,141,0.10)] transition hover:bg-white"
-            >
-              Consultar más ideas
-            </button>
-          </div>
-        </section>
-
-        <ElegantDivider />
-
-        <section className="mt-4">
-          <SectionHeading
-            eyebrow="Buzón de dinero"
-            title="Tu presencia es lo más importante"
-            subtitle={wedding.moneyBoxText}
-            icon={<Gift size={12} />}
-          />
-
-          <InvitationImage
-            src="/invitacion/buzonDeDinero.jpg"
-            alt="Buzón de dinero"
-          />
-        </section>
-
-        <ElegantDivider />
-
-        <section className="mt-4">
-          <SectionHeading
-            eyebrow="Confirmación"
-            title="Confirma tu asistencia a la boda"
-            subtitle="Tu registro será agregado a la lista de acceso."
-            icon={<Users size={12} />}
-          />
-
-          <div className="relative mb-5 overflow-hidden rounded-[32px] border border-[#DCE7D8] bg-[linear-gradient(180deg,rgba(255,255,255,0.92),rgba(241,247,239,0.88))] p-5 shadow-[0_18px_42px_rgba(143,165,141,0.14)]">
-            <div className="absolute inset-y-0 left-0 w-1.5 bg-[#9FB79D]" />
-            <div className="absolute -right-10 -top-10 h-32 w-32 rounded-full bg-[#DCE8D9]/55 blur-2xl" />
-            <div className="absolute right-4 top-4 opacity-20">
-              <Sparkles size={28} className="text-[#7F9680]" />
-            </div>
-
-            <div className="relative">
-              <div className="inline-flex items-center gap-2 rounded-full border border-[#D8E3D3] bg-white/75 px-3 py-1.5 text-[10px] uppercase tracking-[0.26em] text-[#70806F]">
-                <Sparkles size={12} />
-                <span>Importante</span>
-              </div>
-
-              <p className="mt-4 text-base font-semibold leading-7 text-[#435045]">
-                Favor de confirmar por persona, no por familia.
-              </p>
-
-              
-
-              <div className="mt-4 grid gap-2">
-                <div className="flex items-start gap-2 text-sm text-[#617066]">
-                  <span className="mt-1 h-2 w-2 rounded-full bg-[#9FB79D]" />
-                  <span>Confirmación individual por invitado.</span>
-                </div>
-                <div className="flex items-start gap-2 text-sm text-[#617066]">
-                  <span className="mt-1 h-2 w-2 rounded-full bg-[#9FB79D]" />
-                  <span>Acceso para invitados mayores de 15 años.</span>
+                  <div className="flex items-start gap-2 text-sm text-[#617066]">
+                    <span className="mt-1 h-2 w-2 rounded-full bg-[#9FB79D]" />
+                    <span>Acceso para invitados mayores de 15 años.</span>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          <RSVPForm
-            title="Datos del invitado"
-            note="Completa tu información para registrar correctamente tu acceso."
-            state={weddingRsvp}
-            setState={setWeddingRsvp}
-            buttonLabel="Confirmo que asistiré"
-            href={`https://wa.me/${wedding.weddingWhatsapp.replace(
-              /\D/g,
-              ""
-            )}?text=${weddingMessage}`}
-          />
-        </section>
-
-        <ElegantDivider />
-
-        <section className="mt-4">
-          <SectionHeading
-            eyebrow="Tornaboda"
-            title="Y que la celebración continúe..."
-            subtitle="Acompáñanos a nuestra tornaboda para seguir compartiendo este momento tan especial juntos."
-            icon={<Sparkles size={12} />}
-          />
-
-          <div className="space-y-3">
-            <div className="rounded-[28px] bg-[linear-gradient(180deg,rgba(255,255,255,0.82),rgba(248,251,247,0.64))] px-4 py-4 ring-1 ring-[#DCE7D8]/90 shadow-[0_16px_38px_rgba(143,165,141,0.10)]">
-              <p className="text-lg font-medium text-[#435045]">
-                {wedding.tornabodaTime} · {wedding.tornabodaLocation}
-              </p>
-              <p className="mt-2 text-sm leading-6 text-[#6F7C73]">
-                Solo lleva tu bebida favorita.
-              </p>
-            </div>
-
-            <div className="rounded-[28px] bg-[linear-gradient(180deg,rgba(255,255,255,0.82),rgba(248,251,247,0.64))] px-4 py-4 ring-1 ring-[#DCE7D8]/90 shadow-[0_16px_38px_rgba(143,165,141,0.10)]">
-              <p className="text-sm font-semibold text-[#435045]">
-                Evento familiar
-              </p>
-              <p className="mt-2 text-sm leading-6 text-[#6F7C73]">
-                En la tornaboda se aceptan invitados de todas las edades.
-              </p>
-            </div>
-          </div>
-
-          <div className="mt-4">
             <RSVPForm
               title="Datos del invitado"
-              note="Completa tu información para registrar correctamente tu acceso a la tornaboda."
-              state={afterRsvp}
-              setState={setAfterRsvp}
-              buttonLabel="Confirmar asistencia a la tornaboda"
-              href={`https://wa.me/${wedding.tornabodaWhatsapp.replace(
+              note="Completa tu información para registrar correctamente tu acceso."
+              state={weddingRsvp}
+              setState={setWeddingRsvp}
+              buttonLabel="Confirmo que asistiré"
+              href={`https://wa.me/${wedding.weddingWhatsapp.replace(
                 /\D/g,
                 ""
-              )}?text=${afterMessage}`}
+              )}?text=${weddingMessage}`}
             />
-          </div>
-
-          <div className="mt-4 rounded-[30px] bg-[linear-gradient(180deg,rgba(255,255,255,0.82),rgba(248,251,247,0.64))] px-4 py-4 ring-1 ring-[#DCE7D8]/90 shadow-[0_16px_38px_rgba(143,165,141,0.10)]">
-            <p className="text-sm font-medium text-[#435045]">
-              Ubicación de la tornaboda
-            </p>
-            <p className="mt-2 text-sm leading-6 text-[#6F7C73]">
-              {wedding.tornabodaAddress}
-            </p>
-
-            <div className="mt-4 overflow-hidden rounded-[30px] border border-[#D8E3D3] bg-white/90 shadow-[0_16px_40px_rgba(143,165,141,0.10)]">
-              <iframe
-                title="Mapa de la tornaboda"
-                src={`https://www.google.com/maps?q=${encodeURIComponent(
-                  wedding.tornabodaAddress
-                )}&output=embed`}
-                className="h-64 w-full"
-                loading="lazy"
-              />
-            </div>
-
-            <a
-              href={wedding.tornabodaMapsUrl}
-              target="_blank"
-              rel="noreferrer"
-              className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-[18px] bg-[#9FB79D] px-4 py-3.5 text-sm font-semibold text-[#FBFBF7] shadow-[0_14px_30px_rgba(143,165,141,0.18)] transition hover:translate-y-[-1px] hover:bg-[#8DA88B] active:translate-y-0"
-            >
-              <MapPin size={16} />
-              Abrir ubicación de la tornaboda
-            </a>
-          </div>
+          </StageFrame>
         </section>
 
         <ElegantDivider />
 
         <section className="mt-4">
-          <SectionHeading
-            eyebrow="Nuestra sesión"
-            title="Un pequeño vistazo de nosotros"
-            subtitle="Desliza y descubre algunos de nuestros momentos favoritos."
-            icon={<Heart size={12} />}
-          />
+          <StageFrame>
+            <SectionHeading
+              eyebrow="Tornaboda"
+              title="Y que la celebración continúe..."
+              subtitle="Acompáñanos a nuestra tornaboda para seguir compartiendo este momento tan especial juntos."
+              icon={<Sparkles size={12} />}
+            />
 
-          <PremiumGalleryCarousel images={sessionGallery} />
+            <div className="space-y-3">
+              <SoftCard>
+                <p className="text-lg font-medium text-[#435045]">
+                  {wedding.tornabodaTime} · {wedding.tornabodaLocation}
+                </p>
+                <p className="mt-2 text-sm leading-6 text-[#6F7C73]">
+                  Solo lleva tu bebida favorita.
+                </p>
+              </SoftCard>
+
+              <SoftCard>
+                <p className="text-sm font-semibold text-[#435045]">
+                  Evento familiar
+                </p>
+                <p className="mt-2 text-sm leading-6 text-[#6F7C73]">
+                  En la tornaboda se aceptan invitados de todas las edades.
+                </p>
+              </SoftCard>
+            </div>
+
+            <div className="mt-4">
+              <RSVPForm
+                title="Datos del invitado"
+                note="Completa tu información para registrar correctamente tu acceso a la tornaboda."
+                state={afterRsvp}
+                setState={setAfterRsvp}
+                buttonLabel="Confirmar asistencia a la tornaboda"
+                href={`https://wa.me/${wedding.tornabodaWhatsapp.replace(
+                  /\D/g,
+                  ""
+                )}?text=${afterMessage}`}
+              />
+            </div>
+
+            <SoftCard className="mt-4">
+              <p className="text-sm font-medium text-[#435045]">
+                Ubicación de la tornaboda
+              </p>
+              <p className="mt-2 text-sm leading-6 text-[#6F7C73]">
+                {wedding.tornabodaAddress}
+              </p>
+
+              <div className="mt-4 overflow-hidden rounded-[30px] border border-[#D8E3D3] bg-white/90 shadow-[0_16px_40px_rgba(143,165,141,0.10)] ring-1 ring-white/60">
+                <iframe
+                  title="Mapa de la tornaboda"
+                  src={`https://www.google.com/maps?q=${encodeURIComponent(
+                    wedding.tornabodaAddress
+                  )}&output=embed`}
+                  className="h-64 w-full"
+                  loading="lazy"
+                />
+              </div>
+
+              <a
+                href={wedding.tornabodaMapsUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-[18px] border border-[#95AF93]/25 bg-[#9FB79D] px-4 py-3.5 text-sm font-semibold text-[#FBFBF7] shadow-[0_14px_30px_rgba(143,165,141,0.18)] transition duration-200 hover:-translate-y-[1px] hover:bg-[#8DA88B] active:translate-y-0"
+              >
+                <MapPin size={16} />
+                Abrir ubicación de la tornaboda
+              </a>
+            </SoftCard>
+          </StageFrame>
+        </section>
+
+        <ElegantDivider />
+
+        <section className="mt-4">
+          <StageFrame>
+            <SectionHeading
+              eyebrow="Nuestra sesión"
+              title="Un pequeño vistazo de nosotros"
+              subtitle="Desliza y descubre algunos de nuestros momentos favoritos."
+              icon={<Heart size={12} />}
+            />
+
+            <PremiumGalleryCarousel images={sessionGallery} />
+          </StageFrame>
         </section>
 
         <footer className="relative px-4 pb-10 pt-10 text-center">
@@ -1358,7 +1458,7 @@ export default function WeddingInvitationMobile() {
               {ideas.map((idea) => (
                 <div
                   key={idea.text}
-                  className="rounded-[28px] bg-white/80 p-4 ring-1 ring-[#DCE7D8] shadow-[0_10px_24px_rgba(143,165,141,0.08)]"
+                  className="rounded-[28px] border border-[#DCE7D8] bg-white/84 p-4 shadow-[0_10px_24px_rgba(143,165,141,0.08)] ring-1 ring-white/60"
                 >
                   <InvitationImage src={idea.src} alt={idea.text} />
                   <p className="mt-3 text-sm leading-6 text-[#6A786E]">
