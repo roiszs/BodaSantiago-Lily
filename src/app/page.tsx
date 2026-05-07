@@ -641,7 +641,7 @@ export default function WeddingInvitationMobile() {
     tornabodaLocation: "Samalayuca",
     tornabodaAddress: "Galeana, 32730 Samalayuca, Chih.",
     tornabodaMapsUrl:
-      "https://www.google.com/maps/search/?api=1&query=" +
+      "https://www.google.com/maps/place/Jard%C3%ADn+de+Eventos+Samalayuca/@31.3508856,-106.4811442,17z/data=!4m22!1m15!4m14!1m6!1m2!1s0x86e77fafe090cd85:0x4b18b7e218e90841!2sJard%C3%ADn+de+Eventos+Samalayuca,+Galeana,+32730+Samalayuca,+Chih.!2m2!1d-106.4785693!2d31.3508856!1m6!1m2!1s0x86e77fafe090cd85:0x4b18b7e218e90841!2sJard%C3%ADn+de+Eventos+Samalayuca,+Galeana,+32730+Samalayuca,+Chih.!2m2!1d-106.4785693!2d31.3508856!3m5!1s0x86e77fafe090cd85:0x4b18b7e218e90841!8m2!3d31.3508856!4d-106.4785693!16s%2Fg%2F11p0y67y4m?entry=ttu&g_ep=EgoyMDI2MDUwMi4wIKXMDSoASAFQAw%3D%3D" +
       encodeURIComponent("Galeana, 32730 Samalayuca, Chihuahua"),
     tornabodaTime: "12:00 PM",
     songSrc: "/music/boda2.mp3",
