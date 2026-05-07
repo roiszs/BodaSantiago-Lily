@@ -463,10 +463,10 @@ function HeroStackedCarousel({
   );
 }
 
-function PremiumGalleryCarousel({
+function YearsGalleryCarousel({
   images,
 }: {
-  images: { src: string; alt: string }[];
+  images: { year: string; src: string; alt: string }[];
 }) {
   const [activeIndex, setActiveIndex] = useState(0);
 
@@ -475,7 +475,7 @@ function PremiumGalleryCarousel({
 
     const interval = setInterval(() => {
       setActiveIndex((current) => (current + 1) % images.length);
-    }, 4600);
+    }, 5000);
 
     return () => clearInterval(interval);
   }, [images.length]);
@@ -489,11 +489,11 @@ function PremiumGalleryCarousel({
   };
 
   return (
-    <div className="rounded-[36px] bg-[linear-gradient(180deg,rgba(255,255,255,0.90),rgba(248,251,247,0.78))] p-3 ring-1 ring-[#DCE7D8] shadow-[0_20px_54px_rgba(143,165,141,0.12)]">
-      <div className="relative overflow-hidden rounded-[32px] border border-[#D8E3D3] bg-white/82">
+    <div className="rounded-[36px] border border-[#D5E2D2] bg-[linear-gradient(180deg,rgba(236,245,234,0.95),rgba(247,250,245,0.92))] p-3 shadow-[0_22px_56px_rgba(143,165,141,0.12)] ring-1 ring-white/70">
+      <div className="relative overflow-hidden rounded-[32px] border border-[#D8E3D3] bg-white/86">
         <div className="pointer-events-none absolute inset-x-8 top-4 z-10 h-[88%] rounded-t-[999px] border border-white/35" />
 
-        <div className="relative h-[25rem]">
+        <div className="relative h-[29rem]">
           <Image
             src={images[activeIndex].src}
             alt={images[activeIndex].alt}
@@ -501,83 +501,111 @@ function PremiumGalleryCarousel({
             className="object-cover"
             sizes="(max-width: 768px) 100vw, 430px"
           />
-          <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(34,48,38,0.34),rgba(34,48,38,0.08),transparent_58%)]" />
 
-          <div className="absolute left-4 top-4 rounded-full border border-white/45 bg-white/18 px-3 py-1.5 text-[10px] uppercase tracking-[0.24em] text-white backdrop-blur-md">
-            Sesión editorial
+          <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(24,34,27,0.42),rgba(24,34,27,0.08),transparent_58%)]" />
+
+          {/* etiqueta superior izquierda */}
+          <div className="absolute left-4 top-4 rounded-full border border-white/45 bg-white/18 px-4 py-2 text-[10px] uppercase tracking-[0.26em] text-white backdrop-blur-md">
+            El pasar de los años
           </div>
 
-          <div className="absolute right-4 top-4 rounded-full border border-white/45 bg-white/18 px-3 py-1.5 text-[10px] uppercase tracking-[0.22em] text-white backdrop-blur-md">
+          {/* contador superior derecho */}
+          <div className="absolute right-4 top-4 rounded-full border border-white/45 bg-white/18 px-4 py-2 text-[10px] uppercase tracking-[0.22em] text-white backdrop-blur-md">
             {String(activeIndex + 1).padStart(2, "0")} /{" "}
             {String(images.length).padStart(2, "0")}
           </div>
 
-          <div className="absolute bottom-4 left-4 right-4 flex items-end justify-between gap-4">
-            <div className="max-w-[68%] rounded-[22px] border border-white/35 bg-white/14 px-4 py-3 text-left backdrop-blur-md">
-              <p className="text-[10px] uppercase tracking-[0.24em] text-white/85">
-                Lily & Santiago
+          {/* año inferior izquierdo */}
+          <div className="absolute bottom-4 left-4">
+            <div className="rounded-[22px] border border-white/35 bg-white/14 px-5 py-4 backdrop-blur-md shadow-[0_10px_28px_rgba(0,0,0,0.12)]">
+              <p className="text-[10px] uppercase tracking-[0.24em] text-white/78">
+                Año
               </p>
-              <p className="mt-2 text-sm leading-6 text-white/95">
-                Un pequeño recorrido por algunos instantes que quedarán para
-                siempre con nosotros.
+              <p className="mt-2 text-[2rem] font-semibold leading-none text-white">
+                {images[activeIndex].year}
               </p>
             </div>
+          </div>
 
-            <div className="flex items-center gap-2">
-              <button
-                type="button"
-                onClick={prev}
-                className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/45 bg-white/18 text-white backdrop-blur-md"
-                aria-label="Foto anterior"
-              >
-                <ChevronLeft size={18} />
-              </button>
-              <button
-                type="button"
-                onClick={next}
-                className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/45 bg-white/18 text-white backdrop-blur-md"
-                aria-label="Siguiente foto"
-              >
-                <ChevronRight size={18} />
-              </button>
-            </div>
+          {/* flechas inferiores derechas */}
+          <div className="absolute bottom-4 right-4 flex items-center gap-2">
+            <button
+              type="button"
+              onClick={prev}
+              className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/45 bg-white/18 text-white backdrop-blur-md"
+              aria-label="Foto anterior"
+            >
+              <ChevronLeft size={18} />
+            </button>
+            <button
+              type="button"
+              onClick={next}
+              className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/45 bg-white/18 text-white backdrop-blur-md"
+              aria-label="Siguiente foto"
+            >
+              <ChevronRight size={18} />
+            </button>
           </div>
         </div>
       </div>
 
-      <div className="mt-3 flex gap-2 overflow-x-auto pb-1 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
-        {images.map((image, index) => (
-          <button
-            key={image.src}
-            type="button"
-            onClick={() => setActiveIndex(index)}
-            className={`relative h-20 min-w-[78px] overflow-hidden rounded-[18px] border transition ${
-              activeIndex === index
-                ? "scale-[1.03] border-[#9FB79D] shadow-[0_10px_24px_rgba(143,165,141,0.16)]"
-                : "border-[#D8E3D3] opacity-75"
-            }`}
-            aria-label={`Seleccionar foto ${index + 1}`}
-          >
-            <Image
-              src={image.src}
-              alt={image.alt}
-              fill
-              className="object-cover"
-              sizes="78px"
-            />
-            <div
-              className={`absolute inset-0 ${
+      <div className="mt-4">
+        <div className="mb-3 flex items-center justify-between">
+          <p className="text-[10px] uppercase tracking-[0.24em] text-[#7F8F81]">
+            Nuestra historia
+          </p>
+          <p className="text-[10px] uppercase tracking-[0.24em] text-[#8FA18F]">
+            Desliza o toca un año
+          </p>
+        </div>
+
+        <div className="flex gap-2 overflow-x-auto pb-1 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
+          {images.map((image, index) => (
+            <button
+              key={image.year}
+              type="button"
+              onClick={() => setActiveIndex(index)}
+              className={`relative min-w-[88px] overflow-hidden rounded-[22px] border p-1.5 transition ${
                 activeIndex === index
-                  ? "bg-[linear-gradient(to_top,rgba(67,80,69,0.12),transparent)]"
-                  : "bg-black/10"
+                  ? "border-[#A1B89F] bg-white shadow-[0_12px_26px_rgba(143,165,141,0.16)]"
+                  : "border-[#D8E3D3] bg-white/70"
               }`}
-            />
-          </button>
-        ))}
+              aria-label={`Seleccionar año ${image.year}`}
+            >
+              <div className="relative h-24 w-full overflow-hidden rounded-[16px]">
+                <Image
+                  src={image.src}
+                  alt={image.alt}
+                  fill
+                  className="object-cover"
+                  sizes="88px"
+                />
+                <div
+                  className={`absolute inset-0 ${
+                    activeIndex === index
+                      ? "bg-[linear-gradient(to_top,rgba(67,80,69,0.16),transparent)]"
+                      : "bg-black/10"
+                  }`}
+                />
+              </div>
+
+              <div className="px-1 pb-1 pt-2 text-center">
+                <p
+                  className={`text-xs font-medium ${
+                    activeIndex === index ? "text-[#49584B]" : "text-[#7A877C]"
+                  }`}
+                >
+                  {image.year}
+                </p>
+              </div>
+            </button>
+          ))}
+        </div>
       </div>
     </div>
   );
 }
+
 
 function RSVPForm({
   title,
@@ -668,7 +696,7 @@ export default function WeddingInvitationMobile() {
         "Salón Palazzio, Av. Prof. R. Rivera Lara 6031, Parques Industriales, 32625 Juárez, Chihuahua"
       ),
     galleryClosingQuote:
-      "Mejores son dos que uno... porque si caen, el uno levanta al otro. - — Eclesiastés 4:9-10",
+      "Eclesiastés 4:9 Es mejor ser dos que uno, porque ambos pueden ayudarse mutuamente a lograr el éxito.",
     introText:
       'Te invitamos a ser parte de este día tan especial mientras celebramos el amor, la unión y el inicio de nuestro "Felices para siempre", rodeados de las personas que más significan para nosotros.',
     moneyBoxText:
@@ -741,30 +769,54 @@ export default function WeddingInvitationMobile() {
     },
     {
       src: "/invitacion/foto1.jpeg",
-      alt: "Foto de sesión de Lily y Santiago 1",
+      alt: "Foto de Lily y Santiago",
     },
     {
       src: "/invitacion/foto2.jpeg",
-      alt: "Foto de sesión de Lily y Santiago 2",
+      alt: "Foto de Lily y Santiago",
     },
   ];
 
   const sessionGallery = [
     {
-      src: "/invitacion/foto1.jpeg",
-      alt: "Foto de sesión 1 de Lily y Santiago",
+      year: "2019",
+      src: "/invitacion/2019.jpeg",
+      alt: "Foto de Lily y Santiago del año 2019",
     },
     {
-      src: "/invitacion/foto2.jpeg",
-      alt: "Foto de sesión 2 de Lily y Santiago",
+      year: "2020",
+      src: "/invitacion/2020.jpeg",
+      alt: "Foto de Lily y Santiago del año 2020",
     },
     {
-      src: "/invitacion/foto3.jpeg",
-      alt: "Foto de sesión 3 de Lily y Santiago",
+      year: "2021",
+      src: "/invitacion/2021.jpeg",
+      alt: "Foto de Lily y Santiago del año 2021",
     },
     {
-      src: "/invitacion/foto4.jpeg",
-      alt: "Foto de sesión 4 de Lily y Santiago",
+      year: "2022",
+      src: "/invitacion/2022.jpeg",
+      alt: "Foto de Lily y Santiago del año 2022",
+    },
+    {
+      year: "2023",
+      src: "/invitacion/2023.jpeg",
+      alt: "Foto de Lily y Santiago del año 2023",
+    },
+    {
+      year: "2024",
+      src: "/invitacion/2024.jpeg",
+      alt: "Foto de Lily y Santiago del año 2024",
+    },
+    {
+      year: "2025",
+      src: "/invitacion/2025.jpeg",
+      alt: "Foto de Lily y Santiago del año 2025",
+    },
+    {
+      year: "2026",
+      src: "/invitacion/2026.jpeg",
+      alt: "Foto de Lily y Santiago del año 2026",
     },
   ];
 
@@ -1414,13 +1466,13 @@ export default function WeddingInvitationMobile() {
         <section className="mt-4">
           <StageFrame>
             <SectionHeading
-              eyebrow="Nuestra sesión"
-              title="Un pequeño vistazo de nosotros"
-              subtitle="Desliza y descubre algunos de nuestros momentos favoritos."
+              eyebrow="Nuestra historia"
+              title="El pasar de los años"
+              subtitle="Ocho años, ocho recuerdos, una historia que seguimos escribiendo juntos."
               icon={<Heart size={12} />}
             />
 
-            <PremiumGalleryCarousel images={sessionGallery} />
+            <YearsGalleryCarousel images={sessionGallery} />
           </StageFrame>
         </section>
 
