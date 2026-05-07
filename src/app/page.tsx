@@ -644,7 +644,7 @@ export default function WeddingInvitationMobile() {
       "https://www.google.com/maps/search/?api=1&query=" +
       encodeURIComponent("Galeana, 32730 Samalayuca, Chihuahua"),
     tornabodaTime: "12:00 PM",
-    songSrc: "/music/boda.mp3",
+    songSrc: "/music/boda2.mp3",
   };
 
   const womenPalette = [
