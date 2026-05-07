@@ -631,7 +631,7 @@ export default function WeddingInvitationMobile() {
         "Salón Palazzio, Av. Prof. R. Rivera Lara 6031, Parques Industriales, 32625 Juárez, Chihuahua"
       ),
     galleryClosingQuote:
-      "Gracias por acompañarnos a escribir el primer capítulo de esta nueva historia juntos.",
+      "Mejores son dos que uno... porque si caen, el uno levanta al otro. - — Eclesiastés 4:9-10",
     introText:
       'Te invitamos a ser parte de este día tan especial mientras celebramos el amor, la unión y el inicio de nuestro "Felices para siempre", rodeados de las personas que más significan para nosotros.',
     moneyBoxText:
@@ -1056,7 +1056,7 @@ export default function WeddingInvitationMobile() {
               </p>
               <p className="mt-2 text-[15px] leading-7 text-[#6A786E]">
                 Con mucho cariño, queremos que este día sea una celebración para
-                adultos, por lo que la invitación está pensada para invitados
+                adultos, por lo que la fiesta está pensada para
                 mayores de 15 años. Gracias por comprender y acompañarnos.
               </p>
             </div>
@@ -1208,11 +1208,7 @@ export default function WeddingInvitationMobile() {
                 Favor de confirmar por persona, no por familia.
               </p>
 
-              <p className="mt-2 text-sm leading-7 text-[#617066]">
-                La invitación para la boda está pensada para invitados mayores
-                de 15 años. Gracias por su comprensión y por acompañarnos en
-                este día tan especial.
-              </p>
+              
 
               <div className="mt-4 grid gap-2">
                 <div className="flex items-start gap-2 text-sm text-[#617066]">
