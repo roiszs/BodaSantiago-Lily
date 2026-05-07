@@ -686,7 +686,7 @@ export default function WeddingInvitationMobile() {
     },
     {
       text: "Traje formal oscuro con camisa limpia para un look clásico y elegante.",
-      src: "/invitacion/hombre-opcion.jpeg",
+      src: "/invitacion/hombre-opcionn.jpeg",
     },
     {
       text: "Opción vaquera formal con saco estructurado, botas y accesorios sobrios.",
@@ -1142,7 +1142,7 @@ export default function WeddingInvitationMobile() {
                 alt="Referencia de traje formal para hombre"
               />
               <InvitationImage
-                src="/invitacion/hombre-vaquero-1.jpg"
+                src="/invitacion/hombre-vaquero-1.jpeg"
                 alt="Referencia de traje vaquero formal para hombre"
               />
             </div>
