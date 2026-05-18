@@ -1236,8 +1236,11 @@ export default function WeddingInvitationMobile() {
 
             <div className="space-y-4">
               <SoftCard className="overflow-hidden p-0">
-                <div className="border-b border-[#D8E4D5] bg-[linear-gradient(180deg,rgba(255,255,255,0.72),rgba(244,249,241,0.82))] px-4 py-4">
-                  <div className="flex items-start justify-between gap-3">
+                <div className="relative overflow-hidden border-b border-[#D8E4D5] bg-[linear-gradient(180deg,rgba(255,255,255,0.84),rgba(243,248,240,0.92))] px-4 py-5">
+                  <div className="pointer-events-none absolute -right-10 -top-10 h-28 w-28 rounded-full border border-[#D6E2D3]/70" />
+                  <div className="pointer-events-none absolute right-6 top-6 h-14 w-14 rounded-full border border-white/60" />
+
+                  <div className="relative flex items-start justify-between gap-3">
                     <div>
                       <p className="text-[10px] uppercase tracking-[0.26em] text-[#7A897C]">
                         Código de vestimenta
@@ -1245,16 +1248,19 @@ export default function WeddingInvitationMobile() {
                       <p className="mt-2 text-lg font-semibold leading-7 text-[#435045]">
                         Elegancia clásica en tonos profundos
                       </p>
+                      <p className="mt-2 max-w-[240px] text-sm leading-6 text-[#6C786F]">
+                        Una guía visual para mantener una estética armónica, elegante y sobria durante la celebración.
+                      </p>
                     </div>
 
-                    <div className="rounded-full border border-[#D6E2D3] bg-white/82 px-3 py-1.5 text-[10px] uppercase tracking-[0.22em] text-[#7A897C]">
+                    <div className="rounded-full border border-[#D6E2D3] bg-white/88 px-3 py-1.5 text-[10px] uppercase tracking-[0.22em] text-[#7A897C] shadow-[0_8px_18px_rgba(143,165,141,0.06)]">
                       Dress code
                     </div>
                   </div>
                 </div>
 
                 <div className="px-4 py-4">
-                  <div className="rounded-[24px] border border-[#DCE7D8] bg-[linear-gradient(180deg,rgba(250,252,248,0.98),rgba(241,247,239,0.95))] p-4">
+                  <div className="rounded-[26px] border border-[#DCE7D8] bg-[linear-gradient(180deg,rgba(251,253,249,0.98),rgba(242,247,239,0.96))] p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.55)]">
                     <div className="flex items-center justify-between gap-3">
                       <p className="text-sm font-medium text-[#435045]">
                         Tonos sugeridos para vestidos
@@ -1266,14 +1272,14 @@ export default function WeddingInvitationMobile() {
                     </div>
 
                     <div className="relative mt-4">
-                      <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-6 bg-gradient-to-r from-[#FAFCF8] to-transparent" />
-                      <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-6 bg-gradient-to-l from-[#FAFCF8] to-transparent" />
+                      <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-6 bg-gradient-to-r from-[#FBFDF9] to-transparent" />
+                      <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-6 bg-gradient-to-l from-[#FBFDF9] to-transparent" />
 
                       <div className="flex snap-x snap-mandatory gap-3 overflow-x-auto pb-2 pr-4 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
                         {womenPalette.map((tone) => (
                           <div
                             key={tone.name}
-                            className="min-w-[112px] snap-start rounded-[22px] border border-[#DCE7D8] bg-white/96 p-3 text-center shadow-[0_8px_20px_rgba(143,165,141,0.08)]"
+                            className="min-w-[112px] snap-start rounded-[22px] border border-[#DCE7D8] bg-white/96 p-3 text-center shadow-[0_10px_22px_rgba(143,165,141,0.08)]"
                           >
                             <div
                               className="mx-auto h-12 w-12 rounded-full border border-white/70 shadow-[inset_0_1px_0_rgba(255,255,255,0.45)]"
@@ -1295,14 +1301,20 @@ export default function WeddingInvitationMobile() {
               </SoftCard>
 
               <div className="grid grid-cols-2 gap-3">
-                <div className="rounded-[30px] border border-[#D8E4D5] bg-white/82 p-2 shadow-[0_12px_30px_rgba(143,165,141,0.08)] ring-1 ring-white/60">
+                <div className="overflow-hidden rounded-[30px] border border-[#D8E4D5] bg-white/82 p-2 shadow-[0_12px_30px_rgba(143,165,141,0.08)] ring-1 ring-white/60">
+                  <div className="mb-2 px-1 pt-1 text-[10px] uppercase tracking-[0.22em] text-[#7A897C]">
+                    Formal
+                  </div>
                   <InvitationImage
                     src="/invitacion/hombre-traje1.webp"
                     alt="Referencia de traje formal para hombre"
                   />
                 </div>
 
-                <div className="rounded-[30px] border border-[#D8E4D5] bg-white/82 p-2 shadow-[0_12px_30px_rgba(143,165,141,0.08)] ring-1 ring-white/60">
+                <div className="overflow-hidden rounded-[30px] border border-[#D8E4D5] bg-white/82 p-2 shadow-[0_12px_30px_rgba(143,165,141,0.08)] ring-1 ring-white/60">
+                  <div className="mb-2 px-1 pt-1 text-[10px] uppercase tracking-[0.22em] text-[#7A897C]">
+                    Vaquero elegante
+                  </div>
                   <InvitationImage
                     src="/invitacion/hombre-vaquero-1.jpeg"
                     alt="Referencia de traje vaquero formal para hombre"
@@ -1310,21 +1322,26 @@ export default function WeddingInvitationMobile() {
                 </div>
               </div>
 
-              <SoftCard>
-                <div className="mb-3 flex items-center justify-between">
-                  <p className="text-[10px] uppercase tracking-[0.22em] text-[#7E8D80]">
-                    Reglas clave
-                  </p>
-                  <Shirt size={14} className="text-[#88A186]" />
+              <SoftCard className="overflow-hidden">
+                <div className="mb-4 flex items-center justify-between">
+                  <div>
+                    <p className="text-[10px] uppercase tracking-[0.22em] text-[#7E8D80]">
+                      Reglas clave
+                    </p>
+                    <p className="mt-1 text-sm text-[#6D786F]">
+                      Consideraciones para mantener la armonía visual del evento.
+                    </p>
+                  </div>
+                  <Shirt size={15} className="text-[#88A186]" />
                 </div>
 
-                <ul className="space-y-3 text-sm leading-7 text-[#6A786E]">
+                <ul className="space-y-3">
                   {dressRules.map((rule) => (
                     <li
                       key={rule}
-                      className="border-b border-[#EDF3EB] pb-3 last:border-b-0 last:pb-0"
+                      className="rounded-[18px] border border-[#E8F0E5] bg-white/72 px-4 py-3 text-sm leading-7 text-[#6A786E]"
                     >
-                      • {rule}
+                      {rule}
                     </li>
                   ))}
                 </ul>
@@ -1333,7 +1350,7 @@ export default function WeddingInvitationMobile() {
               <button
                 type="button"
                 onClick={() => setShowDressIdeas(true)}
-                className="relative z-20 inline-flex min-h-[56px] w-full items-center justify-center gap-2 rounded-[20px] border border-[#95AF93]/20 bg-[linear-gradient(180deg,#A8BDA2,#97AF92)] px-4 py-4 text-sm font-semibold text-white shadow-[0_16px_32px_rgba(143,165,141,0.18)] transition duration-200 active:scale-[0.99]"
+                className="relative z-20 inline-flex min-h-[58px] w-full items-center justify-center gap-2 rounded-[22px] border border-[#95AF93]/20 bg-[linear-gradient(180deg,#A8BDA2,#97AF92)] px-4 py-4 text-sm font-semibold text-white shadow-[0_16px_32px_rgba(143,165,141,0.18)] transition duration-200 active:scale-[0.99]"
               >
                 Consultar más ideas
               </button>
@@ -1552,7 +1569,7 @@ export default function WeddingInvitationMobile() {
               {ideas.map((idea, index) => (
                 <div
                   key={idea.text}
-                  className="overflow-hidden rounded-[28px] border border-[#DCE7D8] bg-white/90 shadow-[0_12px_28px_rgba(143,165,141,0.08)] ring-1 ring-white/60"
+                  className="overflow-hidden rounded-[30px] border border-[#DCE7D8] bg-white/92 shadow-[0_12px_28px_rgba(143,165,141,0.08)] ring-1 ring-white/60"
                 >
                   <div className="p-3">
                     <InvitationImage src={idea.src} alt={idea.text} />
