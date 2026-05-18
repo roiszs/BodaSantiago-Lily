@@ -504,18 +504,15 @@ function YearsGalleryCarousel({
 
           <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(24,34,27,0.42),rgba(24,34,27,0.08),transparent_58%)]" />
 
-          {/* etiqueta superior izquierda */}
           <div className="absolute left-4 top-4 rounded-full border border-white/45 bg-white/18 px-4 py-2 text-[10px] uppercase tracking-[0.26em] text-white backdrop-blur-md">
             El pasar de los años
           </div>
 
-          {/* contador superior derecho */}
           <div className="absolute right-4 top-4 rounded-full border border-white/45 bg-white/18 px-4 py-2 text-[10px] uppercase tracking-[0.22em] text-white backdrop-blur-md">
             {String(activeIndex + 1).padStart(2, "0")} /{" "}
             {String(images.length).padStart(2, "0")}
           </div>
 
-          {/* año inferior izquierdo */}
           <div className="absolute bottom-4 left-4">
             <div className="rounded-[22px] border border-white/35 bg-white/14 px-5 py-4 backdrop-blur-md shadow-[0_10px_28px_rgba(0,0,0,0.12)]">
               <p className="text-[10px] uppercase tracking-[0.24em] text-white/78">
@@ -527,7 +524,6 @@ function YearsGalleryCarousel({
             </div>
           </div>
 
-          {/* flechas inferiores derechas */}
           <div className="absolute bottom-4 right-4 flex items-center gap-2">
             <button
               type="button"
@@ -605,7 +601,6 @@ function YearsGalleryCarousel({
     </div>
   );
 }
-
 
 function RSVPForm({
   title,
@@ -696,7 +691,7 @@ export default function WeddingInvitationMobile() {
         "Salón Palazzio, Av. Prof. R. Rivera Lara 6031, Parques Industriales, 32625 Juárez, Chihuahua"
       ),
     galleryClosingQuote:
-      "Eclesiastés 4:9 Es mejor ser dos que uno, porque ambos pueden ayudarse mutuamente a lograr el éxito.",
+      "Mejores son dos que uno... porque si caen, el uno levanta al otro. - — Eclesiastés 4:9-10",
     introText:
       'Te invitamos a ser parte de este día tan especial mientras celebramos el amor, la unión y el inicio de nuestro "Felices para siempre", rodeados de las personas que más significan para nosotros.',
     moneyBoxText:
@@ -812,11 +807,6 @@ export default function WeddingInvitationMobile() {
       year: "2025",
       src: "/invitacion/2025.jpeg",
       alt: "Foto de Lily y Santiago del año 2025",
-    },
-    {
-      year: "2026",
-      src: "/invitacion/2026.jpeg",
-      alt: "Foto de Lily y Santiago del año 2026",
     },
   ];
 
@@ -1244,40 +1234,59 @@ export default function WeddingInvitationMobile() {
               icon={<Shirt size={12} />}
             />
 
-            <SoftCard>
-              <div className="flex items-center justify-between gap-3">
-                <p className="text-sm font-medium text-[#435045]">
-                  Tonos sugeridos para vestidos
-                </p>
-                <div className="inline-flex items-center gap-1 text-[10px] uppercase tracking-[0.18em] text-[#8A9A8C]">
-                  <span>Desliza</span>
-                  <ChevronRight size={13} />
+            <SoftCard className="overflow-hidden">
+              <div className="mb-4 flex items-center justify-between gap-3">
+                <div>
+                  <p className="text-[10px] uppercase tracking-[0.24em] text-[#7E8D80]">
+                    Código de vestimenta
+                  </p>
+                  <p className="mt-2 text-base font-semibold text-[#435045]">
+                    Elegancia clásica en tonos profundos
+                  </p>
+                </div>
+
+                <div className="rounded-full border border-[#D8E3D3] bg-white/80 px-3 py-1.5 text-[10px] uppercase tracking-[0.22em] text-[#7B8A7D]">
+                  Dress code
                 </div>
               </div>
 
-              <div className="relative mt-4">
-                <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-6 bg-gradient-to-r from-[#FAFCF8] to-transparent" />
-                <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-6 bg-gradient-to-l from-[#FAFCF8] to-transparent" />
+              <div className="rounded-[24px] border border-[#DCE7D8] bg-[linear-gradient(180deg,rgba(250,252,248,0.95),rgba(241,247,239,0.92))] p-4">
+                <div className="flex items-center justify-between gap-3">
+                  <p className="text-sm font-medium text-[#435045]">
+                    Tonos sugeridos para vestidos
+                  </p>
+                  <div className="inline-flex items-center gap-1 text-[10px] uppercase tracking-[0.18em] text-[#8A9A8C]">
+                    <span>Desliza</span>
+                    <ChevronRight size={13} />
+                  </div>
+                </div>
 
-                <div className="flex snap-x snap-mandatory gap-3 overflow-x-auto pb-2 pr-4 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
-                  {womenPalette.map((tone) => (
-                    <div
-                      key={tone.name}
-                      className="min-w-[112px] snap-start rounded-[22px] border border-[#DCE7D8] bg-white/94 p-3 text-center shadow-[0_8px_20px_rgba(143,165,141,0.08)]"
-                    >
+                <div className="relative mt-4">
+                  <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-6 bg-gradient-to-r from-[#FAFCF8] to-transparent" />
+                  <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-6 bg-gradient-to-l from-[#FAFCF8] to-transparent" />
+
+                  <div className="flex snap-x snap-mandatory gap-3 overflow-x-auto pb-2 pr-4 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
+                    {womenPalette.map((tone) => (
                       <div
-                        className="mx-auto h-12 w-12 rounded-full border border-white/70"
-                        style={{ backgroundColor: tone.hex }}
-                      />
-                      <p className="mt-2 text-[11px] leading-4 text-[#6F7C73]">
-                        {tone.name}
-                      </p>
-                    </div>
-                  ))}
+                        key={tone.name}
+                        className="min-w-[112px] snap-start rounded-[22px] border border-[#DCE7D8] bg-white/94 p-3 text-center shadow-[0_8px_20px_rgba(143,165,141,0.08)]"
+                      >
+                        <div
+                          className="mx-auto h-12 w-12 rounded-full border border-white/70"
+                          style={{ backgroundColor: tone.hex }}
+                        />
+                        <p className="mt-2 text-[11px] leading-4 text-[#6F7C73]">
+                          {tone.name}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="mt-4 rounded-[20px] border border-[#D8E3D3] bg-white/78 p-3">
+                  <p className="text-sm text-[#667368]">No rojo · No blanco</p>
                 </div>
               </div>
-
-              <p className="mt-3 text-sm text-[#7F8E84]">No rojo · No blanco</p>
             </SoftCard>
 
             <div className="mt-4 grid gap-3">
@@ -1293,6 +1302,13 @@ export default function WeddingInvitationMobile() {
               </div>
 
               <SoftCard>
+                <div className="mb-3 flex items-center justify-between">
+                  <p className="text-[10px] uppercase tracking-[0.22em] text-[#7E8D80]">
+                    Reglas clave
+                  </p>
+                  <Shirt size={14} className="text-[#88A186]" />
+                </div>
+
                 <ul className="space-y-2 text-sm leading-6 text-[#6A786E]">
                   {dressRules.map((rule) => (
                     <li key={rule}>• {rule}</li>
@@ -1303,7 +1319,7 @@ export default function WeddingInvitationMobile() {
               <button
                 type="button"
                 onClick={() => setShowDressIdeas(true)}
-                className="inline-flex items-center justify-center gap-2 rounded-[18px] border border-[#D8E3D3] bg-white/90 px-4 py-3.5 text-sm font-medium text-[#5D6B61] shadow-[0_10px_22px_rgba(143,165,141,0.10)] transition duration-200 hover:bg-white"
+                className="inline-flex items-center justify-center gap-2 rounded-[18px] border border-[#95AF93]/20 bg-[#9FB79D] px-4 py-3.5 text-sm font-semibold text-white shadow-[0_14px_30px_rgba(143,165,141,0.16)] transition duration-200 hover:-translate-y-[1px] hover:bg-[#8DA88B] active:translate-y-0"
               >
                 Consultar más ideas
               </button>
@@ -1468,7 +1484,7 @@ export default function WeddingInvitationMobile() {
             <SectionHeading
               eyebrow="Nuestra historia"
               title="El pasar de los años"
-              subtitle="Ocho años, ocho recuerdos, una historia que seguimos escribiendo juntos."
+              subtitle="Siete años, siete recuerdos, una historia que seguimos escribiendo juntos."
               icon={<Heart size={12} />}
             />
 
@@ -1486,8 +1502,8 @@ export default function WeddingInvitationMobile() {
 
       {showDressIdeas ? (
         <div className="fixed inset-0 z-50 flex items-end bg-[#556459]/20 backdrop-blur-sm">
-          <div className="max-h-[88vh] w-full overflow-y-auto rounded-t-[34px] border border-[#D8E3D3] bg-[#F6F6F1] p-5 text-[#3F4B43] shadow-2xl">
-            <div className="mb-4 flex items-center justify-between">
+          <div className="max-h-[88vh] w-full overflow-y-auto rounded-t-[34px] border border-[#D8E3D3] bg-[linear-gradient(180deg,#F6F8F3_0%,#EEF4EA_100%)] p-5 text-[#3F4B43] shadow-2xl">
+            <div className="mb-5 flex items-center justify-between">
               <div>
                 <p className="text-[11px] uppercase tracking-[0.28em] text-[#8A9A8C]">
                   Dress code
@@ -1495,6 +1511,9 @@ export default function WeddingInvitationMobile() {
                 <h3 className="mt-1 text-2xl font-semibold">
                   Más ideas de estilo
                 </h3>
+                <p className="mt-2 text-sm leading-6 text-[#667368]">
+                  Inspiración visual para lograr un look elegante y en armonía con la celebración.
+                </p>
               </div>
 
               <button
@@ -1506,16 +1525,24 @@ export default function WeddingInvitationMobile() {
               </button>
             </div>
 
-            <div className="space-y-4">
+            <div className="grid gap-4">
               {ideas.map((idea) => (
                 <div
                   key={idea.text}
-                  className="rounded-[28px] border border-[#DCE7D8] bg-white/84 p-4 shadow-[0_10px_24px_rgba(143,165,141,0.08)] ring-1 ring-white/60"
+                  className="overflow-hidden rounded-[28px] border border-[#DCE7D8] bg-white/88 shadow-[0_12px_28px_rgba(143,165,141,0.08)] ring-1 ring-white/60"
                 >
-                  <InvitationImage src={idea.src} alt={idea.text} />
-                  <p className="mt-3 text-sm leading-6 text-[#6A786E]">
-                    {idea.text}
-                  </p>
+                  <div className="p-3">
+                    <InvitationImage src={idea.src} alt={idea.text} />
+                  </div>
+
+                  <div className="px-4 pb-4">
+                    <div className="mb-2 inline-flex rounded-full border border-[#D8E3D3] bg-[#F7FAF5] px-3 py-1 text-[10px] uppercase tracking-[0.22em] text-[#7D8B7E]">
+                      Inspiración
+                    </div>
+                    <p className="text-sm leading-6 text-[#667368]">
+                      {idea.text}
+                    </p>
+                  </div>
                 </div>
               ))}
             </div>
