@@ -1234,71 +1234,80 @@ export default function WeddingInvitationMobile() {
               icon={<Shirt size={12} />}
             />
 
-            <SoftCard className="overflow-hidden">
-              <div className="mb-4 flex items-center justify-between gap-3">
-                <div>
-                  <p className="text-[10px] uppercase tracking-[0.24em] text-[#7E8D80]">
-                    Código de vestimenta
-                  </p>
-                  <p className="mt-2 text-base font-semibold text-[#435045]">
-                    Elegancia clásica en tonos profundos
-                  </p>
-                </div>
+            <div className="space-y-4">
+              <SoftCard className="overflow-hidden p-0">
+                <div className="border-b border-[#D8E4D5] bg-[linear-gradient(180deg,rgba(255,255,255,0.72),rgba(244,249,241,0.82))] px-4 py-4">
+                  <div className="flex items-start justify-between gap-3">
+                    <div>
+                      <p className="text-[10px] uppercase tracking-[0.26em] text-[#7A897C]">
+                        Código de vestimenta
+                      </p>
+                      <p className="mt-2 text-lg font-semibold leading-7 text-[#435045]">
+                        Elegancia clásica en tonos profundos
+                      </p>
+                    </div>
 
-                <div className="rounded-full border border-[#D8E3D3] bg-white/80 px-3 py-1.5 text-[10px] uppercase tracking-[0.22em] text-[#7B8A7D]">
-                  Dress code
-                </div>
-              </div>
-
-              <div className="rounded-[24px] border border-[#DCE7D8] bg-[linear-gradient(180deg,rgba(250,252,248,0.95),rgba(241,247,239,0.92))] p-4">
-                <div className="flex items-center justify-between gap-3">
-                  <p className="text-sm font-medium text-[#435045]">
-                    Tonos sugeridos para vestidos
-                  </p>
-                  <div className="inline-flex items-center gap-1 text-[10px] uppercase tracking-[0.18em] text-[#8A9A8C]">
-                    <span>Desliza</span>
-                    <ChevronRight size={13} />
+                    <div className="rounded-full border border-[#D6E2D3] bg-white/82 px-3 py-1.5 text-[10px] uppercase tracking-[0.22em] text-[#7A897C]">
+                      Dress code
+                    </div>
                   </div>
                 </div>
 
-                <div className="relative mt-4">
-                  <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-6 bg-gradient-to-r from-[#FAFCF8] to-transparent" />
-                  <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-6 bg-gradient-to-l from-[#FAFCF8] to-transparent" />
-
-                  <div className="flex snap-x snap-mandatory gap-3 overflow-x-auto pb-2 pr-4 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
-                    {womenPalette.map((tone) => (
-                      <div
-                        key={tone.name}
-                        className="min-w-[112px] snap-start rounded-[22px] border border-[#DCE7D8] bg-white/94 p-3 text-center shadow-[0_8px_20px_rgba(143,165,141,0.08)]"
-                      >
-                        <div
-                          className="mx-auto h-12 w-12 rounded-full border border-white/70"
-                          style={{ backgroundColor: tone.hex }}
-                        />
-                        <p className="mt-2 text-[11px] leading-4 text-[#6F7C73]">
-                          {tone.name}
-                        </p>
+                <div className="px-4 py-4">
+                  <div className="rounded-[24px] border border-[#DCE7D8] bg-[linear-gradient(180deg,rgba(250,252,248,0.98),rgba(241,247,239,0.95))] p-4">
+                    <div className="flex items-center justify-between gap-3">
+                      <p className="text-sm font-medium text-[#435045]">
+                        Tonos sugeridos para vestidos
+                      </p>
+                      <div className="inline-flex items-center gap-1 text-[10px] uppercase tracking-[0.18em] text-[#8A9A8C]">
+                        <span>Desliza</span>
+                        <ChevronRight size={13} />
                       </div>
-                    ))}
+                    </div>
+
+                    <div className="relative mt-4">
+                      <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-6 bg-gradient-to-r from-[#FAFCF8] to-transparent" />
+                      <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-6 bg-gradient-to-l from-[#FAFCF8] to-transparent" />
+
+                      <div className="flex snap-x snap-mandatory gap-3 overflow-x-auto pb-2 pr-4 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
+                        {womenPalette.map((tone) => (
+                          <div
+                            key={tone.name}
+                            className="min-w-[112px] snap-start rounded-[22px] border border-[#DCE7D8] bg-white/96 p-3 text-center shadow-[0_8px_20px_rgba(143,165,141,0.08)]"
+                          >
+                            <div
+                              className="mx-auto h-12 w-12 rounded-full border border-white/70 shadow-[inset_0_1px_0_rgba(255,255,255,0.45)]"
+                              style={{ backgroundColor: tone.hex }}
+                            />
+                            <p className="mt-2 text-[11px] leading-4 text-[#6F7C73]">
+                              {tone.name}
+                            </p>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    <div className="mt-4 rounded-[20px] border border-[#D8E3D3] bg-white/82 p-3">
+                      <p className="text-sm text-[#667368]">No rojo · No blanco</p>
+                    </div>
                   </div>
                 </div>
+              </SoftCard>
 
-                <div className="mt-4 rounded-[20px] border border-[#D8E3D3] bg-white/78 p-3">
-                  <p className="text-sm text-[#667368]">No rojo · No blanco</p>
-                </div>
-              </div>
-            </SoftCard>
-
-            <div className="mt-4 grid gap-3">
               <div className="grid grid-cols-2 gap-3">
-                <InvitationImage
-                  src="/invitacion/hombre-traje1.webp"
-                  alt="Referencia de traje formal para hombre"
-                />
-                <InvitationImage
-                  src="/invitacion/hombre-vaquero-1.jpeg"
-                  alt="Referencia de traje vaquero formal para hombre"
-                />
+                <div className="rounded-[30px] border border-[#D8E4D5] bg-white/82 p-2 shadow-[0_12px_30px_rgba(143,165,141,0.08)] ring-1 ring-white/60">
+                  <InvitationImage
+                    src="/invitacion/hombre-traje1.webp"
+                    alt="Referencia de traje formal para hombre"
+                  />
+                </div>
+
+                <div className="rounded-[30px] border border-[#D8E4D5] bg-white/82 p-2 shadow-[0_12px_30px_rgba(143,165,141,0.08)] ring-1 ring-white/60">
+                  <InvitationImage
+                    src="/invitacion/hombre-vaquero-1.jpeg"
+                    alt="Referencia de traje vaquero formal para hombre"
+                  />
+                </div>
               </div>
 
               <SoftCard>
@@ -1309,9 +1318,14 @@ export default function WeddingInvitationMobile() {
                   <Shirt size={14} className="text-[#88A186]" />
                 </div>
 
-                <ul className="space-y-2 text-sm leading-6 text-[#6A786E]">
+                <ul className="space-y-3 text-sm leading-7 text-[#6A786E]">
                   {dressRules.map((rule) => (
-                    <li key={rule}>• {rule}</li>
+                    <li
+                      key={rule}
+                      className="border-b border-[#EDF3EB] pb-3 last:border-b-0 last:pb-0"
+                    >
+                      • {rule}
+                    </li>
                   ))}
                 </ul>
               </SoftCard>
@@ -1319,7 +1333,7 @@ export default function WeddingInvitationMobile() {
               <button
                 type="button"
                 onClick={() => setShowDressIdeas(true)}
-                className="inline-flex items-center justify-center gap-2 rounded-[18px] border border-[#95AF93]/20 bg-[#9FB79D] px-4 py-3.5 text-sm font-semibold text-white shadow-[0_14px_30px_rgba(143,165,141,0.16)] transition duration-200 hover:-translate-y-[1px] hover:bg-[#8DA88B] active:translate-y-0"
+                className="relative z-20 inline-flex min-h-[56px] w-full items-center justify-center gap-2 rounded-[20px] border border-[#95AF93]/20 bg-[linear-gradient(180deg,#A8BDA2,#97AF92)] px-4 py-4 text-sm font-semibold text-white shadow-[0_16px_32px_rgba(143,165,141,0.18)] transition duration-200 active:scale-[0.99]"
               >
                 Consultar más ideas
               </button>
@@ -1501,9 +1515,17 @@ export default function WeddingInvitationMobile() {
       </div>
 
       {showDressIdeas ? (
-        <div className="fixed inset-0 z-50 flex items-end bg-[#556459]/20 backdrop-blur-sm">
-          <div className="max-h-[88vh] w-full overflow-y-auto rounded-t-[34px] border border-[#D8E3D3] bg-[linear-gradient(180deg,#F6F8F3_0%,#EEF4EA_100%)] p-5 text-[#3F4B43] shadow-2xl">
-            <div className="mb-5 flex items-center justify-between">
+        <div className="fixed inset-0 z-[100] bg-[#556459]/28 backdrop-blur-sm">
+          <div
+            className="absolute inset-0"
+            onClick={() => setShowDressIdeas(false)}
+            aria-hidden="true"
+          />
+
+          <div className="absolute inset-x-0 bottom-0 z-[101] max-h-[88vh] overflow-y-auto rounded-t-[34px] border border-[#D8E3D3] bg-[linear-gradient(180deg,#F7FAF5_0%,#EDF4EA_100%)] p-5 text-[#3F4B43] shadow-2xl">
+            <div className="mx-auto mb-4 h-1.5 w-14 rounded-full bg-[#C9D7C7]" />
+
+            <div className="mb-5 flex items-start justify-between gap-4">
               <div>
                 <p className="text-[11px] uppercase tracking-[0.28em] text-[#8A9A8C]">
                   Dress code
@@ -1519,17 +1541,18 @@ export default function WeddingInvitationMobile() {
               <button
                 type="button"
                 onClick={() => setShowDressIdeas(false)}
-                className="rounded-full border border-[#D8E3D3] bg-white/86 p-2 text-[#5D6B61]"
+                className="shrink-0 rounded-full border border-[#D8E3D3] bg-white/90 p-2 text-[#5D6B61] shadow-[0_8px_18px_rgba(143,165,141,0.10)]"
+                aria-label="Cerrar ideas de dress code"
               >
                 <X size={18} />
               </button>
             </div>
 
-            <div className="grid gap-4">
-              {ideas.map((idea) => (
+            <div className="grid gap-4 pb-3">
+              {ideas.map((idea, index) => (
                 <div
                   key={idea.text}
-                  className="overflow-hidden rounded-[28px] border border-[#DCE7D8] bg-white/88 shadow-[0_12px_28px_rgba(143,165,141,0.08)] ring-1 ring-white/60"
+                  className="overflow-hidden rounded-[28px] border border-[#DCE7D8] bg-white/90 shadow-[0_12px_28px_rgba(143,165,141,0.08)] ring-1 ring-white/60"
                 >
                   <div className="p-3">
                     <InvitationImage src={idea.src} alt={idea.text} />
@@ -1537,7 +1560,7 @@ export default function WeddingInvitationMobile() {
 
                   <div className="px-4 pb-4">
                     <div className="mb-2 inline-flex rounded-full border border-[#D8E3D3] bg-[#F7FAF5] px-3 py-1 text-[10px] uppercase tracking-[0.22em] text-[#7D8B7E]">
-                      Inspiración
+                      Inspiración {String(index + 1).padStart(2, "0")}
                     </div>
                     <p className="text-sm leading-6 text-[#667368]">
                       {idea.text}
