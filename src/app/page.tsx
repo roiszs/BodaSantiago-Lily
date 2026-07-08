@@ -727,7 +727,7 @@ export default function WeddingInvitationMobile() {
   ];
 
   const dressRules = [
-    "Mujeres: Es vestido de gala largo. Evitar rojo y blanco.",
+    "Mujeres: Vestido de gala (largo). Evitar rojo y blanco.",
     "Hombres: Look formal o vaquero con traje.",
     "Sí se permiten botas y sombrero si el outfit mantiene el estilo elegante.",
     "No mezclilla.",
