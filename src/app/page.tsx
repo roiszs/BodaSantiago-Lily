@@ -1229,7 +1229,7 @@ export default function WeddingInvitationMobile() {
           <StageFrame>
             <SectionHeading
               eyebrow="Dress code"
-              title="Elegante clásico con toque minimalista"
+              title="Consejos de vestimenta"
               subtitle="Queremos que te sientas increíble y en armonía con la celebración."
               icon={<Shirt size={12} />}
             />
