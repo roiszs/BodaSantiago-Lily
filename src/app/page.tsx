@@ -691,13 +691,13 @@ export default function WeddingInvitationMobile() {
         "Salón Palazzio, Av. Prof. R. Rivera Lara 6031, Parques Industriales, 32625 Juárez, Chihuahua"
       ),
     galleryClosingQuote:
-      "Mejores son dos que uno... porque si caen, el uno levanta al otro. - — Eclesiastés 4:9-10",
+      "Eclesiastés 4:9 Es mejor ser dos que uno, porque ambos pueden ayudarse mutuamente a lograr el éxito.",
     introText:
       'Te invitamos a ser parte de este día tan especial mientras celebramos el amor, la unión y el inicio de nuestro "Felices para siempre", rodeados de las personas que más significan para nosotros.',
     moneyBoxText:
       "Lo más valioso para nosotros es compartir este día contigo. Si deseas contribuir a nuestro nuevo comienzo, ese día contaremos con buzón de dinero.",
-    weddingWhatsapp: "+526560000000",
-    tornabodaWhatsapp: "+526560000000",
+    weddingWhatsapp: "+526567635652",
+    tornabodaWhatsapp: "+526567635652",
     tornabodaLocation: "Samalayuca",
     tornabodaAddress: "Galeana, 32730 Samalayuca, Chih.",
     tornabodaMapsUrl:
