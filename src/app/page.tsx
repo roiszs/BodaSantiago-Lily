@@ -699,9 +699,9 @@ export default function WeddingInvitationMobile() {
     weddingWhatsapp: "+526567635652",
     tornabodaWhatsapp: "+526567635652",
     tornabodaLocation: "Samalayuca",
-    tornabodaAddress: "Galeana, 32730 Samalayuca, Chih.",
+    tornabodaAddress: "QUINTA FLOR DEL DESIERTO, Ojo de La Casa, 32730 Samalayuca, 32730 Cd Juárez, Chih.",
     tornabodaMapsUrl:
-      "https://www.google.com/maps/place/Jard%C3%ADn+de+Eventos+Samalayuca/@31.3508856,-106.4811442,17z/data=!4m22!1m15!4m14!1m6!1m2!1s0x86e77fafe090cd85:0x4b18b7e218e90841!2sJard%C3%ADn+de+Eventos+Samalayuca,+Galeana,+32730+Samalayuca,+Chih.!2m2!1d-106.4785693!2d31.3508856!1m6!1m2!1s0x86e77fafe090cd85:0x4b18b7e218e90841!2sJard%C3%ADn+de+Eventos+Samalayuca,+Galeana,+32730+Samalayuca,+Chih.!2m2!1d-106.4785693!2d31.3508856!3m5!1s0x86e77fafe090cd85:0x4b18b7e218e90841!8m2!3d31.3508856!4d-106.4785693!16s%2Fg%2F11p0y67y4m?entry=ttu&g_ep=EgoyMDI2MDUwMi4wIKXMDSoASAFQAw%3D%3D",
+      "https://www.google.com/maps/place/QUINTA+FLOR+DEL+DESIERTO/@31.3524842,-106.5160031,17z/data=!3m1!4b1!4m6!3m5!1s0x86e77f6e76da22a9:0x22174549b79ae89d!8m2!3d31.3524842!4d-106.5160031!16s%2Fg%2F11rgp52vqj!18m1!1e1?entry=ttu&g_ep=EgoyMDI2MDcwNS4wIKXMDSoASAFQAw%3D%3D",
     tornabodaTime: "12:00 PM",
     songSrc: "/music/boda2.mp3",
   };
