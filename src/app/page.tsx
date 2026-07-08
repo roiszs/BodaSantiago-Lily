@@ -1300,75 +1300,107 @@ export default function WeddingInvitationMobile() {
                 </div>
               </SoftCard>
 
-                      <div className="grid grid-cols-2 gap-3">
-          <div className="overflow-hidden rounded-[30px] border border-[#D8E4D5] bg-white/82 p-2 shadow-[0_12px_30px_rgba(143,165,141,0.08)] ring-1 ring-white/60">
-            <div className="mb-2 px-2 pt-1">
-              <p className="text-[9px] uppercase tracking-[0.34em] text-[#8A998C]">
-                Formal
-              </p>
-              <p className="mt-1 text-[13px] font-medium tracking-[0.01em] text-[#475449]">
-                Look clásico
-              </p>
-            </div>
-            <InvitationImage
-              src="/invitacion/hombre-traje1.webp"
-              alt="Referencia de traje formal para hombre"
-            />
-          </div>
+              <div className="grid grid-cols-2 gap-3">
+  <div className="overflow-hidden rounded-[30px] border border-[#D8E4D5] bg-[linear-gradient(180deg,rgba(255,255,255,0.90),rgba(247,250,245,0.82))] p-3 shadow-[0_12px_30px_rgba(143,165,141,0.08)] ring-1 ring-white/60">
+    <div className="mb-3 flex items-start justify-between gap-3">
+      <div>
+        <p className="text-[9px] uppercase tracking-[0.34em] text-[#8A998C]">
+          Formal
+        </p>
+        <p className="mt-1 text-[14px] font-semibold tracking-[0.01em] text-[#475449]">
+          Look clásico
+        </p>
+      </div>
+      <span className="rounded-full border border-[#D9E4D7] bg-white/88 px-2 py-1 text-[9px] uppercase tracking-[0.2em] text-[#829184]">
+        Gala
+      </span>
+    </div>
 
-          <div className="overflow-hidden rounded-[30px] border border-[#D8E4D5] bg-white/82 p-2 shadow-[0_12px_30px_rgba(143,165,141,0.08)] ring-1 ring-white/60">
-            <div className="mb-2 px-2 pt-1">
-              <p className="text-[9px] uppercase tracking-[0.34em] text-[#8A998C]">
-                Vaquero elegante
-              </p>
-              <p className="mt-1 text-[13px] font-medium tracking-[0.01em] text-[#475449]">
-                Toque western
-              </p>
-            </div>
-            <InvitationImage
-              src="/invitacion/hombre-vaquero-1.jpeg"
-              alt="Referencia de traje vaquero formal para hombre"
-            />
-          </div>
+    <div className="relative h-[18rem] overflow-hidden rounded-[26px] border border-[#D8E3D3] bg-[linear-gradient(180deg,#FCFCFA_0%,#EFF4EB_100%)]">
+  <div className="pointer-events-none absolute inset-x-5 top-4 h-[88%] rounded-t-[999px] border border-white/70" />
+  <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-[#E8EFE3] to-transparent" />
+  <Image
+    src="/invitacion/hombre-traje1.webp"
+    alt="Referencia de traje formal para hombre"
+    fill
+    className="object-cover object-center scale-[1.08]"
+    sizes="(max-width: 768px) 50vw, 220px"
+  />
+</div>
+  </div>
+
+  <div className="overflow-hidden rounded-[30px] border border-[#D8E4D5] bg-[linear-gradient(180deg,rgba(255,255,255,0.90),rgba(247,250,245,0.82))] p-3 shadow-[0_12px_30px_rgba(143,165,141,0.08)] ring-1 ring-white/60">
+    <div className="mb-3 flex items-start justify-between gap-3">
+      <div>
+        <p className="text-[9px] uppercase tracking-[0.34em] text-[#8A998C]">
+          Vaquero elegante
+        </p>
+        <p className="mt-1 text-[14px] font-semibold tracking-[0.01em] text-[#475449]">
+          Toque western
+        </p>
+      </div>
+      <span className="rounded-full border border-[#D9E4D7] bg-white/88 px-2 py-1 text-[9px] uppercase tracking-[0.2em] text-[#829184]">
+        Botas
+      </span>
+    </div>
+
+    <div className="relative h-[18rem] overflow-hidden rounded-[26px] border border-[#D8E3D3] bg-[linear-gradient(180deg,#FCFCFA_0%,#EFF4EB_100%)]">
+  <div className="pointer-events-none absolute inset-x-5 top-4 h-[88%] rounded-t-[999px] border border-white/55" />
+  <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-[#E8EFE3]/70 to-transparent" />
+  <Image
+    src="/invitacion/hombre-vaquero-1.jpeg"
+    alt="Referencia de traje vaquero formal para hombre"
+    fill
+    className="object-cover object-center scale-[1.04]"
+    sizes="(max-width: 768px) 50vw, 220px"
+  />
+</div>
+  </div>
+</div>
+
+<div className="mt-4 overflow-hidden rounded-[30px] border border-[#D8E4D5] bg-[linear-gradient(180deg,rgba(255,255,255,0.90),rgba(246,249,244,0.86))] p-5 shadow-[0_14px_34px_rgba(143,165,141,0.08)] ring-1 ring-white/60">
+  <div className="mb-4 flex items-start justify-between gap-3">
+    <div>
+      <p className="text-[10px] uppercase tracking-[0.30em] text-[#7E8D80]">
+        Reglas clave
+      </p>
+      <h4 className="mt-2 text-[1.1rem] font-semibold tracking-[-0.01em] text-[#435045]">
+        Guía de estilo para la celebración
+      </h4>
+      <p className="mt-2 text-[14px] leading-6 text-[#6D786F]">
+        Una referencia visual clara para conservar una estética elegante, sobria y bien cuidada durante el evento.
+      </p>
+    </div>
+
+    <div className="rounded-full border border-[#D8E3D3] bg-white/84 p-2">
+      <Shirt size={15} className="text-[#88A186]" />
+    </div>
+  </div>
+
+  <div className="space-y-3">
+    {dressRules.map((rule, index) => (
+      <div
+        key={rule}
+        className="flex gap-3 rounded-[20px] border border-[#E8F0E5] bg-white/80 px-4 py-4 shadow-[0_6px_18px_rgba(143,165,141,0.04)]"
+      >
+        <div className="mt-1 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#E7F0E4] text-[11px] font-semibold text-[#6D7F6F]">
+          {index + 1}
         </div>
+        <p className="text-[15px] leading-7 tracking-[0.005em] text-[#5F6C62]">
+          {rule}
+        </p>
+      </div>
+    ))}
+  </div>
+</div>
 
-        <SoftCard className="overflow-hidden">
-          <div className="mb-4 flex items-start justify-between gap-3">
-            <div>
-              <p className="text-[10px] uppercase tracking-[0.30em] text-[#7E8D80]">
-                Reglas clave
-              </p>
-              <h4 className="mt-2 text-[1.05rem] font-semibold tracking-[-0.01em] text-[#435045]">
-                Guía de estilo para la celebración
-              </h4>
-              <p className="mt-2 text-[14px] leading-6 text-[#6D786F]">
-                Consideraciones para mantener una estética elegante, sobria y en armonía con el evento.
-              </p>
-            </div>
-            <div className="rounded-full border border-[#D8E3D3] bg-white/84 p-2">
-              <Shirt size={15} className="text-[#88A186]" />
-            </div>
-          </div>
-
-          <ul className="space-y-3">
-            {dressRules.map((rule) => (
-              <li
-                key={rule}
-                className="rounded-[20px] border border-[#E8F0E5] bg-white/78 px-4 py-4 text-[15px] font-normal leading-7 tracking-[0.005em] text-[#5F6C62] shadow-[0_6px_18px_rgba(143,165,141,0.04)]"
-              >
-                {rule}
-              </li>
-            ))}
-          </ul>
-        </SoftCard>
-
-              <button
-                type="button"
-                onClick={() => setShowDressIdeas(true)}
-                className="relative z-20 inline-flex min-h-[58px] w-full items-center justify-center gap-2 rounded-[22px] border border-[#95AF93]/20 bg-[linear-gradient(180deg,#A8BDA2,#97AF92)] px-4 py-4 text-sm font-semibold text-white shadow-[0_16px_32px_rgba(143,165,141,0.18)] transition duration-200 active:scale-[0.99]"
-              >
-                Consultar más ideas
-              </button>
+<button
+  type="button"
+  onClick={() => setShowDressIdeas(true)}
+  className="relative z-20 inline-flex min-h-[58px] w-full items-center justify-center gap-2 rounded-[22px] border border-[#95AF93]/20 bg-[linear-gradient(180deg,#A8BDA2,#97AF92)] px-4 py-4 text-[15px] font-semibold tracking-[0.01em] text-white shadow-[0_16px_32px_rgba(143,165,141,0.18)] transition duration-200 active:scale-[0.99]"
+>
+  Consultar más ideas
+</button>
             </div>
           </StageFrame>
         </section>
