@@ -737,19 +737,19 @@ export default function WeddingInvitationMobile() {
   const ideas = [
     {
       text: "Vestido satinado midi en tonos oscuros con caída elegante.",
-      src: "/invitacion/mujer-vestido1.jpeg",
+      src: "/invitacion/mujer1.jpeg",
     },
     {
       text: "Vestido largo en tonos profundos y sobrios para una presencia más refinada.",
-      src: "/invitacion/mujer-vestido2.jpeg",
+      src: "/invitacion/mujer2.jpeg",
     },
     {
       text: "Traje formal oscuro con camisa limpia para un look clásico y elegante.",
-      src: "/invitacion/hombre-opcionn.jpeg",
+      src: "/invitacion/hombres11.jpeg",
     },
     {
       text: "Opción vaquera formal con saco estructurado, botas y accesorios sobrios.",
-      src: "/invitacion/hombre-opcionVaquero.jpeg",
+      src: "/invitacion/hombres22.jpeg",
     },
   ];
 
@@ -1320,7 +1320,7 @@ export default function WeddingInvitationMobile() {
   <div className="pointer-events-none absolute inset-x-5 top-4 h-[88%] rounded-t-[999px] border border-white/70" />
   <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-[#E8EFE3] to-transparent" />
   <Image
-    src="/invitacion/hombre-traje1.webp"
+    src="/invitacion/hombre-traje.jpeg"
     alt="Referencia de traje formal para hombre"
     fill
     className="object-cover object-center scale-[1.08]"
@@ -1348,7 +1348,7 @@ export default function WeddingInvitationMobile() {
   <div className="pointer-events-none absolute inset-x-5 top-4 h-[88%] rounded-t-[999px] border border-white/55" />
   <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-[#E8EFE3]/70 to-transparent" />
   <Image
-    src="/invitacion/hombre-vaquero-1.jpeg"
+    src="/invitacion/Vaquero.jpeg"
     alt="Referencia de traje vaquero formal para hombre"
     fill
     className="object-cover object-center scale-[1.04]"
