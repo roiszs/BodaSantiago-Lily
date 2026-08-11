@@ -1348,7 +1348,7 @@ export default function WeddingInvitationMobile() {
   <div className="pointer-events-none absolute inset-x-5 top-4 h-[88%] rounded-t-[999px] border border-white/55" />
   <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-[#E8EFE3]/70 to-transparent" />
   <Image
-    src="/invitacion/Vaquero.jpeg"
+    src="/invitacion/Vaquero3.jpeg"
     alt="Referencia de traje vaquero formal para hombre"
     fill
     className="object-cover object-center scale-[1.04]"
